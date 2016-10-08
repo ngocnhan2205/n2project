@@ -17,7 +17,7 @@ public class UserRestController {
     UserService userService;
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public User demo(){
+    public User demo() {
         return userService.findBySso("admin");
     }
 }

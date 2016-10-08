@@ -10,6 +10,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
  * Created by dhnhan on 9/26/2016.
@@ -23,5 +25,12 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
         MethodSecurityConfig.class,
         OAuth2SecurityConfiguration.class,
         ResourceServerConfiguration.class})
-public class N2Configuration {
+public class N2Configuration extends WebMvcConfigurerAdapter {
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry
+                .addResourceHandler("/**")
+                .addResourceLocations("/n2/");
+    }
 }
