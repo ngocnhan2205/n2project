@@ -16,8 +16,8 @@ appMain.config(['$mdIconProvider','$httpProvider',
         $httpProvider.interceptors.push('AuthIn');
     }]);
 
-appMain.run(['$rootScope', '$window', 'ngProgressFactory','$timeout',
-    function ($rootScope, $window, ngProgressFactory, $timeout) {
+appMain.run(['$rootScope', '$window', 'ngProgressFactory','$timeout','AuthService',
+    function ($rootScope, $window, ngProgressFactory, $timeout, AuthService) {
         $rootScope.$on('n2:error', function (event, rejection) {
             // Ignore `invalid_grant` error - should be catched on `LoginController`.
             if ('invalid_grant' === rejection.data.error) {
@@ -25,8 +25,7 @@ appMain.run(['$rootScope', '$window', 'ngProgressFactory','$timeout',
             }
             // Refresh token when a `invalid_token` error occurs.
             if ('invalid_token' === rejection.data.error) {
-                return $window.location.href = '/';
-                //return OAuth.getRefreshToken();
+                return AuthService.refreshToken();
             }
             // Redirect to `/login` with the `error_reason`.
             return $window.location.href = '#/n2/login';
@@ -42,4 +41,8 @@ appMain.run(['$rootScope', '$window', 'ngProgressFactory','$timeout',
                 $rootScope.progressbar.complete();
             }, 500);
         });
+    }]);
+appMain.controller('N2Controller', ['$scope','AuthService',
+    function($scope, AuthService){
+
     }]);

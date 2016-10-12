@@ -10,7 +10,7 @@
     <title>N2 Expense</title>
 
 </head>
-<body ng-app="N2App">
+<body ng-app="N2App" ng-controller="N2Controller">
 <div id="loading">
 </div>
 <div layout="row">
@@ -20,6 +20,7 @@
                 <span>Expense Management</span>
             </h2>
             <span flex></span>
+            <md-button ng-if="isAuth">User</md-button>
         </div>
     </md-toolbar>
 </div>
