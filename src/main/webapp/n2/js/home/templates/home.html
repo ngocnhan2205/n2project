@@ -1,1 +1,59 @@
-<md-button ng-click="load()">TEst</md-button>
+<md-toolbar layout="row">
+    <div class="md-toolbar-tools">
+        <md-button ng-click="openSideNavPanel()" class="md-icon-button">
+            <md-icon>
+                <i class="material-icons md-24">menu</i>
+            </md-icon>
+        </md-button>
+        <h1>Service</h1>
+    </div>
+</md-toolbar>
+<div layout="row" flex>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2"
+                md-component-id="left">
+        <md-toolbar layout="row">
+            <div class="md-toolbar-tools">
+                <h2>
+                    <span>Side Panel</span>
+                </h2>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
+                    <md-tooltip>Close Side Panel</md-tooltip>
+                    <md-icon class="md-default-theme" class="material-icons">&#xE5CD;</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-content layout-padding="">
+            <md-list>
+                <md-subheader class="md-no-sticky">Favorites</md-subheader>
+                <md-list-item ng-click="navigateTo('data usage', $event)">
+                    <md-icon md-svg-icon="cached"></md-icon>
+                    <p>Data Usage</p>
+                </md-list-item>
+                <md-list-item ng-click="navigateTo('data usage', $event)">
+                    <md-icon md-svg-icon="cached"></md-icon>
+                    <p>Data Usage</p>
+                </md-list-item>
+                <md-list-item ng-click="navigateTo('data usage', $event)">
+                    <md-icon md-svg-icon="cached"></md-icon>
+                    <p>Data Usage</p>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-subheader class="md-no-sticky">Pages</md-subheader>
+                <md-list-item ng-click="navigateTo('data usage', $event)">
+                    <md-icon md-svg-icon="cached"></md-icon>
+                    <p>Data Usage</p>
+                </md-list-item>
+                <md-list-item ng-click="navigateTo('data usage', $event)">
+                    <md-icon md-svg-icon="cached"></md-icon>
+                    <p>Data Usage</p>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </md-sidenav>
+    <div layout="column" flex id="content">
+        <md-content layout="column" flex class="md-padding" ng-view="">
+
+        </md-content>
+    </div>
+</div>

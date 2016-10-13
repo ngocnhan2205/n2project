@@ -4,26 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="js/bower_components/angular-material/angular-material.min.css" rel="stylesheet">
-    <link href="js/bower_components/ngprogress/ngProgress.css" rel="stylesheet">
+    <link href="js/bower_components/angular-material-menu/material-menu-sidenav.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/n2.css" rel="stylesheet">
     <title>N2 Expense</title>
-
 </head>
 <body ng-app="N2App" ng-controller="N2Controller">
-<div id="loading">
+<div id="loading" ng-show="loading">
+    <md-progress-linear class="md-warn" md-mode="indeterminate"></md-progress-linear>
 </div>
-<div layout="row">
-    <md-toolbar style="background-color: #673AB7">
-        <div class="md-toolbar-tools">
-            <h2>
-                <span>Expense Management</span>
-            </h2>
-            <span flex></span>
-            <md-button ng-if="isAuth">User</md-button>
-        </div>
-    </md-toolbar>
-</div>
+
 <div ui-view>
 </div>
 
@@ -35,7 +25,7 @@
 <script src="js/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="js/bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="js/bower_components/angular-material/angular-material.min.js"></script>
-<script src="js/bower_components/ngprogress/build/ngprogress.min.js"></script>
+<script src="js/bower_components/angular-material-menu/material-menu-sidenav.min.js"></script>
 <!--main module-->
 <script src="js/app.js"></script>
 <script src="js/login/login.js"></script>

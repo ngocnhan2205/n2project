@@ -5,8 +5,8 @@ var moduleLib = ['ui.router',
                 'ngMaterial',
                 'ngAnimate',
                 'ngMessages',
-                'ngProgress',
-                'ngCookies'];
+                'ngCookies',
+                'ngMenuSidenav'];
 var moduleApp = ['Login', 'HomeModule'];
 var app = moduleApp.concat(moduleLib);
 var appMain = angular.module('N2App', app);
@@ -16,8 +16,8 @@ appMain.config(['$mdIconProvider','$httpProvider',
         $httpProvider.interceptors.push('AuthIn');
     }]);
 
-appMain.run(['$rootScope', '$window', 'ngProgressFactory','$timeout','AuthService',
-    function ($rootScope, $window, ngProgressFactory, $timeout, AuthService) {
+appMain.run(['$rootScope', '$window','$timeout','AuthService',
+    function ($rootScope, $window, $timeout, AuthService) {
         $rootScope.$on('n2:error', function (event, rejection) {
             // Ignore `invalid_grant` error - should be catched on `LoginController`.
             if ('invalid_grant' === rejection.data.error) {
@@ -32,17 +32,19 @@ appMain.run(['$rootScope', '$window', 'ngProgressFactory','$timeout','AuthServic
         });
 
         $rootScope.$on('$stateChangeStart', function () {
-            $rootScope.progressbar = ngProgressFactory.createInstance();
-            $rootScope.progressbar.start();
-            $rootScope.progressbar.setColor('red');
+            $rootScope.$broadcast('loading', true);
         });
         $rootScope.$on('$stateChangeSuccess', function () {
-            $timeout(function () {
-                $rootScope.progressbar.complete();
-            }, 500);
+            $timeout(function(){
+                $rootScope.$broadcast('loading', false);
+            },1000);
         });
     }]);
-appMain.controller('N2Controller', ['$scope','AuthService',
-    function($scope, AuthService){
-
+appMain.controller('N2Controller', ['$scope','$rootScope',
+    function($scope, $rootScope){
+        $scope.loading = false;
+        $rootScope.$on("loading", function(e, data){
+            $scope.loading = data;
+        });
     }]);
+

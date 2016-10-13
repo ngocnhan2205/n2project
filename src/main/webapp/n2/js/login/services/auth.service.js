@@ -6,6 +6,7 @@ loginModule.factory('AuthService', ['$http', '$q', '$cookieStore','$rootScope',
         return {
             auth: function (user) {
                 var defer = $q.defer();
+                $cookieStore.remove('n2Token');
                 var params = {
                     grant_type: 'password',
                     username: user.username,
