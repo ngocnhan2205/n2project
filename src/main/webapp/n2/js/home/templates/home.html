@@ -24,29 +24,17 @@
             </div>
         </md-toolbar>
         <md-content layout-padding="">
-            <md-list>
-                <md-subheader class="md-no-sticky">Favorites</md-subheader>
-                <md-list-item ng-click="navigateTo('data usage', $event)">
-                    <md-icon md-svg-icon="cached"></md-icon>
-                    <p>Data Usage</p>
+            <!--<md-list ng-repeat="menu in menus">
+                <md-subheader class="md-no-sticky" ng-bind="menu.name"></md-subheader>
+                <md-list-item class="secondary-button-padding" ng-repeat="submenu in menu.subMenu">
+                    <p ng-bind="submenu.name"></p>
                 </md-list-item>
-                <md-list-item ng-click="navigateTo('data usage', $event)">
-                    <md-icon md-svg-icon="cached"></md-icon>
-                    <p>Data Usage</p>
-                </md-list-item>
-                <md-list-item ng-click="navigateTo('data usage', $event)">
-                    <md-icon md-svg-icon="cached"></md-icon>
-                    <p>Data Usage</p>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-subheader class="md-no-sticky">Pages</md-subheader>
-                <md-list-item ng-click="navigateTo('data usage', $event)">
-                    <md-icon md-svg-icon="cached"></md-icon>
-                    <p>Data Usage</p>
-                </md-list-item>
-                <md-list-item ng-click="navigateTo('data usage', $event)">
-                    <md-icon md-svg-icon="cached"></md-icon>
-                    <p>Data Usage</p>
+            </md-list>-->
+            <md-list ng-repeat="menu in menus">
+                <md-subheader class="md-no-sticky">{{menu.name}}</md-subheader>
+                <md-list-item ui-sref="{{submenu.url}}" ng-repeat="submenu in menu.subMenu">
+                    <img src="static/img/icons/user.svg" class="md-avatar" width="16px" height="16px"/>
+                    <p>{{menu.name}}</p>
                 </md-list-item>
             </md-list>
         </md-content>

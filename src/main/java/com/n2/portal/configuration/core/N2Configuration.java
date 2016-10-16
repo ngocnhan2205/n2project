@@ -31,13 +31,13 @@ public class N2Configuration extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
-                .addResourceHandler("/**")
+                .addResourceHandler("/static/**")
                 .addResourceLocations("/n2/");
     }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("index.html");
+        registry.addViewController("/").setViewName("static/index.html");
         super.addViewControllers(registry);
     }
 }

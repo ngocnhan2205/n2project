@@ -9,24 +9,24 @@ appMain
                 .state('n2',{
                     abstract: true,
                     url: '/n2',
-                    templateUrl: 'js/n2.html'
+                    templateUrl: 'static/js/n2.html'
                 })
                 .state('n2.login',{
                     url: '/login',
                     controller: 'LoginController',
-                    templateUrl: 'js/login/templates/login.html'
+                    templateUrl: 'static/js/login/templates/login.html'
                 })
                 .state('n2.overview',{
                     url: '/overview',
-                    templateUrl: 'js/templates/overview.html'
+                    templateUrl: 'static/js/templates/overview.html'
                 })
                 .state('n2.feature',{
                     url: '/feature',
-                    templateUrl: 'js/templates/feature.html'
+                    templateUrl: 'static/js/templates/feature.html'
                 })
                 .state('home',{
                     url: '/home',
                     controller: 'HomeController',
-                    templateUrl: 'js/home/templates/home.html'
+                    templateUrl: 'static/js/home/templates/home.html'
                 })
         }]);

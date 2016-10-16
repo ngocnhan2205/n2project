@@ -12,7 +12,7 @@
                     <form role="form" name="loginForm" style="width: 100%">
                         <md-input-container class="md-block">
                             <label>User Name</label>
-                            <md-icon md-svg-src="img/icons/user.svg"></md-icon>
+                            <md-icon md-svg-src="static/img/icons/user.svg"></md-icon>
                             <input required name="userName" ng-model="user.username">
                             <div ng-messages="loginForm.userName.$error">
                                 <div ng-message="required">This is required.</div>
@@ -20,7 +20,7 @@
                         </md-input-container>
                         <md-input-container class="md-block">
                             <label>Password</label>
-                            <md-icon md-svg-src="img/icons/password.svg"></md-icon>
+                            <md-icon md-svg-src="static/img/icons/password.svg"></md-icon>
                             <input required name="password" ng-model="user.password" type="password">
                             <div ng-messages="loginForm.password.$error">
                                 <div ng-message="required">This is required.</div>
