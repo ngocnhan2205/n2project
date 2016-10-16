@@ -1,5 +1,8 @@
 package com.n2.portal.model.menu;
 
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,6 +17,7 @@ public class Menu extends AbstractMenu {
     private boolean isAdmin;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "menu")
+    @JsonManagedReference
     private List<SubMenu> subMenu;
 
     public Menu() {

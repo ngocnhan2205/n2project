@@ -1,7 +1,7 @@
 package com.n2.portal.controller;
 
-import com.n2.portal.dao.MenuDao;
 import com.n2.portal.model.menu.Menu;
+import com.n2.portal.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,17 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * Created by dhnhan on 13/10/2016.
- */
-@RestController("/menu")
+
+@RestController
+@RequestMapping("/n2")
 public class MenuController {
 
     @Autowired
-    MenuDao menuDao;
+    MenuService menuService;
 
-    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/api/menu", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Menu> getMenus(){
-        return null;
+        return menuService.getMenu();
     }
 }
