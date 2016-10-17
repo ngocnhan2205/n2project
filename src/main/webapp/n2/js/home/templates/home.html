@@ -35,9 +35,7 @@
             </md-list>
         </md-content>
     </md-sidenav>
-    <div layout="column" flex id="content">
-        <md-content layout="column" flex class="md-padding" ng-view="">
-            <div ui-view></div>
-        </md-content>
+    <div layout="column" class="relative" layout-fill role="main">
+        <div ui-view layout="column" layout-fill layout-padding></div>
     </div>
 </div>

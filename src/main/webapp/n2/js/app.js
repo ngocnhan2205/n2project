@@ -8,7 +8,7 @@ var moduleLib = ['ui.router',
                 'ngCookies',
                 'ncy-angular-breadcrumb'
                 ];
-var moduleApp = ['Login', 'HomeModule', 'Dashboard'];
+var moduleApp = ['Login', 'HomeModule', 'Dashboard', 'Expense'];
 var app = moduleApp.concat(moduleLib);
 var appMain = angular.module('N2App', app);
 

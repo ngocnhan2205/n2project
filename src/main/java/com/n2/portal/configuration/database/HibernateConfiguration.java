@@ -29,7 +29,9 @@ public class HibernateConfiguration {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[]{"com.n2.portal.model", "com.n2.portal.model.menu"});
+        sessionFactory.setPackagesToScan(new String[]{"com.n2.portal.model",
+                "com.n2.portal.model.expense",
+                "com.n2.portal.model.menu"});
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }

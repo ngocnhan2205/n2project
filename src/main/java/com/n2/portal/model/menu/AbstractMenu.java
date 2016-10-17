@@ -19,7 +19,7 @@ public abstract class AbstractMenu {
     private String icon;
     @Column(name = "URL")
     private String url;
-        @Column(name = "OTHERINDEX")
+    @Column(name = "OTHERINDEX")
     private int orderIndex;
 
     public AbstractMenu() {

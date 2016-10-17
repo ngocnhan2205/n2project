@@ -40,4 +40,12 @@ appMain
                         label: 'Dashboard'
                     }
                 })
+                .state('home.expense',{
+                    url: '/expense',
+                    controller: 'ExpenseController',
+                    templateUrl: 'static/js/expense/templates/expense.html',
+                    ncyBreadcrumb: {
+                        label: 'Expense'
+                    }
+                })
         }]);
