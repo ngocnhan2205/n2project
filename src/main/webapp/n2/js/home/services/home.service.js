@@ -7,6 +7,10 @@ homeModule
             getMenu: function(){
                 var url = '/n2/api/menu';
                 return N2Service.requestRest(url, 'GET');
+            },
+            getUser: function(){
+                var url = '/n2/api/user';
+                return N2Service.requestRest(url, 'GET');
             }
         }
     }]);

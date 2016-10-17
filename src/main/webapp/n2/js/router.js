@@ -27,6 +27,17 @@ appMain
                 .state('home',{
                     url: '/home',
                     controller: 'HomeController',
-                    templateUrl: 'static/js/home/templates/home.html'
+                    templateUrl: 'static/js/home/templates/home.html',
+                    ncyBreadcrumb: {
+                        label: 'Home'
+                    }
+                })
+                .state('home.dashboard',{
+                    url: '/dashboard',
+                    controller: 'DashboardController',
+                    templateUrl: 'static/js/dashboard/templates/dashboard.html',
+                    ncyBreadcrumb: {
+                        label: 'Dashboard'
+                    }
                 })
         }]);

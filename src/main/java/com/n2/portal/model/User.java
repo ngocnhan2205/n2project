@@ -1,5 +1,7 @@
 package com.n2.portal.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,6 +28,7 @@ public class User {
     private String ssoId;
 
     @Column(name = "PASSWORD", nullable = false)
+    @JsonIgnore
     private String password;
 
     @Column(name = "FIRST_NAME", nullable = false)
@@ -38,12 +41,14 @@ public class User {
     private String email;
 
     @Column(name = "STATE", nullable = false)
+    @JsonIgnore
     private String state = State.ACTIVE.getState();
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "APP_USER_USER_PROFILE",
             joinColumns = {@JoinColumn(name = "USER_ID")},
             inverseJoinColumns = {@JoinColumn(name = "USER_PROFILE_ID")})
+    @JsonIgnore
     private Set<UserProfile> userProfiles = new HashSet<UserProfile>();
 
     public Long getId() {

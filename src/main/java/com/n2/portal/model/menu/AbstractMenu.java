@@ -19,8 +19,8 @@ public abstract class AbstractMenu {
     private String icon;
     @Column(name = "URL")
     private String url;
-    @Column(name = "INDEX")
-    private int index;
+        @Column(name = "OTHERINDEX")
+    private int orderIndex;
 
     public AbstractMenu() {
     }
@@ -65,11 +65,11 @@ public abstract class AbstractMenu {
         this.url = url;
     }
 
-    public int getIndex() {
-        return index;
+    public int getOrderIndex() {
+        return orderIndex;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    public void setOrderIndex(int orderIndex) {
+        this.orderIndex = orderIndex;
     }
 }

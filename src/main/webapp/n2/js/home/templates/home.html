@@ -5,17 +5,19 @@
                 <i class="material-icons md-24">menu</i>
             </md-icon>
         </md-button>
-        <h1>Service</h1>
+        <h1>Expense Management</h1>
     </div>
 </md-toolbar>
+<div ncy-breadcrumb></div>
 <div layout="row" flex>
     <md-sidenav class="md-sidenav-left md-whiteframe-z2"
                 md-component-id="left">
         <md-toolbar layout="row">
             <div class="md-toolbar-tools">
-                <h2>
-                    <span>Side Panel</span>
-                </h2>
+                <div layout="column" class="md-toolbar-tools-bottom inset">
+                    <div style="font-size: 18px;">{{user.firstName}} {{user.lastName}}</div>
+                    <div ng-bind="user.email"></div>
+                </div>
                 <span flex></span>
                 <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
                     <md-tooltip>Close Side Panel</md-tooltip>
@@ -24,24 +26,18 @@
             </div>
         </md-toolbar>
         <md-content layout-padding="">
-            <!--<md-list ng-repeat="menu in menus">
-                <md-subheader class="md-no-sticky" ng-bind="menu.name"></md-subheader>
-                <md-list-item class="secondary-button-padding" ng-repeat="submenu in menu.subMenu">
-                    <p ng-bind="submenu.name"></p>
-                </md-list-item>
-            </md-list>-->
             <md-list ng-repeat="menu in menus">
-                <md-subheader class="md-no-sticky">{{menu.name}}</md-subheader>
-                <md-list-item ui-sref="{{submenu.url}}" ng-repeat="submenu in menu.subMenu">
-                    <img src="static/img/icons/user.svg" class="md-avatar" width="16px" height="16px"/>
+                <md-list-item ui-sref="{{menu.url}}" ng-click="closeSideNavPanel()">
+                    <img ng-src="static/img/icons/{{menu.icon}}.svg" width="32px" height="32px" style="margin-right: 5px;"/>
                     <p>{{menu.name}}</p>
                 </md-list-item>
+                <md-divider></md-divider>
             </md-list>
         </md-content>
     </md-sidenav>
     <div layout="column" flex id="content">
         <md-content layout="column" flex class="md-padding" ng-view="">
-
+            <div ui-view></div>
         </md-content>
     </div>
 </div>

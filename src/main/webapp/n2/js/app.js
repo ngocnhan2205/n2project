@@ -6,8 +6,9 @@ var moduleLib = ['ui.router',
                 'ngAnimate',
                 'ngMessages',
                 'ngCookies',
-                'ngMenuSidenav'];
-var moduleApp = ['Login', 'HomeModule'];
+                'ncy-angular-breadcrumb'
+                ];
+var moduleApp = ['Login', 'HomeModule', 'Dashboard'];
 var app = moduleApp.concat(moduleLib);
 var appMain = angular.module('N2App', app);
 
@@ -34,10 +35,14 @@ appMain.run(['$rootScope', '$window','$timeout','AuthService',
         $rootScope.$on('$stateChangeStart', function () {
             $rootScope.$broadcast('loading', true);
         });
-        $rootScope.$on('$stateChangeSuccess', function () {
+        $rootScope.$on('$stateChangeSuccess', function (e, data) {
             $timeout(function(){
                 $rootScope.$broadcast('loading', false);
+                if (data.name === 'home'){
+                    $window.location.href = '#/home/dashboard';
+                }
             },1000);
+
         });
     }]);
 appMain.controller('N2Controller', ['$scope','$rootScope',
@@ -47,4 +52,5 @@ appMain.controller('N2Controller', ['$scope','$rootScope',
             $scope.loading = data;
         });
     }]);
+
 

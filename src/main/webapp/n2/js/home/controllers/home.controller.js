@@ -5,6 +5,7 @@ homeModule
     .controller('HomeController', ['$scope', '$mdSidenav','HomeService',
         function ($scope, $mdSidenav, HomeService) {
             $scope.menus = [];
+            $scope.user = {};
 
             $scope.getMenu = function(){
                 HomeService.getMenu().then(function (res) {
@@ -13,8 +14,19 @@ homeModule
                 })
             };
 
-            $scope.getMenu();
+            $scope.getUser = function(){
+                HomeService.getUser().then(function(res){
+                    console.log(res.data);
+                    $scope.user = res.data;
+                })
+            };
 
+            function init(){
+                $scope.getUser();
+                $scope.getMenu();
+            }
+
+            init();
 
             $scope.openSideNavPanel = function() {
                 $mdSidenav('left').open();
@@ -22,5 +34,6 @@ homeModule
             $scope.closeSideNavPanel = function() {
                 $mdSidenav('left').close();
             };
+
 
         }]);
