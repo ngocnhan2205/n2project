@@ -84,6 +84,6 @@ md-sidenav ng-md-icon {
     top: 5px;
 }
 
-.user-avatar {
-    border-radius: 99%;
+.md-button {
+    text-transform: capitalize !important;/*For Lower case use lowercase*/
 }

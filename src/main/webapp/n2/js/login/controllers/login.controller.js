@@ -5,10 +5,10 @@ loginModule
     .controller('LoginController', ['$scope', '$mdSidenav', '$state','AuthService',
         function ($scope, $mdSidenav, $state, AuthService) {
             $scope.user = {};
-            $scope.login = function () {
-                AuthService.auth($scope.user).then(function (res) {
+            $scope.login = function (e) {
+                AuthService.auth($scope.user, e).then(function (res) {
                     if (res.status == 200){
-                        $state.go('home');
+                        $state.go('home.dashboard');
                     }
                 });
             }
