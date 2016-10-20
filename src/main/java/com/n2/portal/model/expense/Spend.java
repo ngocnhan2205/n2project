@@ -14,12 +14,32 @@ public class Spend extends AbstractExpense {
 
     @Column(name = "PRICE")
     private Double price;
+
+    @Column(name = "DATE_SPEND")
+    private Date dateSpend;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EXPENSE_ID", nullable = false)
     @JsonBackReference
     private Expense expense;
 
     public Spend() {
+    }
+
+    public Date getDateSpend() {
+        return dateSpend;
+    }
+
+    public void setDateSpend(Date dateSpend) {
+        this.dateSpend = dateSpend;
+    }
+
+    public Expense getExpense() {
+        return expense;
+    }
+
+    public void setExpense(Expense expense) {
+        this.expense = expense;
     }
 
     public Double getPrice() {

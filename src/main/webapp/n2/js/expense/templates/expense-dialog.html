@@ -1,0 +1,37 @@
+<md-dialog aria-label="Expense" style="width: 700px;">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Expense</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon md-svg-src="static/img/icons/exit.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <md-content layout-padding>
+
+                <md-input-container md-no-float class="md-block">
+                    <label>Expense</label>
+                    <md-icon md-svg-src="static/img/icons/expense-m.svg"></md-icon>
+                    <input ng-model="expense.name" type="text">
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Description</label>
+                    <md-icon md-svg-src="static/img/icons/note.svg"></md-icon>
+                    <textarea ng-model="expense.description" md-maxlength="150" rows="2" md-select-on-focus></textarea>
+                </md-input-container>
+            </md-content>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="save()">
+                Submit
+            </md-button>
+            <md-button ng-click="cancel()">
+                Cancel
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

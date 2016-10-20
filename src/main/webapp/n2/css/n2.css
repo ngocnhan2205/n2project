@@ -87,3 +87,17 @@ md-sidenav ng-md-icon {
 .md-button {
     text-transform: capitalize !important;/*For Lower case use lowercase*/
 }
+
+.n2-header {
+    background-color: #abc8dc!important;
+    color: #2c4a5e !important;
+    font-weight: bold !important;
+}
+
+.btn-text {
+    color: #2c4a5e !important;
+}
+
+md-card md-card-title {
+    padding: 10px 16px 16px !important;
+}

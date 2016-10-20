@@ -14,8 +14,6 @@ import java.util.List;
 public class Expense extends AbstractExpense {
     @Column(name = "TOTAL")
     private Double total;
-    @Column(name = "DATESPEND")
-    private Date dateSpend;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "expense")
     @JsonManagedReference
     private List<Spend> spends;
@@ -38,11 +36,4 @@ public class Expense extends AbstractExpense {
         this.spends = spends;
     }
 
-    public Date getDateSpend() {
-        return dateSpend;
-    }
-
-    public void setDateSpend(Date dateSpend) {
-        this.dateSpend = dateSpend;
-    }
 }
