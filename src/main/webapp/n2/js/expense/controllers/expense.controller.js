@@ -35,7 +35,7 @@ expenseModule.controller('ExpenseController', ['$scope', '$mdDialog', 'ExpenseSe
             $scope.expense = {};
             $scope.cancel = function () {
                 $mdDialog.cancel();
-            }
+            };
 
             $scope.save = function () {
                 var obj = {

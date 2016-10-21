@@ -12,9 +12,10 @@ var moduleApp = ['Login', 'HomeModule', 'Dashboard', 'Expense'];
 var app = moduleApp.concat(moduleLib);
 var appMain = angular.module('N2App', app);
 
-appMain.config(['$mdIconProvider','$httpProvider',
-    function ($mdIconProvider, $httpProvider) {
+appMain.config(['$mdIconProvider','$httpProvider', '$mdAriaProvider',
+    function ($mdIconProvider, $httpProvider, $mdAriaProvider) {
         $httpProvider.interceptors.push('AuthIn');
+        $mdAriaProvider.disableWarnings();
     }]);
 
 appMain.run(['$rootScope', '$window','$timeout','AuthService',
