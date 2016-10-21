@@ -24,8 +24,9 @@ public class ExpenseServiceImpl implements ExpenseService {
     private SpendDao spendDao;
 
     public Expense saveExpense(ExpenseDTO dto) {
+        Expense e = dto.getExpense();
+        e.setTotal((double) 0F);
         Expense expense = expenseDao.saveOrUpdate(dto.getExpense());
-        expense.setTotal((double) 0F);
         return expense;
     }
 }

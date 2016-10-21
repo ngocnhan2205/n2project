@@ -1,9 +1,13 @@
 <md-content md-scroll-y>
-    <div layout="row">
+    <div layout="row" layout-wrap>
         <span flex></span>
         <md-button class="md-primary" ng-click="showDialogExpense($event)">
             <md-icon md-svg-src="static/img/icons/add.svg" class="s24" aria-label="Cake"></md-icon>
             Add Expense
+        </md-button>
+        <md-button class="md-primary" ng-click="showOption()">
+            <md-icon md-svg-src="static/img/icons/setting.svg" class="s24" aria-label="Cake"></md-icon>
+            Show Option
         </md-button>
     </div>
     <div layout="row" layout-xs="column" layout-align="center center" layout-wrap>
@@ -11,19 +15,20 @@
             <md-card>
                 <md-toolbar class="n2-header">
                     <div class="md-toolbar-tools">
-                        <span>Expense</span>
+                        <span flex>Expense</span>
                         <span flex></span>
-                        <md-button class="md-primary">
-                            <md-icon md-svg-src="static/img/icons/spend.svg" aria-label="add spend"></md-icon>
-                            <span class="btn-text">Spend</span>
-                        </md-button>
+                        <span>
+                            <md-icon md-svg-src="static/img/icons/money.svg" class="s24" aria-label="Cake">
+                            </md-icon>
+                            <span>200.000</span>
+                        </span>
                     </div>
                 </md-toolbar>
                 <md-card-title>
-                    <span class="md-subhead">Total: </span>
+                    <span class="md-subhead">Description: </span>
                 </md-card-title>
                 <md-divider></md-divider>
-                <md-card-content style="height: 180px; overflow-y: auto">
+                <md-card-content style="height: 260px; overflow-y: auto">
                     <md-list-item>
                         <p> topping.name </p>
                         <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
@@ -50,6 +55,9 @@
                     </md-list-item>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="end center">
+                    <md-button class="md-primary">
+                        <md-icon md-svg-src="static/img/icons/spend.svg" aria-label="add spend"></md-icon>
+                    </md-button>
                     <md-button>
                         <md-icon md-svg-src="/static/img/icons/edit.svg"></md-icon>
                     </md-button>

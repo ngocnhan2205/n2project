@@ -1,8 +1,8 @@
 /**
  * Created by dhnhan on 18/10/2016.
  */
-expenseModule.controller('ExpenseController', ['$scope', '$mdDialog', 'ExpenseService',
-    function ($scope, $mdDialog, ExpenseService) {
+expenseModule.controller('ExpenseController', ['$scope', '$mdDialog', 'ExpenseService', '$mdBottomSheet',
+    function ($scope, $mdDialog, ExpenseService, $mdBottomSheet) {
         $scope.showDialogExpense = function (ev) {
             $mdDialog.show({
                 controller: DialogExpenseController,
@@ -18,6 +18,18 @@ expenseModule.controller('ExpenseController', ['$scope', '$mdDialog', 'ExpenseSe
 
                 });
         };
+
+        $scope.showOption = function () {
+            $scope.alert = '';
+            $mdBottomSheet.show({
+                templateUrl: 'static/js/expense/templates/option-tpl.html',
+                controller: 'OptionController',
+                clickOutsideToClose: true
+            }).then(function (clickedItem) {
+
+            });
+        };
+
 
         function DialogExpenseController($scope, $mdDialog, ExpenseService) {
             $scope.expense = {};
