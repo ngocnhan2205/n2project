@@ -14,6 +14,8 @@ import java.util.List;
 public class Expense extends AbstractExpense {
     @Column(name = "TOTAL")
     private Double total;
+    @Column(name = "userId")
+    private String userId;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "expense")
     @JsonManagedReference
     private List<Spend> spends;
@@ -36,4 +38,11 @@ public class Expense extends AbstractExpense {
         this.spends = spends;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 }

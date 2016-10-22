@@ -1,7 +1,8 @@
 package com.n2.portal.utils;
 
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
-
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -13,6 +14,7 @@ public class N2Date {
     public static final String MONTH = "month";
     public static final int START = 1;
     public static final int END = 0;
+    public static final String FORMAT_DATE = "dd/MM/yyyy";
 
 
 
@@ -43,5 +45,17 @@ public class N2Date {
         calendar.set(Calendar.MILLISECOND, 0);
         calendar.set(Calendar.SECOND, 0);
         return calendar.getTime();
+    }
+
+    public static Date parseDate(String date){
+        DateFormat df = new SimpleDateFormat(FORMAT_DATE);
+        Date rs = null;
+        try {
+            rs = df.parse(date);
+            return rs;
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return rs;
+        }
     }
 }

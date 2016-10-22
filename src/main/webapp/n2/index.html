@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="static/js/bower_components/angular-material/angular-material.min.css" rel="stylesheet">
     <link href="static/js/bower_components/angular-material-menu/material-menu-sidenav.min.css" rel="stylesheet">
+    <link href="static/js/bower_components/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet">
     <link href="static/js/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="static/js/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="static/css/n2.css" rel="stylesheet">
+    <link href="static/css/expense.css" rel="stylesheet">
     <title>N2 Expense</title>
 </head>
 <body ng-app="N2App" ng-controller="N2Controller">
 <div id="loading" ng-show="loading">
     <md-progress-linear class="md-warn" md-mode="indeterminate"></md-progress-linear>
 </div>
-
 <div ui-view>
 </div>
 
 <!--lib javascript-->
 <script src="static/js/bower_components/angular/angular.min.js"></script>
+<script src="static/js/bower_components/moment/moment.js"></script>
 <script src="static/js/bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="static/js/bower_components/angular-messages/angular-messages.min.js"></script>
 <script src="static/js/bower_components/angular-cookies/angular-cookies.min.js"></script>
@@ -28,6 +30,7 @@
 <script src="static/js/bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="static/js/bower_components/angular-material/angular-material.min.js"></script>
 <script src="static/js/bower_components/angular-breadcrumb/dist/angular-breadcrumb.min.js"></script>
+<script src="static/js/bower_components/angular-material-data-table/dist/md-data-table.js"></script>
 <!--main module-->
 <script src="static/js/app.js"></script>
 <script src="static/js/login/login.js"></script>
@@ -36,6 +39,7 @@
 <script src="static/js/expense/expense.js"></script>
 <script src="static/js/router.js"></script>
 <script src="static/js/common/common.service.js"></script>
+<script src="static/js/common/common.constant.js"></script>
 <!--login module-->
 <script src="static/js/login/controllers/login.controller.js"></script>
 <script src="static/js/login/services/auth.service.js"></script>

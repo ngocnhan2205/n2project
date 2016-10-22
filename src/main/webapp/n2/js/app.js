@@ -6,16 +6,20 @@ var moduleLib = ['ui.router',
                 'ngAnimate',
                 'ngMessages',
                 'ngCookies',
-                'ncy-angular-breadcrumb'
+                'ncy-angular-breadcrumb',
+                'md.data.table'
                 ];
 var moduleApp = ['Login', 'HomeModule', 'Dashboard', 'Expense'];
 var app = moduleApp.concat(moduleLib);
 var appMain = angular.module('N2App', app);
 
-appMain.config(['$mdIconProvider','$httpProvider', '$mdAriaProvider',
-    function ($mdIconProvider, $httpProvider, $mdAriaProvider) {
+appMain.config(['$mdIconProvider','$httpProvider', '$mdAriaProvider','$mdDateLocaleProvider',
+    function ($mdIconProvider, $httpProvider, $mdAriaProvider,$mdDateLocaleProvider) {
         $httpProvider.interceptors.push('AuthIn');
         $mdAriaProvider.disableWarnings();
+        $mdDateLocaleProvider.formatDate = function(date) {
+            return moment(date).format('DD/MM/YYYY');
+        };
     }]);
 
 appMain.run(['$rootScope', '$window','$timeout','AuthService',

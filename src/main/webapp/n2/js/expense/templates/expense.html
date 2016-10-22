@@ -1,77 +1,61 @@
-<md-content md-scroll-y>
-    <div layout="row" layout-xs="column" layout-wrap>
-        <span class="n2-date" flex>
-            <md-icon md-svg-src="static/img/icons/date.svg" class="s24" aria-label="Cake">
-            </md-icon> &nbsp;
-            Day : 22/05/1993
-        </span>
-        <md-button class="md-raised md-primary" ng-click="showDialogExpense($event)" flex>
-            <md-icon md-svg-src="static/img/icons/add.svg" class="s24" aria-label="Cake"></md-icon>
-            Add Expense
-        </md-button>
-        <md-button class="md-raised" ng-click="showOption()" flex>
-            <md-icon md-svg-src="static/img/icons/setting.svg" class="s24" aria-label="Cake"></md-icon>
-            Show Option
-        </md-button>
+<div class="panel-ex">
+    <div class="n2-date">
+        <md-icon md-svg-src="static/img/icons/date.svg" class="s24" aria-label="Cake" style="margin-left: 10px;">
+        </md-icon>
+        &nbsp;
+        <span class="n2-date-text">{{ setting.gran.name }}: {{setting.date}}</span>
+        <button type="button" class="btn btn-default btn-header" ng-click="showOption()">
+            <i class="material-icons">settings</i>
+        </button>
+        <button type="button" class="btn btn-primary btn-header" ng-click="showDialogExpense($event)">
+            <i class="material-icons">add</i>
+        </button>
     </div>
-    <div layout="row" layout-xs="column" layout-align="center center" layout-wrap>
-        <div flex="50" flex-xs="100">
-            <md-card>
-                <md-toolbar class="n2-header">
-                    <div class="md-toolbar-tools">
-                        <span flex>Expense</span>
-                        <span flex></span>
-                        <span>
-                            <md-icon md-svg-src="static/img/icons/money.svg" class="s24" aria-label="Cake">
-                            </md-icon>
-                            <span>200.000</span>
-                        </span>
-                    </div>
-                </md-toolbar>
-                <md-card-title>
-                    <span class="md-subhead">Description: </span>
-                </md-card-title>
-                <md-divider></md-divider>
-                <md-card-content style="height: 260px; overflow-y: auto">
-                    <md-list-item>
-                        <p> topping.name </p>
-                        <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
-                    </md-list-item>
-                    <md-divider></md-divider>
-                    <md-list-item>
-                        <p> topping.name </p>
-                        <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
-                    </md-list-item>
-                    <md-divider></md-divider>
-                    <md-list-item>
-                        <p> topping.name </p>
-                        <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
-                    </md-list-item>
-                    <md-divider></md-divider>
-                    <md-list-item>
-                        <p> topping.name </p>
-                        <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
-                    </md-list-item>
-                    <md-divider></md-divider>
-                    <md-list-item>
-                        <p> topping.name </p>
-                        <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
-                    </md-list-item>
-                </md-card-content>
-                <md-card-actions layout="row" layout-align="end center">
-                    <md-button class="md-primary">
-                        <md-icon md-svg-src="static/img/icons/spend.svg" aria-label="add spend"></md-icon>
-                    </md-button>
-                    <md-button>
-                        <md-icon md-svg-src="/static/img/icons/edit.svg"></md-icon>
-                    </md-button>
-                    <md-button>
-                        <md-icon md-svg-src="/static/img/icons/delete.svg"></md-icon>
-                    </md-button>
-                </md-card-actions>
-            </md-card>
-        </div>
+    <div class="panel-body-ex">
+        <md-card>
+            <md-card-header style="padding-bottom: 0px">
+                <md-card-header-text>
+                    <span class="md-title">User</span>
+                    <span class="md-subhead">subhead</span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-divider></md-divider>
+            <md-content layout-padding>
+                <p>
+                    sss
+                </p>
+                <md-table-container>
+                    <table md-table>
+                        <thead md-head>
+                        <tr md-row>
+                            <th md-column>Action</th>
+                            <th md-column>Spend</th>
+                            <th md-column md-numeric>Price</th>
+                        </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row  ng-repeat="dessert in desserts.data">
+                            <td md-cell>{{dessert.name}}</td>
+                            <td md-cell>{{dessert.calories.value}}</td>
+                            <td md-cell>{{dessert.fat.value | number: 1}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+            </md-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-primary">
+                    <md-icon md-svg-src="static/img/icons/spend.svg" aria-label="add spend"></md-icon>
+                </md-button>
+                <md-button>
+                    <md-icon md-svg-src="/static/img/icons/edit.svg"></md-icon>
+                </md-button>
+                <md-button>
+                    <md-icon md-svg-src="/static/img/icons/delete.svg"></md-icon>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</div>
 
-        <span flex></span>
-    </div>
-</md-content>
+

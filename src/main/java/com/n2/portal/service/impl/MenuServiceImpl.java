@@ -4,7 +4,7 @@ import com.n2.portal.dao.MenuDao;
 import com.n2.portal.model.UserProfileType;
 import com.n2.portal.model.menu.Menu;
 import com.n2.portal.service.MenuService;
-import com.n2.portal.utils.N2Utils;
+import com.n2.portal.utils.N2Security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,7 +22,7 @@ public class MenuServiceImpl implements MenuService {
     MenuDao menuDao;
 
     public List<Menu> getMenu() {
-        boolean role = N2Utils.hasRole("ROLE_" + UserProfileType.ADMIN.getUserProfileType());
+        boolean role = N2Security.hasRole("ROLE_" + UserProfileType.ADMIN.getUserProfileType());
         if (role)
             return menuDao.getAll();
         else

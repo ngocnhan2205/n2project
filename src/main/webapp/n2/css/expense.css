@@ -1,0 +1,27 @@
+.btn-header {
+    float: right;
+    border-radius: 0px;
+    height: 100%;
+}
+
+.n2-date {
+    padding: 0px 0px;
+    line-height: 40px;
+    background-color: #F0F0F0;
+    height: 40px;
+    width: 100%;
+    display: block;
+}
+
+.n2-date-text {
+    font-weight: 500;
+    font-size: 15px;
+}
+.panel-ex {
+    border: 1px solid #F0F0F0;
+    background-color: #F8F8F8;
+}
+
+.panel-body-ex {
+    padding: 5px;
+}

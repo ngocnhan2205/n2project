@@ -10,7 +10,7 @@ import java.util.Collection;
  * Created by dhnhan on 17/10/2016.
  */
 
-public class N2Utils {
+public class N2Security {
     public static String getUser() {
         String userName = null;
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();

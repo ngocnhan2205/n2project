@@ -3,17 +3,18 @@
         <md-content>
             <div layout="row">
                 <md-input-container flex="30" class="n2-input">
-                    <label>State</label>
-                    <md-select ng-model="ctrl.userState">
-                        <md-option><em>None</em></md-option>
+                    <md-select ng-model="setting.gran">
+                        <md-option ng-repeat="gran in grans" ng-value="gran">
+                            {{gran.name}}
+                        </md-option>
                     </md-select>
                 </md-input-container>
                 <md-input-container flex="70" class="n2-input">
-                    <md-datepicker ng-model="user.submissionDate"></md-datepicker>
+                    <md-datepicker ng-model="setting.date"></md-datepicker>
                 </md-input-container>
             </div>
             <div layout="row">
-                <md-button class="md-raised md-primary">Okie</md-button>
+                <md-button class="md-raised md-primary" ng-click="ok()">Ok</md-button>
                 <md-button class="md-raised" ng-click="cancel()">Cancel</md-button>
             </div>
         </md-content>

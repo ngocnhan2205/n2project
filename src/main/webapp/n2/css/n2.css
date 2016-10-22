@@ -101,12 +101,5 @@ md-sidenav ng-md-icon {
 md-card md-card-title {
     padding: 10px 16px 16px !important;
 }
-.n2-date {
-    border-left: 4px solid #4CAF50;
-    padding: 8px 12px;
-    line-height: 38px;
-    background-color: #f3fefc;
-    margin-left: 8px;
-    margin-right: 8px;
-}
+
 
