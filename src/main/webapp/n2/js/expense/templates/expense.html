@@ -12,17 +12,16 @@
         </button>
     </div>
     <div class="panel-body-ex">
-        <md-card>
+        <md-card ng-repeat="e in expenses">
             <md-card-header style="padding-bottom: 0px">
                 <md-card-header-text>
-                    <span class="md-title">User</span>
-                    <span class="md-subhead">subhead</span>
+                    <span class="md-title" ng-bind="e.name"></span>
+                    <span class="md-subhead" ng-bind="e.total"></span>
                 </md-card-header-text>
             </md-card-header>
             <md-divider></md-divider>
             <md-content layout-padding>
-                <p>
-                    sss
+                <p ng-bind="e.description">
                 </p>
                 <md-table-container>
                     <table md-table>
@@ -34,10 +33,18 @@
                         </tr>
                         </thead>
                         <tbody md-body>
-                        <tr md-row  ng-repeat="dessert in desserts.data">
-                            <td md-cell>{{dessert.name}}</td>
-                            <td md-cell>{{dessert.calories.value}}</td>
-                            <td md-cell>{{dessert.fat.value | number: 1}}</td>
+                        <tr md-row ng-repeat="s in e.spends">
+                            <td md-cell>{{s.name}}</td>
+                            <td md-cell>{{s.name}}</td>
+                            <td md-cell>{{s.price | number: 0}}</td>
+                        </tr>
+                        <tr md-row>
+                            <td md-cell>
+                                <md-icon class="n2-icon" md-svg-src="/static/img/icons/edit1.svg"></md-icon>
+                                <md-icon class="n2-icon" md-svg-src="/static/img/icons/del.svg"></md-icon>
+                            </td>
+                            <td md-cell>s.name</td>
+                            <td md-cell>s.price </td>
                         </tr>
                         </tbody>
                     </table>

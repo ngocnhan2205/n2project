@@ -29,10 +29,9 @@ public class ExpenseController {
     }
 
     @RequestMapping(value = "/expense", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Expense>> getAllByUser(@RequestParam("id") Long id,
-                                                      @RequestParam("gran") String gran,
+    public ResponseEntity<List<Expense>> getAllByUser(@RequestParam("gran") String gran,
                                                       @RequestParam("date") String strDate) {
         Date date = N2Date.parseDate(strDate);
-        return new ResponseEntity<List<Expense>>(expenseService.getExpenses(date,gran,id), HttpStatus.OK);
+        return new ResponseEntity<List<Expense>>(expenseService.getExpenses(date,gran), HttpStatus.OK);
     }
 }

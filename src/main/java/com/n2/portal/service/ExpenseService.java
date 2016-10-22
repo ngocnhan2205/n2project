@@ -12,5 +12,5 @@ import java.util.List;
 public interface ExpenseService {
     public Expense saveExpense(ExpenseDTO dto);
 
-    public List<Expense> getExpenses(Date date,String gran, Long id);
+    public List<Expense> getExpenses(Date date,String gran);
 }

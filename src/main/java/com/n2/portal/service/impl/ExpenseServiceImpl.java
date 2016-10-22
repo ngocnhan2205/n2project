@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,14 +38,16 @@ public class ExpenseServiceImpl implements ExpenseService {
         return expense;
     }
 
-    public List<Expense> getExpenses(Date date, String gran, Long id) {
+    public List<Expense> getExpenses(Date date, String gran) {
         List<Expense> expenses = expenseDao.getExpenseByUserId(N2Security.getUser());
         Date startDate = N2Date.getDate(gran, date, N2Date.START);
         Date endDate = N2Date.getDate(gran, date, N2Date.END);
-        List<Spend> spends = null;
+        List<Spend> spends;
         for (Expense e : expenses) {
             spends = spendDao.getSpendWithExpense(startDate, endDate, e.getId());
-            e.setTotal(caculatorPrice(spends));
+            if (spends != null) {
+                e.setTotal(caculatorPrice(spends));
+            }
             e.setSpends(spends);
         }
         return expenses;

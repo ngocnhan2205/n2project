@@ -25,3 +25,9 @@
 .panel-body-ex {
     padding: 5px;
 }
+
+.n2-icon {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
