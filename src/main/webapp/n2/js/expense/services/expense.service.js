@@ -11,7 +11,7 @@ expenseModule.factory('ExpenseService', ['N2Service', function (N2Service) {
             var params = {
                 gran: setting.gran.value,
                 date: setting.date
-            }
+            };
             return N2Service.requestRest(this.url, 'GET', params);
         },
         deleteExpense: function(id) {

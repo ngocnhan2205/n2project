@@ -4,18 +4,18 @@
 expenseModule.controller('ExpenseController',
     ['$scope', '$mdDialog', 'ExpenseService', '$mdBottomSheet', 'GRAN', 'N2Service', 'N2_ACTION',
         function ($scope, $mdDialog, ExpenseService, $mdBottomSheet, GRAN, N2Service, N2_ACTION) {
-        $scope.setting = {};
-        $scope.setting.gran = GRAN[0];
-        $scope.setting.date = moment(new Date()).format('DD/MM/YYYY');
-        $scope.expenses = [];
+            $scope.setting = {};
+            $scope.setting.gran = GRAN[0];
+            $scope.setting.date = moment(new Date()).format('DD/MM/YYYY');
+            $scope.expenses = [];
 
             $scope.showDialogExpense = function (ev, action, obj) {
                 var d = $mdDialog.show({
-                controller: DialogExpenseController,
-                templateUrl: 'static/js/expense/templates/expense-dialog.html',
-                parent: angular.element(document.body),
-                targetEvent: ev,
-                clickOutsideToClose: true,
+                    controller: DialogExpenseController,
+                    templateUrl: 'static/js/expense/templates/expense-dialog.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true,
                     fullscreen: true,
                     locals: {
                         Action: action,
@@ -29,7 +29,7 @@ expenseModule.controller('ExpenseController',
                         $scope.expenses.push(objData.data);
                     }
                 });
-        };
+            };
 
             $scope.deleteExpense = function (e, id) {
                 var con = N2Service.showConfirm('Expense', 'Are you want delete it?', e);
@@ -38,37 +38,37 @@ expenseModule.controller('ExpenseController',
                         $n2.removeObjInObjs($scope.expenses, res.data.id);
                     });
                 })
-        };
+            };
 
-        function init() {
-            ExpenseService.getExpense($scope.setting).then(function(res){
-                $scope.expenses = res.data;
-            })
-        }
+            function init() {
+                ExpenseService.getExpense($scope.setting).then(function (res) {
+                    $scope.expenses = res.data;
+                })
+            }
 
 
-        $scope.showOption = function () {
-            $mdBottomSheet.show({
-                templateUrl: 'static/js/expense/templates/option-tpl.html',
-                controller: 'OptionController',
-                clickOutsideToClose: true
-            }).then(function (setting) {
-                var format = 'DD/MM/YYYY';
-                if (setting.gran.value == 'month') {
-                    format = 'MM/YYYY';
-                }
-                $scope.setting.gran = setting.gran;
-                $scope.setting.date = moment(setting.date).format(format);
-            });
-        };
+            $scope.showOption = function () {
+                $mdBottomSheet.show({
+                    templateUrl: 'static/js/expense/templates/option-tpl.html',
+                    controller: 'OptionController',
+                    clickOutsideToClose: true
+                }).then(function (setting) {
+                    var format = 'DD/MM/YYYY';
+                    if (setting.gran.value == 'month') {
+                        format = 'MM/YYYY';
+                    }
+                    $scope.setting.gran = setting.gran;
+                    $scope.setting.date = moment(setting.date).format(format);
+                });
+            };
 
 
             function DialogExpenseController($scope, $mdDialog, ExpenseService, Action, obj, N2_ACTION) {
                 $scope.expenseDialog = {};
                 $scope.action = null;
-            $scope.cancel = function () {
-                $mdDialog.cancel();
-            };
+                $scope.cancel = function () {
+                    $mdDialog.cancel();
+                };
 
                 function init() {
                     if (obj) {
@@ -81,25 +81,24 @@ expenseModule.controller('ExpenseController',
                     }
                 }
 
-            $scope.save = function () {
-                var obj = {
-                    expense: $scope.expenseDialog
+                $scope.save = function () {
+                    var obj = {
+                        expense: $scope.expenseDialog
+                    };
+                    ExpenseService.saveExpense(obj).then(function (res) {
+                        var passObj = {};
+                        if (Action == N2_ACTION.EDIT) {
+                            passObj.action = N2_ACTION.EDIT;
+                        } else {
+                            passObj.action = N2_ACTION.NEW;
+                        }
+                        passObj.data = res.data;
+                        $mdDialog.hide(passObj);
+                    });
                 };
-                ExpenseService.saveExpense(obj).then(function (res) {
-                    var passObj = {};
-                    if (Action == N2_ACTION.EDIT) {
-                        passObj.action = N2_ACTION.EDIT;
-                    } else {
-                        passObj.action = N2_ACTION.NEW;
-                    }
-                    passObj.data = res.data;
-                    $mdDialog.hide(passObj);
-                });
-            };
                 init();
-        }
+            }
 
 
-
-        init();
-    }]);
+            init();
+        }]);
