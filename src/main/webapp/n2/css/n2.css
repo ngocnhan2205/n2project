@@ -9,6 +9,7 @@ md-content.md-default-theme {
 md-card {
     background-color: #fff;
 }
+
 md-card h2:first-of-type {
     margin-top: 0;
 }
@@ -24,6 +25,7 @@ h2 {
 .md-toolbar-tools-bottom {
     font-size: small;
 }
+
 .md-toolbar-tools-bottom:last-child {
     opacity: 0.8;
 }
@@ -36,6 +38,7 @@ md-toolbar:not(.md-hue-1),
 md-sidenav {
     fill: #737373;
 }
+
 md-sidenav ng-md-icon {
     position: relative;
     top: 5px;
@@ -44,10 +47,10 @@ md-sidenav ng-md-icon {
 .user-avatar {
     border-radius: 99%;
 }
+
 .breadcrumb {
     margin-bottom: 0;
 }
-
 
 md-content.md-default-theme {
     background-color: #eee;
@@ -56,6 +59,7 @@ md-content.md-default-theme {
 md-card {
     background-color: #fff;
 }
+
 md-card h2:first-of-type {
     margin-top: 0;
 }
@@ -71,6 +75,7 @@ h2 {
 .md-toolbar-tools-bottom {
     font-size: small;
 }
+
 .md-toolbar-tools-bottom :last-child {
     opacity: 0.8;
 }
@@ -83,17 +88,18 @@ md-toolbar:not(.md-hue-1),
 md-sidenav {
     fill: #737373;
 }
+
 md-sidenav ng-md-icon {
     position: relative;
     top: 5px;
 }
 
 .md-button {
-    text-transform: capitalize !important;/*For Lower case use lowercase*/
+    text-transform: capitalize !important; /*For Lower case use lowercase*/
 }
 
 .n2-header {
-    background-color: #abc8dc!important;
+    background-color: #abc8dc !important;
     color: #2c4a5e !important;
     font-weight: bold !important;
 }
@@ -109,5 +115,10 @@ md-card md-card-title {
 .n2-icon {
     color: #365899;
     font-size: 16px;
+    cursor: pointer;
+}
+
+.input-spend-c {
+    margin: 0px !important;
 }
 

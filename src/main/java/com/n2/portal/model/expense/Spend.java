@@ -1,6 +1,8 @@
 package com.n2.portal.model.expense;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.n2.portal.utils.N2Date;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -16,6 +18,7 @@ public class Spend extends AbstractExpense {
     private Double price;
 
     @Column(name = "DATE_SPEND")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = N2Date.FORMAT_DATE)
     private Date dateSpend;
 
     @ManyToOne(fetch = FetchType.LAZY)

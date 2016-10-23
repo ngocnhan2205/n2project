@@ -17,12 +17,11 @@ public class N2Date {
     public static final String FORMAT_DATE = "dd/MM/yyyy";
 
 
-
-    public static Date getDate(String gran, Date date, int typeDate){
+    public static Date getDate(String gran, Date date, int typeDate) {
         Date rs = formatDate(date);
         Calendar calendar = calendarDate(rs);
-        if (gran.equalsIgnoreCase(MONTH)){
-            if (typeDate == START){
+        if (gran.equalsIgnoreCase(MONTH)) {
+            if (typeDate == START) {
                 calendar.set(Calendar.DAY_OF_MONTH, 1);
             } else {
                 calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
@@ -31,13 +30,13 @@ public class N2Date {
         return calendar.getTime();
     }
 
-    public static Calendar calendarDate(Date date){
+    public static Calendar calendarDate(Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         return calendar;
     }
 
-    public static Date formatDate(Date date){
+    public static Date formatDate(Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         calendar.set(Calendar.MINUTE, 0);
@@ -47,7 +46,7 @@ public class N2Date {
         return calendar.getTime();
     }
 
-    public static Date parseDate(String date){
+    public static Date parseDate(String date) {
         DateFormat df = new SimpleDateFormat(FORMAT_DATE);
         Date rs = null;
         try {

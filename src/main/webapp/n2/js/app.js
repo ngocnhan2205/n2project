@@ -2,27 +2,27 @@
  * Created by dhnhan on 08/10/2016.
  */
 var moduleLib = ['ui.router',
-                'ngMaterial',
-                'ngAnimate',
-                'ngMessages',
-                'ngCookies',
-                'ncy-angular-breadcrumb',
-                'md.data.table'
-                ];
+    'ngMaterial',
+    'ngAnimate',
+    'ngMessages',
+    'ngCookies',
+    'ncy-angular-breadcrumb',
+    'md.data.table'
+];
 var moduleApp = ['Login', 'HomeModule', 'Dashboard', 'Expense'];
 var app = moduleApp.concat(moduleLib);
 var appMain = angular.module('N2App', app);
 
-appMain.config(['$mdIconProvider','$httpProvider', '$mdAriaProvider','$mdDateLocaleProvider',
-    function ($mdIconProvider, $httpProvider, $mdAriaProvider,$mdDateLocaleProvider) {
+appMain.config(['$mdIconProvider', '$httpProvider', '$mdAriaProvider', '$mdDateLocaleProvider',
+    function ($mdIconProvider, $httpProvider, $mdAriaProvider, $mdDateLocaleProvider) {
         $httpProvider.interceptors.push('AuthIn');
         $mdAriaProvider.disableWarnings();
-        $mdDateLocaleProvider.formatDate = function(date) {
+        $mdDateLocaleProvider.formatDate = function (date) {
             return moment(date).format('DD/MM/YYYY');
         };
     }]);
 
-appMain.run(['$rootScope', '$window','$timeout','AuthService',
+appMain.run(['$rootScope', '$window', '$timeout', 'AuthService',
     function ($rootScope, $window, $timeout, AuthService) {
         $rootScope.$on('n2:error', function (event, rejection) {
             // Ignore `invalid_grant` error - should be catched on `LoginController`.
@@ -41,19 +41,19 @@ appMain.run(['$rootScope', '$window','$timeout','AuthService',
             $rootScope.$broadcast('loading', true);
         });
         $rootScope.$on('$stateChangeSuccess', function (e, data) {
-            $timeout(function(){
+            $timeout(function () {
                 $rootScope.$broadcast('loading', false);
-                if (data.name === 'home'){
+                if (data.name === 'home') {
                     $window.location.href = '#/home/dashboard';
                 }
-            },1000);
+            }, 1000);
 
         });
     }]);
-appMain.controller('N2Controller', ['$scope','$rootScope',
-    function($scope, $rootScope){
+appMain.controller('N2Controller', ['$scope', '$rootScope',
+    function ($scope, $rootScope) {
         $scope.loading = false;
-        $rootScope.$on("loading", function(e, data){
+        $rootScope.$on("loading", function (e, data) {
             $scope.loading = data;
         });
     }]);

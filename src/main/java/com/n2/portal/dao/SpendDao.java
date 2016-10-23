@@ -10,5 +10,7 @@ import java.util.List;
  */
 public interface SpendDao extends IGenericDao<Spend, Long> {
 
-    public List<Spend> getSpendWithExpense(Date sDate,Date eDate, Long expenseId);
+    public List<Spend> getSpendWithExpense(Date sDate, Date eDate, Long expenseId);
+
+    public void deleteSpend(Long idExpense);
 }

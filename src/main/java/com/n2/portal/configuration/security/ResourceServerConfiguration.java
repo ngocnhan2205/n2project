@@ -22,11 +22,11 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     public void configure(HttpSecurity http) throws Exception {
         http.antMatcher("/**")
                 .authorizeRequests()
-                    .antMatchers("/").permitAll()
+                .antMatchers("/").permitAll()
 
-                    .antMatchers("/n2/**").authenticated()
-                    .antMatchers("/api/**").access("hasRole('ADMIN') or hasRole('USER')")
-                    .antMatchers("/admin/**").access("hasRole('ADMIN')");
+                .antMatchers("/n2/**").authenticated()
+                .antMatchers("/api/**").access("hasRole('ADMIN') or hasRole('USER')")
+                .antMatchers("/admin/**").access("hasRole('ADMIN')");
     }
 
 }

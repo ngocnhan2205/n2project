@@ -18,8 +18,8 @@ public class MenuController {
     @Autowired
     MenuService menuService;
 
-    @RequestMapping(value="/api/menu", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Menu> getMenus(){
+    @RequestMapping(value = "/api/menu", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Menu> getMenus() {
         return menuService.getMenu();
     }
 }

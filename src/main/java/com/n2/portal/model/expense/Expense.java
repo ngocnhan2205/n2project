@@ -1,6 +1,8 @@
 package com.n2.portal.model.expense;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -18,7 +20,9 @@ public class Expense extends AbstractExpense {
     private String userId;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "expense")
     @JsonManagedReference
+    @Fetch(FetchMode.SELECT)
     private List<Spend> spends;
+
     public Expense() {
     }
 

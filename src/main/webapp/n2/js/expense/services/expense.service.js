@@ -14,8 +14,15 @@ expenseModule.factory('ExpenseService', ['N2Service', function (N2Service) {
             };
             return N2Service.requestRest(this.url, 'GET', params);
         },
-        deleteExpense: function(id) {
+        deleteExpense: function (id) {
             return N2Service.requestRest(this.url + '/' + id, 'DELETE');
+        },
+        addSpend: function (id, setting, spendData) {
+            var urlSpend = '/n2/api/spend/' + id;
+            var params = {
+                gran: setting.gran.value
+            };
+            return N2Service.requestRest(urlSpend, 'POST', params, spendData);
         }
     }
 }]);

@@ -8,6 +8,7 @@ import com.n2.portal.model.expense.Spend;
 import com.n2.portal.service.ExpenseService;
 import com.n2.portal.utils.N2Date;
 import com.n2.portal.utils.N2Security;
+import com.n2.portal.utils.N2Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,6 +31,24 @@ public class ExpenseServiceImpl implements ExpenseService {
     @Autowired
     private SpendDao spendDao;
 
+    public Expense getExpense(Long id) {
+        return expenseDao.getById(id);
+    }
+
+    public Expense getExpense(Long id, Date date, String gran) {
+        Date startDate = N2Date.getDate(gran, date, N2Date.START);
+        Date endDate = N2Date.getDate(gran, date, N2Date.END);
+        Expense expense = expenseDao.getExpense(id, N2Security.getUser());
+        List<Spend> spends = spendDao.getSpendWithExpense(startDate, endDate, expense.getId());
+        if (spends != null) {
+            expense.setTotal(N2Util.caculatorPrice(spends));
+        } else {
+            expense.setTotal((double) 0F);
+        }
+        expense.setSpends(spends);
+        return expense;
+    }
+
     public Expense saveExpense(ExpenseDTO dto) {
         Expense e = dto.getExpense();
         e.setUserId(N2Security.getUser());
@@ -46,7 +65,7 @@ public class ExpenseServiceImpl implements ExpenseService {
         for (Expense e : expenses) {
             spends = spendDao.getSpendWithExpense(startDate, endDate, e.getId());
             if (spends != null) {
-                e.setTotal(caculatorPrice(spends));
+                e.setTotal(N2Util.caculatorPrice(spends));
             }
             e.setSpends(spends);
         }
@@ -56,14 +75,8 @@ public class ExpenseServiceImpl implements ExpenseService {
     public Expense deleteExpense(Long id) {
         Expense expense = new Expense();
         expense.setId(id);
+        spendDao.deleteSpend(id);
         return expenseDao.delete(expense);
     }
 
-    private double caculatorPrice(List<Spend> spends) {
-        double rs = 0F;
-        for (Spend s : spends) {
-            rs += s.getPrice();
-        }
-        return rs;
-    }
 }

@@ -13,11 +13,17 @@ import java.util.List;
  * Created by dhnhan on 20/10/2016.
  */
 @Repository
-public class ExpenseDaoImpl extends GenericDao<Expense,Long> implements ExpenseDao {
+public class ExpenseDaoImpl extends GenericDao<Expense, Long> implements ExpenseDao {
 
     public List<Expense> getExpenseByUserId(String userId) {
         Criteria criteria = createEntityCriteria();
         criteria.add(Restrictions.eq("userId", userId));
         return criteria.list();
+    }
+
+    public Expense getExpense(Long id, String userId) {
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.and(Restrictions.eq("id", id), Restrictions.eq("userId", userId)));
+        return (Expense) criteria.uniqueResult();
     }
 }

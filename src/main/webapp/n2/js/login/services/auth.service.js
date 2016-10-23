@@ -1,7 +1,7 @@
 /**
  * Created by dhnhan on 09/10/2016.
  */
-loginModule.factory('AuthService', ['$http', '$q', '$cookieStore','$rootScope', 'N2Service',
+loginModule.factory('AuthService', ['$http', '$q', '$cookieStore', '$rootScope', 'N2Service',
     function ($http, $q, $cookieStore, $rootScope, N2Service) {
         return {
             auth: function (user, e) {
@@ -26,7 +26,7 @@ loginModule.factory('AuthService', ['$http', '$q', '$cookieStore','$rootScope', 
                     $cookieStore.put('n2Token', res.data);
                     defer.resolve(res);
                 }, function errorCallback(res) {
-                    N2Service.showAlert('Login failed!','Username or password incorrect!', e);
+                    N2Service.showAlert('Login failed!', 'Username or password incorrect!', e);
                     $cookieStore.remove('n2Token');
                     defer.reject();
                 });
@@ -57,7 +57,7 @@ loginModule.factory('AuthService', ['$http', '$q', '$cookieStore','$rootScope', 
                 });
                 return defer.promise;
             },
-            isAuth: function(){
+            isAuth: function () {
                 var token = $cookieStore.get('n2Token');
                 if (token)
                     return true;

@@ -31,38 +31,6 @@ expenseModule.controller('ExpenseController',
                 });
             };
 
-            $scope.deleteExpense = function (e, id) {
-                var con = N2Service.showConfirm('Expense', 'Are you want delete it?', e);
-                $mdDialog.show(con).then(function () {
-                    ExpenseService.deleteExpense(id).then(function (res) {
-                        $n2.removeObjInObjs($scope.expenses, res.data.id);
-                    });
-                })
-            };
-
-            function init() {
-                ExpenseService.getExpense($scope.setting).then(function (res) {
-                    $scope.expenses = res.data;
-                })
-            }
-
-
-            $scope.showOption = function () {
-                $mdBottomSheet.show({
-                    templateUrl: 'static/js/expense/templates/option-tpl.html',
-                    controller: 'OptionController',
-                    clickOutsideToClose: true
-                }).then(function (setting) {
-                    var format = 'DD/MM/YYYY';
-                    if (setting.gran.value == 'month') {
-                        format = 'MM/YYYY';
-                    }
-                    $scope.setting.gran = setting.gran;
-                    $scope.setting.date = moment(setting.date).format(format);
-                });
-            };
-
-
             function DialogExpenseController($scope, $mdDialog, ExpenseService, Action, obj, N2_ACTION) {
                 $scope.expenseDialog = {};
                 $scope.action = null;
@@ -98,6 +66,73 @@ expenseModule.controller('ExpenseController',
                 };
                 init();
             }
+
+            $scope.showSpendDialog = function (ev, id, actionSpend, objSpend) {
+                var d = $mdDialog.show({
+                    controller: SpendController,
+                    templateUrl: 'static/js/expense/templates/spend-dialog.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true,
+                    fullscreen: true,
+                    locals: {
+                        ActionSpend: actionSpend,
+                        objSpend: objSpend,
+                        settingSpend: $scope.setting,
+                        idExpense: id
+                    }
+                });
+                d.then(function (dataSpend) {
+                    $n2.changeObjInObjs($scope.expenses, dataSpend);
+                })
+            };
+
+            function SpendController($scope, $mdDialog, ActionSpend, objSpend, settingSpend, idExpense) {
+                var setting = angular.copy(settingSpend);
+                var id = angular.copy(idExpense);
+                $scope.spendDialog = {};
+                $scope.cancelSpend = function () {
+                    $mdDialog.cancel();
+                };
+                $scope.saveSpend = function () {
+                    var obj = $scope.spendDialog;
+                    obj.dateSpend = setting.date;
+                    ExpenseService.addSpend(id, setting, obj).then(function (res) {
+                        $mdDialog.hide(res.data);
+                    });
+                }
+            }
+
+            $scope.deleteExpense = function (e, id) {
+                var con = N2Service.showConfirm('Expense', 'Are you want delete it?', e);
+                $mdDialog.show(con).then(function () {
+                    ExpenseService.deleteExpense(id).then(function (res) {
+                        $n2.removeObjInObjs($scope.expenses, res.data.id);
+                    });
+                })
+            };
+
+            function init() {
+                ExpenseService.getExpense($scope.setting).then(function (res) {
+                    $scope.expenses = res.data;
+                })
+            }
+
+
+            $scope.showOption = function () {
+                $mdBottomSheet.show({
+                    templateUrl: 'static/js/expense/templates/option-tpl.html',
+                    controller: 'OptionController',
+                    clickOutsideToClose: true
+                }).then(function (setting) {
+                    var format = 'DD/MM/YYYY';
+                    if (setting.gran.value == 'month') {
+                        format = 'MM/YYYY';
+                    }
+                    $scope.setting.gran = setting.gran;
+                    $scope.setting.date = moment(setting.date).format(format);
+                });
+            };
 
 
             init();

@@ -14,7 +14,7 @@ import java.util.List;
  * Created by dhnhan on 13/10/2016.
  */
 @Repository
-public class MenuDaoImpl extends GenericDao<Menu,Long> implements MenuDao {
+public class MenuDaoImpl extends GenericDao<Menu, Long> implements MenuDao {
 
     public List<Menu> getMenuWithPermissionAdmin() {
         Criteria cr = createEntityCriteria();

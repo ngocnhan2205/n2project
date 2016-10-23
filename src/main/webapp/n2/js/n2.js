@@ -5,7 +5,7 @@ var $n2 = {};
 $n2.removeObjInObjs = function (objs, id) {
     if ($n2.isNullArray(objs))
         return;
-    for(var i = 0; i < objs.length; i++) {
+    for (var i = 0; i < objs.length; i++) {
         if (objs[i].id == id) {
             objs.splice(i, 1);
         }

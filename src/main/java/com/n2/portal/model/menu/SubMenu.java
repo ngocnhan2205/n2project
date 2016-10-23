@@ -15,6 +15,7 @@ public class SubMenu extends AbstractMenu {
     @JoinColumn(name = "MENU_ID", nullable = false)
     @JsonBackReference
     private Menu menu;
+
     public SubMenu() {
     }
 

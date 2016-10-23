@@ -28,7 +28,8 @@
         <md-content layout-padding="">
             <md-list ng-repeat="menu in menus">
                 <md-list-item ui-sref="{{menu.url}}" ng-click="closeSideNavPanel()">
-                    <img ng-src="static/img/icons/{{menu.icon}}.svg" width="32px" height="32px" style="margin-right: 5px;"/>
+                    <img ng-src="static/img/icons/{{menu.icon}}.svg" width="32px" height="32px"
+                         style="margin-right: 5px;"/>
                     <p>{{menu.name}}</p>
                 </md-list-item>
                 <md-divider></md-divider>

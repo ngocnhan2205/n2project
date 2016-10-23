@@ -1,6 +1,7 @@
 package com.n2.portal.dao;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,10 @@ public abstract class GenericDao<T, PK extends Serializable> implements IGeneric
 
     protected Criteria createEntityCriteria() {
         return getSession().createCriteria(this.type);
+    }
+
+    protected Query createQuery(String query) {
+        return getSession().createQuery(query);
     }
 
     public T saveOrUpdate(T o) {

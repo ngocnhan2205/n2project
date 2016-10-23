@@ -26,6 +26,7 @@ public class Menu extends AbstractMenu {
     public List<SubMenu> getSubMenu() {
         return subMenu;
     }
+
     public void setSubMenu(List<SubMenu> subMenu) {
         this.subMenu = subMenu;
     }

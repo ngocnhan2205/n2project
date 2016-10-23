@@ -6,25 +6,25 @@ appMain
         function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise("/n2/overview");
             $stateProvider
-                .state('n2',{
+                .state('n2', {
                     abstract: true,
                     url: '/n2',
                     templateUrl: 'static/js/n2.html'
                 })
-                .state('n2.login',{
+                .state('n2.login', {
                     url: '/login',
                     controller: 'LoginController',
                     templateUrl: 'static/js/login/templates/login.html'
                 })
-                .state('n2.overview',{
+                .state('n2.overview', {
                     url: '/overview',
                     templateUrl: 'static/js/templates/overview.html'
                 })
-                .state('n2.feature',{
+                .state('n2.feature', {
                     url: '/feature',
                     templateUrl: 'static/js/templates/feature.html'
                 })
-                .state('home',{
+                .state('home', {
                     url: '/home',
                     controller: 'HomeController',
                     templateUrl: 'static/js/home/templates/home.html',
@@ -32,7 +32,7 @@ appMain
                         label: 'Home'
                     }
                 })
-                .state('home.dashboard',{
+                .state('home.dashboard', {
                     url: '/dashboard',
                     controller: 'DashboardController',
                     templateUrl: 'static/js/dashboard/templates/dashboard.html',
@@ -40,7 +40,7 @@ appMain
                         label: 'Dashboard'
                     }
                 })
-                .state('home.expense',{
+                .state('home.expense', {
                     url: '/expense',
                     controller: 'ExpenseController',
                     templateUrl: 'static/js/expense/templates/expense.html',

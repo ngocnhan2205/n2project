@@ -10,4 +10,6 @@ import java.util.List;
 public interface ExpenseDao extends IGenericDao<Expense, Long> {
 
     public List<Expense> getExpenseByUserId(String userId);
+
+    public Expense getExpense(Long id, String userId);
 }

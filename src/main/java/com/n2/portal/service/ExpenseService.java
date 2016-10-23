@@ -10,9 +10,13 @@ import java.util.List;
  * Created by dhnhan on 20/10/2016.
  */
 public interface ExpenseService {
+    public Expense getExpense(Long id);
+
+    public Expense getExpense(Long id, Date date, String gran);
+
     public Expense saveExpense(ExpenseDTO dto);
 
-    public List<Expense> getExpenses(Date date,String gran);
+    public List<Expense> getExpenses(Date date, String gran);
 
     public Expense deleteExpense(Long id);
 }
