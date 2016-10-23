@@ -13,4 +13,6 @@ public interface ExpenseService {
     public Expense saveExpense(ExpenseDTO dto);
 
     public List<Expense> getExpenses(Date date,String gran);
+
+    public Expense deleteExpense(Long id);
 }

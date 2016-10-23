@@ -40,8 +40,8 @@
                         </tr>
                         <tr md-row>
                             <td md-cell>
-                                <md-icon class="n2-icon" md-svg-src="/static/img/icons/edit1.svg"></md-icon>
-                                <md-icon class="n2-icon" md-svg-src="/static/img/icons/del.svg"></md-icon>
+                                <i class="material-icons n2-icon">mode_edit</i>
+                                <i class="material-icons n2-icon">delete_forever</i>
                             </td>
                             <td md-cell>s.name</td>
                             <td md-cell>s.price </td>
@@ -57,7 +57,7 @@
                 <md-button>
                     <md-icon md-svg-src="/static/img/icons/edit.svg"></md-icon>
                 </md-button>
-                <md-button>
+                <md-button ng-click="deleteExpense(e.id)">
                     <md-icon md-svg-src="/static/img/icons/delete.svg"></md-icon>
                 </md-button>
             </md-card-actions>

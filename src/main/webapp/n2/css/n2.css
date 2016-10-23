@@ -1,3 +1,7 @@
+body {
+    font-family: Arial Unicode MS, Lucida Sans Unicode, Arial, verdana, arial, helvetica, sans-serif;
+}
+
 md-content.md-default-theme {
     background-color: #eee;
 }
@@ -102,4 +106,8 @@ md-card md-card-title {
     padding: 10px 16px 16px !important;
 }
 
+.n2-icon {
+    color: #365899;
+    font-size: 16px;
+}
 

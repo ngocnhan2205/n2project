@@ -12,7 +12,7 @@ VALUES ('admin','$2a$10$hLkfaVeSZ9UB7hCrE1eeheb7EacOr9xbbghmkc0mqmdrPN.9dY.Fa', 
 
 /* Populate JOIN Table */
 INSERT INTO APP_USER_USER_PROFILE (user_id, user_profile_id)
-  SELECT user.id, profile.id FROM app_user user, user_profile profile
+  SELECT user.id, profile.id FROM APP_USER user, USER_PROFILE profile
   where user.sso_id='admin' and profile.type='ADMIN';
 --   user
 INSERT INTO APP_USER(sso_id, password, first_name, last_name, email, state)
@@ -20,7 +20,7 @@ VALUES ('user','$2a$10$hLkfaVeSZ9UB7hCrE1eeheb7EacOr9xbbghmkc0mqmdrPN.9dY.Fa', '
 
 /* Populate JOIN Table */
 INSERT INTO APP_USER_USER_PROFILE (user_id, user_profile_id)
-  SELECT user.id, profile.id FROM app_user user, user_profile profile
+  SELECT user.id, profile.id FROM APP_USER user, USER_PROFILE profile
   where user.sso_id='user' and profile.type='USER';
 -- menu
 INSERT INTO MENU(id, DESCRIPTION, ICON, NAME, URL, ISADMIN, OTHERINDEX)

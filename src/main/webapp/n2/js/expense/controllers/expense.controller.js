@@ -18,10 +18,14 @@ expenseModule.controller('ExpenseController', ['$scope', '$mdDialog', 'ExpenseSe
                 fullscreen: true
             })
                 .then(function (data) {
-
-                }, function () {
-
+                    $scope.expenses.push(data);
                 });
+        };
+
+        $scope.deleteExpense = function(id){
+            ExpenseService.deleteExpense(id).then(function(res){
+                $n2.removeElementInArray($scope.expenses, res.data.id);
+            });
         };
 
         function init() {
@@ -58,8 +62,8 @@ expenseModule.controller('ExpenseController', ['$scope', '$mdDialog', 'ExpenseSe
                 var obj = {
                     expense: $scope.expense
                 };
-                ExpenseService.saveExpense(obj).then(function (data) {
-                    console.log(data.data);
+                ExpenseService.saveExpense(obj).then(function (res) {
+                    $mdDialog.hide(res.data);
                 })
             }
         }

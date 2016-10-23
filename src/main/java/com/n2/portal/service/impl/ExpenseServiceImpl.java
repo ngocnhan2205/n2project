@@ -53,6 +53,12 @@ public class ExpenseServiceImpl implements ExpenseService {
         return expenses;
     }
 
+    public Expense deleteExpense(Long id) {
+        Expense expense = new Expense();
+        expense.setId(id);
+        return expenseDao.delete(expense);
+    }
+
     private double caculatorPrice(List<Spend> spends) {
         double rs = 0F;
         for (Spend s : spends) {

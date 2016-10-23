@@ -34,4 +34,9 @@ public class ExpenseController {
         Date date = N2Date.parseDate(strDate);
         return new ResponseEntity<List<Expense>>(expenseService.getExpenses(date,gran), HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/expense/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<Expense> delete(@PathVariable("id") Long id){
+        return new ResponseEntity<Expense>(expenseService.deleteExpense(id), HttpStatus.OK);
+    }
 }
