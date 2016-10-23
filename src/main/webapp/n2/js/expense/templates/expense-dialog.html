@@ -1,8 +1,8 @@
 <md-dialog aria-label="Expense" style="width: 700px;">
-    <form>
+    <form name="expense">
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <h2>Expense</h2>
+                <h2>{{ action }} Expense</h2>
                 <span flex></span>
                 <md-button class="md-icon-button" ng-click="cancel()">
                     <md-icon md-svg-src="static/img/icons/exit.svg" aria-label="Close dialog"></md-icon>
@@ -14,18 +14,22 @@
                 <md-input-container md-no-float class="md-block">
                     <label>Expense</label>
                     <md-icon md-svg-src="static/img/icons/expense-m.svg"></md-icon>
-                    <input ng-model="expense.name" type="text">
+                    <input ng-model="expenseDialog.name" type="text" required name="expenseName">
+                    <div ng-messages="expense.expenseName.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
                 </md-input-container>
                 <md-input-container class="md-block">
                     <label>Description</label>
                     <md-icon md-svg-src="static/img/icons/note.svg"></md-icon>
-                    <textarea ng-model="expense.description" md-maxlength="150" rows="2" md-select-on-focus></textarea>
+                    <textarea ng-model="expenseDialog.description" md-maxlength="150" rows="2"
+                              md-select-on-focus></textarea>
                 </md-input-container>
             </md-content>
         </md-dialog-content>
         <md-dialog-actions layout="row">
             <span flex></span>
-            <md-button class="md-raised md-primary" ng-click="save()">
+            <md-button class="md-raised md-primary" ng-click="save()" ng-disabled="expense.$invalid">
                 Submit
             </md-button>
             <md-button ng-click="cancel()">

@@ -54,10 +54,10 @@
                 <md-button class="md-primary">
                     <md-icon md-svg-src="static/img/icons/spend.svg" aria-label="add spend"></md-icon>
                 </md-button>
-                <md-button>
+                <md-button ng-click="showDialogExpense($event, 'Edit', e)">
                     <md-icon md-svg-src="/static/img/icons/edit.svg"></md-icon>
                 </md-button>
-                <md-button ng-click="deleteExpense(e.id)">
+                <md-button ng-click="deleteExpense($event, e.id)">
                     <md-icon md-svg-src="/static/img/icons/delete.svg"></md-icon>
                 </md-button>
             </md-card-actions>

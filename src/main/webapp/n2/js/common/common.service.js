@@ -38,6 +38,16 @@ appMain.factory('N2Service', ['$http', '$q', '$mdDialog',
                         .ok('Cancel')
                         .targetEvent(ev)
                 );
+            },
+            showConfirm: function (title, msg, ev) {
+                var con = $mdDialog.confirm()
+                    .title(title)
+                    .textContent(msg)
+                    .ariaLabel('Confirm')
+                    .targetEvent(ev)
+                    .ok('Yes')
+                    .cancel('No');
+                return con;
             }
         }
     }]);

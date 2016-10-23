@@ -1,31 +1,43 @@
 /**
  * Created by dhnhan on 18/10/2016.
  */
-expenseModule.controller('ExpenseController', ['$scope', '$mdDialog', 'ExpenseService', '$mdBottomSheet', 'GRAN',
-    function ($scope, $mdDialog, ExpenseService, $mdBottomSheet, GRAN) {
+expenseModule.controller('ExpenseController',
+    ['$scope', '$mdDialog', 'ExpenseService', '$mdBottomSheet', 'GRAN', 'N2Service', 'N2_ACTION',
+        function ($scope, $mdDialog, ExpenseService, $mdBottomSheet, GRAN, N2Service, N2_ACTION) {
         $scope.setting = {};
         $scope.setting.gran = GRAN[0];
         $scope.setting.date = moment(new Date()).format('DD/MM/YYYY');
         $scope.expenses = [];
 
-        $scope.showDialogExpense = function (ev) {
-            $mdDialog.show({
+            $scope.showDialogExpense = function (ev, action, obj) {
+                var d = $mdDialog.show({
                 controller: DialogExpenseController,
                 templateUrl: 'static/js/expense/templates/expense-dialog.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose: true,
-                fullscreen: true
-            })
-                .then(function (data) {
-                    $scope.expenses.push(data);
+                    fullscreen: true,
+                    locals: {
+                        Action: action,
+                        obj: obj
+                    }
+                });
+                d.then(function (objData) {
+                    if (objData.action == N2_ACTION.EDIT) {
+                        $n2.changeObjInObjs($scope.expenses, objData.data);
+                    } else {
+                        $scope.expenses.push(objData.data);
+                    }
                 });
         };
 
-        $scope.deleteExpense = function(id){
-            ExpenseService.deleteExpense(id).then(function(res){
-                $n2.removeElementInArray($scope.expenses, res.data.id);
-            });
+            $scope.deleteExpense = function (e, id) {
+                var con = N2Service.showConfirm('Expense', 'Are you want delete it?', e);
+                $mdDialog.show(con).then(function () {
+                    ExpenseService.deleteExpense(id).then(function (res) {
+                        $n2.removeObjInObjs($scope.expenses, res.data.id);
+                    });
+                })
         };
 
         function init() {
@@ -36,7 +48,6 @@ expenseModule.controller('ExpenseController', ['$scope', '$mdDialog', 'ExpenseSe
 
 
         $scope.showOption = function () {
-            $scope.alert = '';
             $mdBottomSheet.show({
                 templateUrl: 'static/js/expense/templates/option-tpl.html',
                 controller: 'OptionController',
@@ -52,119 +63,43 @@ expenseModule.controller('ExpenseController', ['$scope', '$mdDialog', 'ExpenseSe
         };
 
 
-        function DialogExpenseController($scope, $mdDialog, ExpenseService) {
-            $scope.expense = {};
+            function DialogExpenseController($scope, $mdDialog, ExpenseService, Action, obj, N2_ACTION) {
+                $scope.expenseDialog = {};
+                $scope.action = null;
             $scope.cancel = function () {
                 $mdDialog.cancel();
             };
 
+                function init() {
+                    if (obj) {
+                        $scope.expenseDialog = angular.copy(obj);
+                    }
+                    if (Action == N2_ACTION.EDIT) {
+                        $scope.action = N2_ACTION.EDIT;
+                    } else {
+                        $scope.action = N2_ACTION.NEW;
+                    }
+                }
+
             $scope.save = function () {
                 var obj = {
-                    expense: $scope.expense
+                    expense: $scope.expenseDialog
                 };
                 ExpenseService.saveExpense(obj).then(function (res) {
-                    $mdDialog.hide(res.data);
-                })
-            }
+                    var passObj = {};
+                    if (Action == N2_ACTION.EDIT) {
+                        passObj.action = N2_ACTION.EDIT;
+                    } else {
+                        passObj.action = N2_ACTION.NEW;
+                    }
+                    passObj.data = res.data;
+                    $mdDialog.hide(passObj);
+                });
+            };
+                init();
         }
 
 
-        $scope.desserts = {
-            "count": 9,
-            "data": [
-                {
-                    "name": "Frozen yogurt",
-                    "type": "Ice cream",
-                    "calories": {"value": 159.0},
-                    "fat": {"value": 6.0},
-                    "carbs": {"value": 24.0},
-                    "protein": {"value": 4.0},
-                    "sodium": {"value": 87.0},
-                    "calcium": {"value": 14.0},
-                    "iron": {"value": 1.0}
-                }, {
-                    "name": "Ice cream sandwich",
-                    "type": "Ice cream",
-                    "calories": {"value": 237.0},
-                    "fat": {"value": 9.0},
-                    "carbs": {"value": 37.0},
-                    "protein": {"value": 4.3},
-                    "sodium": {"value": 129.0},
-                    "calcium": {"value": 8.0},
-                    "iron": {"value": 1.0}
-                }, {
-                    "name": "Eclair",
-                    "type": "Pastry",
-                    "calories": {"value": 262.0},
-                    "fat": {"value": 16.0},
-                    "carbs": {"value": 24.0},
-                    "protein": {"value": 6.0},
-                    "sodium": {"value": 337.0},
-                    "calcium": {"value": 6.0},
-                    "iron": {"value": 7.0}
-                }, {
-                    "name": "Cupcake",
-                    "type": "Pastry",
-                    "calories": {"value": 305.0},
-                    "fat": {"value": 3.7},
-                    "carbs": {"value": 67.0},
-                    "protein": {"value": 4.3},
-                    "sodium": {"value": 413.0},
-                    "calcium": {"value": 3.0},
-                    "iron": {"value": 8.0}
-                }, {
-                    "name": "Jelly bean",
-                    "type": "Candy",
-                    "calories": {"value": 375.0},
-                    "fat": {"value": 0.0},
-                    "carbs": {"value": 94.0},
-                    "protein": {"value": 0.0},
-                    "sodium": {"value": 50.0},
-                    "calcium": {"value": 0.0},
-                    "iron": {"value": 0.0}
-                }, {
-                    "name": "Lollipop",
-                    "type": "Candy",
-                    "calories": {"value": 392.0},
-                    "fat": {"value": 0.2},
-                    "carbs": {"value": 98.0},
-                    "protein": {"value": 0.0},
-                    "sodium": {"value": 38.0},
-                    "calcium": {"value": 0.0},
-                    "iron": {"value": 2.0}
-                }, {
-                    "name": "Honeycomb",
-                    "type": "Other",
-                    "calories": {"value": 408.0},
-                    "fat": {"value": 3.2},
-                    "carbs": {"value": 87.0},
-                    "protein": {"value": 6.5},
-                    "sodium": {"value": 562.0},
-                    "calcium": {"value": 0.0},
-                    "iron": {"value": 45.0}
-                }, {
-                    "name": "Donut",
-                    "type": "Pastry",
-                    "calories": {"value": 452.0},
-                    "fat": {"value": 25.0},
-                    "carbs": {"value": 51.0},
-                    "protein": {"value": 4.9},
-                    "sodium": {"value": 326.0},
-                    "calcium": {"value": 2.0},
-                    "iron": {"value": 22.0}
-                }, {
-                    "name": "KitKat",
-                    "type": "Candy",
-                    "calories": {"value": 518.0},
-                    "fat": {"value": 26.0},
-                    "carbs": {"value": 65.0},
-                    "protein": {"value": 7.0},
-                    "sodium": {"value": 54.0},
-                    "calcium": {"value": 12.0},
-                    "iron": {"value": 6.0}
-                }
-            ]
-        };
 
         init();
     }]);
