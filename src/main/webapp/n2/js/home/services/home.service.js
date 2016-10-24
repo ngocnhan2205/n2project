@@ -11,6 +11,10 @@ homeModule
             getUser: function () {
                 var url = '/n2/api/user';
                 return N2Service.requestRest(url, 'GET');
+            },
+            logout: function () {
+                var url = '/n2/api/logout';
+                return N2Service.requestRest(url, 'GET');
             }
         }
     }]);

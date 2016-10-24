@@ -49,4 +49,16 @@ public class Expense extends AbstractExpense {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    public void caculator() {
+        if (this.spends != null) {
+            double spend = 0;
+            for (Spend s : spends) {
+                spend += s.getPrice();
+            }
+            this.setTotal(spend);
+        } else {
+            this.setTotal(0D);
+        }
+    }
 }

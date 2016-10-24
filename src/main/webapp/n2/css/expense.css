@@ -26,6 +26,15 @@
 
 .panel-body-ex {
     padding: 5px;
+    margin: 0 auto;
+    width: 80%;
+
+}
+
+@media only screen and (max-width: 500px) {
+    .panel-body-ex {
+        width: 100% !important;
+    }
 }
 
 .n2-icon {

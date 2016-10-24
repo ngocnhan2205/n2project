@@ -37,7 +37,7 @@ appMain.run(['$rootScope', '$window', '$timeout', 'AuthService',
             return $window.location.href = '#/n2/login';
         });
 
-        $rootScope.$on('$stateChangeStart', function () {
+        $rootScope.$on('$stateChangeStart', function (e, data) {
             $rootScope.$broadcast('loading', true);
         });
         $rootScope.$on('$stateChangeSuccess', function (e, data) {
@@ -46,7 +46,10 @@ appMain.run(['$rootScope', '$window', '$timeout', 'AuthService',
                 if (data.name === 'home') {
                     $window.location.href = '#/home/dashboard';
                 }
-            }, 1000);
+                if (data.name === 'n2.login' && AuthService.isAuth()) {
+                    $window.location.href = '#/home/dashboard';
+                }
+            }, 200);
 
         });
     }]);

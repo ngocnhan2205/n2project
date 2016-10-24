@@ -2,22 +2,27 @@
  * Created by dhnhan on 09/10/2016.
  */
 homeModule
-    .controller('HomeController', ['$scope', '$mdSidenav', 'HomeService',
-        function ($scope, $mdSidenav, HomeService) {
+    .controller('HomeController', ['$scope', '$mdSidenav', 'HomeService', '$cookieStore', '$window',
+        function ($scope, $mdSidenav, HomeService, $cookieStore, $window) {
             $scope.menus = [];
             $scope.user = {};
 
             $scope.getMenu = function () {
                 HomeService.getMenu().then(function (res) {
-                    console.log(res.data);
                     $scope.menus = res.data;
                 })
             };
 
             $scope.getUser = function () {
                 HomeService.getUser().then(function (res) {
-                    console.log(res.data);
                     $scope.user = res.data;
+                })
+            };
+
+            $scope.logout = function () {
+                HomeService.logout().then(function () {
+                    $cookieStore.remove('n2Token');
+                    $window.location.href = '#/n2/login';
                 })
             };
 
@@ -34,6 +39,5 @@ homeModule
             $scope.closeSideNavPanel = function () {
                 $mdSidenav('left').close();
             };
-
 
         }]);

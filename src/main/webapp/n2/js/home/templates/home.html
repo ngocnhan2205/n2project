@@ -6,6 +6,24 @@
             </md-icon>
         </md-button>
         <h1>Expense Management</h1>
+        <span flex></span>
+        <md-menu>
+            <md-button ng-click="$mdOpenMenu($event)">
+                <i class="fa fa-cogs" aria-hidden="true"></i> Setting
+            </md-button>
+            <md-menu-content width="4">
+                <md-menu-item>
+                    <md-button>
+                        <i class="fa fa-user" aria-hidden="true"></i> User Info
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="logout()">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
     </div>
 </md-toolbar>
 <div ncy-breadcrumb></div>

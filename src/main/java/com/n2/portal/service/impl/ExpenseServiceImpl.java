@@ -40,11 +40,7 @@ public class ExpenseServiceImpl implements ExpenseService {
         Date endDate = N2Date.getDate(gran, date, N2Date.END);
         Expense expense = expenseDao.getExpense(id, N2Security.getUser());
         List<Spend> spends = spendDao.getSpendWithExpense(startDate, endDate, expense.getId());
-        if (spends != null) {
-            expense.setTotal(N2Util.caculatorPrice(spends));
-        } else {
-            expense.setTotal((double) 0F);
-        }
+        expense.caculator();
         expense.setSpends(spends);
         return expense;
     }
@@ -52,7 +48,7 @@ public class ExpenseServiceImpl implements ExpenseService {
     public Expense saveExpense(ExpenseDTO dto) {
         Expense e = dto.getExpense();
         e.setUserId(N2Security.getUser());
-        e.setTotal((double) 0F);
+        e.caculator();
         Expense expense = expenseDao.saveOrUpdate(dto.getExpense());
         return expense;
     }
@@ -65,7 +61,7 @@ public class ExpenseServiceImpl implements ExpenseService {
         for (Expense e : expenses) {
             spends = spendDao.getSpendWithExpense(startDate, endDate, e.getId());
             if (spends != null) {
-                e.setTotal(N2Util.caculatorPrice(spends));
+                e.caculator();
             }
             e.setSpends(spends);
         }
