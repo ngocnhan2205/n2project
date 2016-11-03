@@ -5,7 +5,7 @@ expenseModule.controller('ExpenseController',
     ['$scope', '$mdDialog', 'ExpenseService', '$mdBottomSheet', 'GRAN', 'N2Service', 'N2_ACTION',
         function ($scope, $mdDialog, ExpenseService, $mdBottomSheet, GRAN, N2Service, N2_ACTION) {
             $scope.setting = {};
-            $scope.setting.date = moment(new Date()).format('MM/YYYY');
+            $scope.setting.date = moment(new Date()).format('DD/MM/YYYY');
             $scope.expenses = [];
             $scope.m = 1000;
             $scope.changeMonth = new Date();
