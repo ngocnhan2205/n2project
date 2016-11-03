@@ -5,9 +5,31 @@ expenseModule.controller('ExpenseController',
     ['$scope', '$mdDialog', 'ExpenseService', '$mdBottomSheet', 'GRAN', 'N2Service', 'N2_ACTION',
         function ($scope, $mdDialog, ExpenseService, $mdBottomSheet, GRAN, N2Service, N2_ACTION) {
             $scope.setting = {};
-            $scope.setting.gran = GRAN[0];
-            $scope.setting.date = moment(new Date()).format('DD/MM/YYYY');
+            $scope.setting.date = moment(new Date()).format('MM/YYYY');
             $scope.expenses = [];
+            $scope.m = 1000;
+            $scope.changeMonth = new Date();
+            $scope.dates = buildCalendarNow(new Date());
+            function buildCalendarNow(date) {
+                var last = $n2.getLastDate(date);
+                var dateLast = $n2.getLastDayOfMonthToday(date);
+                var month = dateLast.getMonth() + 1;
+                var year = dateLast.getYear();
+                var dates = [];
+                var obj = null;
+                for (var i = 1; i <= last; i++) {
+                    var d = new Date(year, month, i);
+                    obj = {};
+                    obj.date = i;
+                    obj.day = $n2.getDayOfWeek(d);
+                    obj.dateObj = d;
+                    if (i == date.getDate()) {
+                        obj.active = true;
+                    }
+                    dates.push(obj);
+                }
+                return dates;
+            }
 
             $scope.showDialogExpense = function (ev, action, obj) {
                 var d = $mdDialog.show({
@@ -67,42 +89,6 @@ expenseModule.controller('ExpenseController',
                 init();
             }
 
-            $scope.showSpendDialog = function (ev, id, actionSpend, objSpend) {
-                var d = $mdDialog.show({
-                    controller: SpendController,
-                    templateUrl: 'static/js/expense/templates/spend-dialog.html',
-                    parent: angular.element(document.body),
-                    targetEvent: ev,
-                    clickOutsideToClose: true,
-                    fullscreen: true,
-                    locals: {
-                        ActionSpend: actionSpend,
-                        objSpend: objSpend,
-                        settingSpend: $scope.setting,
-                        idExpense: id
-                    }
-                });
-                d.then(function (dataSpend) {
-                    $n2.changeObjInObjs($scope.expenses, dataSpend);
-                })
-            };
-
-            function SpendController($scope, $mdDialog, ActionSpend, objSpend, settingSpend, idExpense) {
-                var setting = angular.copy(settingSpend);
-                var id = angular.copy(idExpense);
-                $scope.spendDialog = {};
-                $scope.cancelSpend = function () {
-                    $mdDialog.cancel();
-                };
-                $scope.saveSpend = function () {
-                    var obj = $scope.spendDialog;
-                    obj.dateSpend = setting.date;
-                    ExpenseService.addSpend(id, setting, obj).then(function (res) {
-                        $mdDialog.hide(res.data);
-                    });
-                }
-            }
-
             $scope.deleteExpense = function (e, id) {
                 var con = N2Service.showConfirm('Expense', 'Are you want delete it?', e);
                 $mdDialog.show(con).then(function () {
@@ -112,28 +98,15 @@ expenseModule.controller('ExpenseController',
                 })
             };
 
-            function init() {
-                ExpenseService.getExpense($scope.setting).then(function (res) {
-                    $scope.expenses = res.data;
-                })
-            }
-
-
             $scope.showOption = function () {
                 $mdBottomSheet.show({
                     templateUrl: 'static/js/expense/templates/option-tpl.html',
                     controller: 'OptionController',
                     clickOutsideToClose: true
                 }).then(function (setting) {
-                    var format = 'DD/MM/YYYY';
-                    if (setting.gran.value == 'month') {
-                        format = 'MM/YYYY';
-                    }
-                    $scope.setting.gran = setting.gran;
+                    var format = 'MM/YYYY';
+                    $scope.dates = buildCalendarNow(setting.date);
                     $scope.setting.date = moment(setting.date).format(format);
                 });
             };
-
-
-            init();
         }]);

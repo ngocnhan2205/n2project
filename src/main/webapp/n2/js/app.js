@@ -6,8 +6,7 @@ var moduleLib = ['ui.router',
     'ngAnimate',
     'ngMessages',
     'ngCookies',
-    'ncy-angular-breadcrumb',
-    'md.data.table'
+    'ncy-angular-breadcrumb'
 ];
 var moduleApp = ['Login', 'HomeModule', 'Dashboard', 'Expense'];
 var app = moduleApp.concat(moduleLib);

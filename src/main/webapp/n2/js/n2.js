@@ -27,4 +27,37 @@ $n2.isNullArray = function (objs) {
         return true;
     else
         return false;
-}
+};
+
+$n2.formatDateToDay = function (date, format) {
+    var formatDefault = 'DD/MM/YYYY';
+    if (format) {
+        formatDefault = format;
+    }
+    var d = new Date();
+    if (date) {
+        d = date;
+    }
+    return moment(d).format(formatDefault);
+};
+
+$n2.getLastDayOfMonthToday = function (date) {
+    var d = new Date();
+    d = date ? date : d;
+    var lastDate = new Date(d.getFullYear(), d.getMonth() + 1, 0);
+    return lastDate;
+};
+
+$n2.getDayOfWeek = function (date) {
+    var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    return weekday[date.getDay()];
+};
+
+$n2.getLastDate = function (date) {
+    return $n2.getLastDayOfMonthToday(date).getDate();
+};
+
+$n2.getDateNow = function (date) {
+    var d = date ? date : new Date();
+    return d.getDate();
+};
