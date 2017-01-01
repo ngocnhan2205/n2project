@@ -1,55 +1,82 @@
 package com.n2.portal.model.expense;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.n2.portal.utils.N2Date;
 
 import javax.persistence.*;
-import java.util.Date;
 
 /**
- * Created by dhnhan on 17/10/2016.
+ * Created by buibichngoc on 1/1/2017.
  */
 @Entity
 @Table(name = "SPEND")
-public class Spend extends AbstractExpense {
+public class Spend {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    @Column(name = "PRICE")
-    private Double price;
+    @Column(name = "NAME", nullable = false)
+    private String name;
 
-    @Column(name = "DATE_SPEND")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = N2Date.FORMAT_DATE)
-    private Date dateSpend;
+    @Column(name = "VALUE", nullable = false)
+    private Double value;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "EXPENSE_ID", nullable = false)
+    @JoinColumn(name = "date_id", nullable = false)
     @JsonBackReference
-    private Expense expense;
+    private ExpenseDate date;
 
-    public Spend() {
+    @Column(name = "EXPENSE")
+    private Boolean expense;
+
+    @Column(name = "FILEATTACH")
+    private String fileAttach;
+
+
+    public Long getId() {
+        return id;
     }
 
-    public Date getDateSpend() {
-        return dateSpend;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setDateSpend(Date dateSpend) {
-        this.dateSpend = dateSpend;
+    public String getName() {
+        return name;
     }
 
-    public Expense getExpense() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getValue() {
+        return value;
+    }
+
+    public void setValue(Double value) {
+        this.value = value;
+    }
+
+    public ExpenseDate getDate() {
+        return date;
+    }
+
+    public void setDate(ExpenseDate date) {
+        this.date = date;
+    }
+
+    public Boolean getExpense() {
         return expense;
     }
 
-    public void setExpense(Expense expense) {
+    public void setExpense(Boolean expense) {
         this.expense = expense;
     }
 
-    public Double getPrice() {
-        return price;
+    public String getFileAttach() {
+        return fileAttach;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setFileAttach(String fileAttach) {
+        this.fileAttach = fileAttach;
     }
 }
