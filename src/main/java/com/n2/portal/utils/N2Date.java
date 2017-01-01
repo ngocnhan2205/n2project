@@ -9,7 +9,10 @@ import java.util.Date;
 /**
  * Created by dhnhan on 20/10/2016.
  */
-public class N2Date {
+public final class N2Date {
+    private N2Date() {
+    }
+
     public static final String DAY = "day";
     public static final String MONTH = "month";
     public static final int START = 1;
