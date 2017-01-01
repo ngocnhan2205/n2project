@@ -4,18 +4,19 @@
                  style="margin-left: 10px;">
         </md-icon>
         &nbsp;
-        <span class="n2-date-text">Month: {{setting.date}}</span>
+        <span class="n2-date-text">Date: {{setting.date}}</span>
     </div>
     <div class="container-fluid">
         <div class="n2-container">
             <div class="n2-item" ng-repeat="d in dates">
-                <div class="n2-item-inner" ng-class="{'n2-active': d.active}" ng-click="showDialogExpense($event)">
+                <div class="n2-item-inner" ng-class="{'n2-active': d.active}"
+                     ng-click="showDialogExpense($event, d.fullDate)">
                     <div class="n2-item-inner-content">
                         <span>{{d.date}}</span>
                     </div>
                 </div>
                 <div class="n2-day">{{d.day}}</div>
-                <div class="n2-total">{{1000 | currency}}</div>
+                <div class="n2-total">{{d.value | currency}}</div>
             </div>
         </div>
     </div>
