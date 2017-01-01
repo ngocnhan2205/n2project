@@ -33,7 +33,7 @@ expenseModule.controller('ExpenseController',
 
             $scope.showDialogExpense = function (ev, action, obj) {
                 var d = $mdDialog.show({
-                    controller: DialogExpenseController,
+                    controller: 'DialogSpendController',
                     templateUrl: 'static/js/expense/templates/expense-dialog.html',
                     parent: angular.element(document.body),
                     targetEvent: ev,
@@ -50,63 +50,6 @@ expenseModule.controller('ExpenseController',
                     } else {
                         $scope.expenses.push(objData.data);
                     }
-                });
-            };
-
-            function DialogExpenseController($scope, $mdDialog, ExpenseService, Action, obj, N2_ACTION) {
-                $scope.expenseDialog = {};
-                $scope.action = null;
-                $scope.cancel = function () {
-                    $mdDialog.cancel();
-                };
-
-                function init() {
-                    if (obj) {
-                        $scope.expenseDialog = angular.copy(obj);
-                    }
-                    if (Action == N2_ACTION.EDIT) {
-                        $scope.action = N2_ACTION.EDIT;
-                    } else {
-                        $scope.action = N2_ACTION.NEW;
-                    }
-                }
-
-                $scope.save = function () {
-                    var obj = {
-                        expense: $scope.expenseDialog
-                    };
-                    ExpenseService.saveExpense(obj).then(function (res) {
-                        var passObj = {};
-                        if (Action == N2_ACTION.EDIT) {
-                            passObj.action = N2_ACTION.EDIT;
-                        } else {
-                            passObj.action = N2_ACTION.NEW;
-                        }
-                        passObj.data = res.data;
-                        $mdDialog.hide(passObj);
-                    });
-                };
-                init();
-            }
-
-            $scope.deleteExpense = function (e, id) {
-                var con = N2Service.showConfirm('Expense', 'Are you want delete it?', e);
-                $mdDialog.show(con).then(function () {
-                    ExpenseService.deleteExpense(id).then(function (res) {
-                        $n2.removeObjInObjs($scope.expenses, res.data.id);
-                    });
-                })
-            };
-
-            $scope.showOption = function () {
-                $mdBottomSheet.show({
-                    templateUrl: 'static/js/expense/templates/option-tpl.html',
-                    controller: 'OptionController',
-                    clickOutsideToClose: true
-                }).then(function (setting) {
-                    var format = 'MM/YYYY';
-                    $scope.dates = buildCalendarNow(setting.date);
-                    $scope.setting.date = moment(setting.date).format(format);
                 });
             };
         }]);
