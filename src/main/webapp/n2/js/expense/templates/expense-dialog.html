@@ -19,6 +19,15 @@
                     <span style="font-weight: 600">Sum: </span>
                     <span style="font-weight: 400">1000 VND</span>
                 </div>
+                <div style="text-align: right">
+                    <button type="button" class="btn btn-default btn-sm" ng-click="showAddExpense()">
+                        <span class="glyphicon glyphicon-plus" style="color: #bfbfbf;"></span>
+                    </button>
+                </div>
+                <div class="n2-input" ng-show="showAdd" focus-on-show>
+                    <input type="text" name="expense" class="lbExpense" ng-model="titleExpense"
+                           placeholder="Enter expense title..." n2-enter="saveExpense()"/>
+                </div>
             </md-content>
         </md-dialog-content>
         <md-dialog-actions layout="row">

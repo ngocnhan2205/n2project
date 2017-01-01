@@ -61,3 +61,9 @@ $n2.getDateNow = function (date) {
     var d = date ? date : new Date();
     return d.getDate();
 };
+
+$n2.isEmpty = function (str) {
+    if (!str || str == null || 0 == str.length) return true;
+    return false;
+};
+

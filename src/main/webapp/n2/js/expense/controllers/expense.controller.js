@@ -25,7 +25,7 @@ expenseModule.controller('ExpenseController',
                     obj.date = i;
                     obj.day = $n2.getDayOfWeek(d);
                     obj.dateObj = d;
-                    obj.fullDate = moment(d).format("DD/MM/YYYY");
+                    obj.fullDate = $n2.formatDateToDay(d, "DD/MM/YYYY");
                     if (i == date.getDate()) {
                         obj.active = true;
                     }
@@ -33,6 +33,7 @@ expenseModule.controller('ExpenseController',
                 }
                 return dates;
             }
+
 
             $scope.showDialogExpense = function (ev, date) {
                 var d = $mdDialog.show({
