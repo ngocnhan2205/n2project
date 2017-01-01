@@ -88,3 +88,16 @@
     background-color: #ff88de !important;
     color: #fff;
 }
+
+.totalSpend {
+    border: 2px solid #ff33cc;
+    background-color: #ffb3ec;
+    border-radius: 10px;
+}
+
+.totalSum {
+    margin-top: 5px;
+    border: 2px solid #2db9b9;
+    background-color: #adebeb;
+    border-radius: 10px;
+}
