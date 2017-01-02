@@ -18,6 +18,12 @@ expenseModule.factory('ExpenseService', ['N2Service', 'METHOD', function (N2Serv
                 date: date
             };
             return N2Service.requestRest(this.urlSpend, METHOD.POST, params);
+        },
+        getExpenseOfSpend: function (date) {
+            var params = {
+                date: date
+            };
+            return N2Service.requestRest(this.urlSpend, METHOD.GET, params);
         }
     }
 }]);

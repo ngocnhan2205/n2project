@@ -13,6 +13,7 @@ loginModule.factory('AuthIn', ['$cookieStore', '$q', '$rootScope', function ($co
         },
         responseError: function (rejection) {
             $rootScope.$emit("n2:error", rejection);
+            $cookieStore.remove('n2Token');
             return $q.reject(rejection);
         }
     }
