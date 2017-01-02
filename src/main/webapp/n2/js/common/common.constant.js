@@ -5,3 +5,9 @@ appMain.constant('GRAN', [
     {name: 'Day', value: 'day'},
     {name: 'Month', value: 'month'}
 ]);
+appMain.constant('METHOD', {
+    GET: 'GET',
+    POST: 'POST',
+    PUT: 'PUT',
+    DELETE: 'DELETE'
+});

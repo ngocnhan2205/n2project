@@ -31,6 +31,8 @@ public class Spend {
     @Column(name = "FILEATTACH")
     private String fileAttach;
 
+    public Spend() {
+    }
 
     public Long getId() {
         return id;

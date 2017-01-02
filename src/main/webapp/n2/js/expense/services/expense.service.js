@@ -1,28 +1,15 @@
 /**
  * Created by dhnhan on 21/10/2016.
  */
-expenseModule.factory('ExpenseService', ['N2Service', function (N2Service) {
+expenseModule.factory('ExpenseService', ['N2Service', 'METHOD', function (N2Service, METHOD) {
     return {
         url: '/n2/api/expense',
-        saveExpense: function (data) {
-            return N2Service.requestRest(this.url, 'POST', null, data);
-        },
-        getExpense: function (setting) {
+        getExpense: function (year, month) {
             var params = {
-                gran: setting.gran.value,
-                date: setting.date
+                year: year,
+                month: month
             };
-            return N2Service.requestRest(this.url, 'GET', params);
-        },
-        deleteExpense: function (id) {
-            return N2Service.requestRest(this.url + '/' + id, 'DELETE');
-        },
-        addSpend: function (id, setting, spendData) {
-            var urlSpend = '/n2/api/spend/' + id;
-            var params = {
-                gran: setting.gran.value
-            };
-            return N2Service.requestRest(urlSpend, 'POST', params, spendData);
+            return N2Service.requestRest(this.url, METHOD.GET, params);
         }
     }
 }]);

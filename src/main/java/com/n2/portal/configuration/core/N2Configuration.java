@@ -25,7 +25,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
         AuthorizationServerConfiguration.class,
         MethodSecurityConfig.class,
         OAuth2SecurityConfiguration.class,
-        ResourceServerConfiguration.class})
+        ResourceServerConfiguration.class,
+        CommonConfiguration.class})
 public class N2Configuration extends WebMvcConfigurerAdapter {
 
     @Override

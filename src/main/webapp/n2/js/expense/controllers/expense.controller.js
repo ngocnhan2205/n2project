@@ -2,15 +2,23 @@
  * Created by dhnhan on 18/10/2016.
  */
 expenseModule.controller('ExpenseController',
-    ['$scope', '$mdDialog',
-        function ($scope, $mdDialog) {
+    ['$scope', '$mdDialog', 'ExpenseService',
+        function ($scope, $mdDialog, ExpenseService) {
+            $scope.date = $n2.formatDateToDay();
+            $scope.dates = [];
 
-            $scope.expenses = [];
-            $scope.m = 1000;
-            $scope.changeMonth = new Date();
-            $scope.dates = buildCalendarNow(new Date());
+            var year = new Date().getFullYear();
+            var month = new Date().getMonth();
 
-            function buildCalendarNow(date) {
+            function init() {
+                ExpenseService.getExpense(year, month).then(function (res) {
+                    $scope.dates = res.data;
+                });
+            };
+
+            init();
+
+            /*function buildCalendarNow(date) {
                 var last = $n2.getLastDate(date);
                 var dateLast = $n2.getLastDayOfMonthToday(date);
                 var month = dateLast.getMonth() + 1;
@@ -19,20 +27,19 @@ expenseModule.controller('ExpenseController',
                 var obj = null;
                 for (var i = 1; i <= last; i++) {
                     var d = new Date(year, month, i);
-
                     obj = {};
                     obj.value = 500;
                     obj.date = i;
                     obj.day = $n2.getDayOfWeek(d);
                     obj.dateObj = d;
-                    obj.fullDate = $n2.formatDateToDay(d, "DD/MM/YYYY");
+             obj.fullDate = $n2.formatDateToDay(d);
                     if (i == date.getDate()) {
                         obj.active = true;
                     }
                     dates.push(obj);
                 }
                 return dates;
-            }
+             }*/
 
 
             $scope.showDialogExpense = function (ev, date) {

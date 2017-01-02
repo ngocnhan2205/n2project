@@ -29,6 +29,12 @@ public class ExpenseDate {
     @Column(name = "TOTAL")
     private Double total;
 
+    @Column(name = "USERID")
+    private String userId;
+
+    public ExpenseDate() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -59,5 +65,13 @@ public class ExpenseDate {
 
     public void setTotal(Double total) {
         this.total = total;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }
