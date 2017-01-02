@@ -25,4 +25,10 @@ public class ExpenseDaoImpl extends GenericDao<ExpenseDate, Long> implements Exp
                 Restrictions.eq("userId", userId)));
         return criteria.list();
     }
+
+    public ExpenseDate getExpenseDateByDate(Date date, String userId) {
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.and(Restrictions.eq("date", date), Restrictions.eq("userId", userId)));
+        return (ExpenseDate) criteria.uniqueResult();
+    }
 }

@@ -1,8 +1,8 @@
 /**
  * Created by banhu on 1/1/2017.
  */
-expenseModule.controller('DialogSpendController', ['$scope', '$mdDialog', 'DATE',
-    function ($scope, $mdDialog, DATE) {
+expenseModule.controller('DialogSpendController', ['$scope', '$mdDialog', 'DATE', 'ExpenseService',
+    function ($scope, $mdDialog, DATE, ExpenseService) {
         $scope.date = DATE;
         $scope.showAdd = false;
         $scope.titleExpense = null;
@@ -19,7 +19,8 @@ expenseModule.controller('DialogSpendController', ['$scope', '$mdDialog', 'DATE'
             if ($n2.isEmpty($scope.titleExpense)) {
                 $scope.showAdd = false;
             } else {
-                alert('sssssss');
+                ExpenseService.saveExpense($scope.titleExpense, $scope.date).then(function (res) {
+                });
             }
         };
 

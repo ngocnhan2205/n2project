@@ -19,4 +19,13 @@ public interface ExpenseDateDao extends IGenericDao<ExpenseDate, Long> {
      * @return
      */
     List<ExpenseDate> getAllDate(String userId, Date endDate, Date startDate);
+
+    /**
+     * get date by date and user id
+     *
+     * @param date
+     * @param userId
+     * @return
+     */
+    ExpenseDate getExpenseDateByDate(Date date, String userId);
 }

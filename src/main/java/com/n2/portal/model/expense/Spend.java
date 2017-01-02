@@ -14,14 +14,14 @@ public class Spend {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME")
     private String name;
 
-    @Column(name = "VALUE", nullable = false)
+    @Column(name = "VALUE")
     private Double value;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "date_id", nullable = false)
+    @JoinColumn(name = "date_id")
     @JsonBackReference
     private ExpenseDate date;
 
