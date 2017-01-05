@@ -3,6 +3,7 @@ package com.n2.portal.utils;
 
 import com.n2.portal.model.expense.ExpenseAbstract;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,13 +13,14 @@ public final class N2Util {
     private N2Util() {
     }
 
-    public static <T extends ExpenseAbstract> Long getById(List<T> list, String id) {
+    public static <T extends ExpenseAbstract> List<T> getById(List<T> list, String parentId) {
+        List<T> listObject = new ArrayList<T>();
         for (T t : list) {
-            if (id.equals(t.getId())) {
-                return t.getId();
+            if (parentId.equals(t.getParentId())) {
+                listObject.add(t);
             }
         }
-        return null;
+        return listObject;
     }
 
 }

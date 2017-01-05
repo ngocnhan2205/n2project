@@ -61,13 +61,7 @@ public class SpendServiceImpl implements SpendService {
         SpendDTO dto = null;
         for (Spend spend : spends) {
             if (spend.getParentId() == null) {
-                dto = new SpendDTO();
-                dto.setSpend(spend);
-                sp = new ArrayList<Spend>();
-                dto.setSubSpend(sp);
-                dtos.add(dto);
-            } else {
-                sp.add(spend);
+
             }
         }
         return dtos;

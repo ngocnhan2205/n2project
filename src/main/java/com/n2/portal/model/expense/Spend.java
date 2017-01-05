@@ -29,8 +29,6 @@ public class Spend extends ExpenseAbstract {
     @Column(name = "FILEATTACH")
     private String fileAttach;
 
-    @Column(name = "PARENTID")
-    private Long parentId;
 
     public Spend() {
     }
@@ -73,14 +71,6 @@ public class Spend extends ExpenseAbstract {
 
     public void setFileAttach(String fileAttach) {
         this.fileAttach = fileAttach;
-    }
-
-    public Long getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
     }
 
 }

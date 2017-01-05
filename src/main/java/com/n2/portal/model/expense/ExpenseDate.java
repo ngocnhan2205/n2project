@@ -13,9 +13,11 @@ import java.util.List;
  */
 @Entity
 @Table(name = "EXPENSEDATE")
-public class ExpenseDate extends ExpenseAbstract {
+public class ExpenseDate {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     @Column(name = "DATE")
     private Date date;
 
@@ -30,6 +32,14 @@ public class ExpenseDate extends ExpenseAbstract {
     private String userId;
 
     public ExpenseDate() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Date getDate() {
