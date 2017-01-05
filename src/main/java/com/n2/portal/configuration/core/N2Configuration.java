@@ -7,6 +7,7 @@ import com.n2.portal.configuration.security.OAuth2SecurityConfiguration;
 import com.n2.portal.configuration.security.ResourceServerConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -19,6 +20,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @Configuration
 @EnableTransactionManagement
+@EnableAspectJAutoProxy
 @EnableWebMvc
 @ComponentScan(basePackages = "com.n2.portal")
 @Import({HibernateConfiguration.class,
