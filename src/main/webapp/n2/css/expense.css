@@ -60,10 +60,11 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     -webkit-transition: background .2s ease-in-out;
     transition: background .2s ease-in-out;
-    background-color: hsl(201, 100%, 60%);
-    -webkit-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em .3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em .3em, /* inner shadow */ hsl(207, 100%, 47%) 0 .1em 3px, hsl(198, 100%, 52%) 0 .3em 1px, /* color border */ rgba(0, 0, 0, 0.2) 0 .5em 5px; /* drop shadow */
-    -moz-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em .3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em .3em, /* inner shadow */ hsl(207, 100%, 47%) 0 .1em 3px, hsl(198, 100%, 52%) 0 .3em 1px, /* color border */ rgba(0, 0, 0, 0.2) 0 .5em 5px; /* drop shadow */
-    box-shadow: inset rgba(255, 255, 255, 0.6) 0 0.3em .3em, inset rgba(0, 0, 0, 0.2) 0 -0.3em .6em, /* inner shadow */ hsl(207, 100%, 47%) 0 .1em 3px, hsl(198, 100%, 52%) 0 .3em 1px, /* color border */ rgba(0, 0, 0, 0.1) 0 .9em 10px;
+    color: hsl(208, 50%, 40%) !important;
+    background-color: hsl(208, 100%, 75%);
+    -webkit-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em .3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em .3em, /* inner shadow */ hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px, /* color border */ rgba(0, 0, 0, 0.2) 0 .5em 5px;
+    -moz-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em .3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em .3em, /* inner shadow */ hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px, /* color border */ rgba(0, 0, 0, 0.2) 0 .5em 5px;
+    box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em .3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em .3em, /* inner shadow */ hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px, /* color border */ rgba(0, 0, 0, 0.2) 0 .5em 5px;
 
 }
 
@@ -116,8 +117,15 @@
 }
 
 .n2-active {
-    background-color: #ff88de !important;
-    color: #fff;
+    /*    background-color: #ff88de !important;
+        color: #fff;*/
+
+    color: hsl(340, 100%, 30%) !important;
+    background-color: hsl(340, 100%, 75%);
+    -webkit-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em .3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em .3em, /* inner shadow */ hsl(340, 70%, 50%) 0 .1em 3px, hsl(340, 80%, 40%) 0 .3em 1px, /* color border */ rgba(0, 0, 0, 0.2) 0 .5em 5px; /* drop shadow */
+    -moz-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em .3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em .3em, /* inner shadow */ hsl(340, 70%, 50%) 0 .1em 3px, hsl(340, 80%, 40%) 0 .3em 1px, /* color border */ rgba(0, 0, 0, 0.2) 0 .5em 5px; /* drop shadow */
+    box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em .3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em .3em, /* inner shadow */ hsl(340, 70%, 50%) 0 .1em 3px, hsl(340, 80%, 40%) 0 .3em 1px, /* color border */ rgba(0, 0, 0, 0.2) 0 .5em 5px; /* drop shadow */
+
 }
 
 .totalSpend {
