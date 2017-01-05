@@ -29,10 +29,35 @@
                            placeholder="Enter expense title..." n2-enter="saveExpense()"/>
                 </div>
                 <div ng-repeat="ex in expenses" class="n2-panel">
-                    <div class="panel-header" ng-bind="ex.name">
+                    <div class="n2-panel-header" ng-bind="ex.name">
                     </div>
-                    <div class="panel-body">
-
+                    <div class="n2-panel-body">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th>Atach</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>rau cai</td>
+                                <td>5000</td>
+                                <td>khong co</td>
+                            </tr>
+                            <tr>
+                                <td>nuoc uong</td>
+                                <td>5000</td>
+                                <td>khong co</td>
+                            </tr>
+                            <tr>
+                                <td>Thit lon</td>
+                                <td>5000</td>
+                                <td>khong co</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </md-content>

@@ -148,9 +148,13 @@
     margin-bottom: 5px;
 }
 
-.n2-panel .panel-header {
+.n2-panel .n2-panel-header {
     background-color: #2196F3;
     padding: 8px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+
+.n2-panel .n2-panel-body {
+    padding: 5px;
 }
