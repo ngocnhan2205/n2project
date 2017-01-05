@@ -19,8 +19,7 @@ expenseModule.controller('DialogSpendController', ['$scope', '$mdDialog', 'DATE'
         function init() {
             ExpenseService.getExpenseOfSpend($scope.date).then(function (res) {
                 $scope.expenses = res.data;
-                console.log($scope.expenses);
-            })
+            });
         };
 
         init();
@@ -28,11 +27,12 @@ expenseModule.controller('DialogSpendController', ['$scope', '$mdDialog', 'DATE'
         $scope.saveExpense = function () {
             if ($n2.isEmpty($scope.titleExpense)) {
                 $scope.showAdd = false;
+                $scope.titleExpense = null;
             } else {
                 ExpenseService.saveExpense($scope.titleExpense, $scope.date).then(function (res) {
                     $scope.expenses.push(res.data);
-                    console.log($scope.expenses);
                     $scope.showAdd = false;
+                    $scope.titleExpense = null;
                 });
             }
         };

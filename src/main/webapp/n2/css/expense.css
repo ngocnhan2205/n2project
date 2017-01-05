@@ -132,3 +132,17 @@
     background-color: #adebeb;
     border-radius: 10px;
 }
+
+.n2-panel {
+    background-color: #ddffff;
+    padding: 0px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.n2-panel .panel-header {
+    background-color: #2196F3;
+    padding: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}

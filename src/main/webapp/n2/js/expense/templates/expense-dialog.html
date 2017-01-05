@@ -28,16 +28,14 @@
                     <input type="text" name="expense" class="lbExpense" ng-model="titleExpense"
                            placeholder="Enter expense title..." n2-enter="saveExpense()"/>
                 </div>
+                <div ng-repeat="ex in expenses" class="n2-panel">
+                    <div class="panel-header" ng-bind="ex.name">
+                    </div>
+                    <div class="panel-body">
+
+                    </div>
+                </div>
             </md-content>
         </md-dialog-content>
-        <md-dialog-actions layout="row">
-            <span flex></span>
-            <md-button class="md-raised md-primary" ng-click="save()" ng-disabled="expense.$invalid">
-                Submit
-            </md-button>
-            <md-button ng-click="close()">
-                Cancel
-            </md-button>
-        </md-dialog-actions>
     </form>
 </md-dialog>
