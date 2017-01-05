@@ -1,5 +1,6 @@
 package com.n2.portal.service.impl;
 
+import com.n2.portal.core.CompareSpend;
 import com.n2.portal.dao.ExpenseDateDao;
 import com.n2.portal.dao.SpendDao;
 import com.n2.portal.dto.SpendDTO;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -39,20 +41,35 @@ public class SpendServiceImpl implements SpendService {
         }
         Spend spend = new Spend();
         spend.setName(name);
-        spend.setExpense(true);
         spend.setDate(expenseDate);
+        spend.setParentId(null);
         return spendDao.saveOrUpdate(spend);
     }
 
     public List<SpendDTO> getAllSpend(Date date) {
-        List<Spend> spends = spendDao.getSpendWithExpense(date, N2Security.getUser(), true);
-        List<SpendDTO> spendDTOS = new ArrayList<SpendDTO>();
+        String userId = N2Security.getUser();
+        ExpenseDate expenseDate = expenseDateDao.getExpenseDateByDate(date, userId);
+        List<Spend> spends = expenseDate.getSpends();
+        //Collections.sort(spends, new CompareSpend());
+        return null;
+    }
+
+
+    private List<SpendDTO> preSpend(List<Spend> spends) {
+        List<SpendDTO> dtos = new ArrayList<SpendDTO>();
+        List<Spend> sp = null;
         SpendDTO dto = null;
-        for (Spend s : spends) {
-            dto = new SpendDTO();
-            dto.setSpend(s);
-            dto.setSubSpend(new ArrayList<Spend>());
+        for (Spend spend : spends) {
+            if (spend.getParentId() == null) {
+                dto = new SpendDTO();
+                dto.setSpend(spend);
+                sp = new ArrayList<Spend>();
+                dto.setSubSpend(sp);
+                dtos.add(dto);
+            } else {
+                sp.add(spend);
+            }
         }
-        return spendDTOS;
+        return dtos;
     }
 }

@@ -9,7 +9,8 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "SPEND")
-public class Spend {
+public class Spend extends ExpenseAbstract {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -25,11 +26,11 @@ public class Spend {
     @JsonBackReference
     private ExpenseDate date;
 
-    @Column(name = "EXPENSE")
-    private Boolean expense;
-
     @Column(name = "FILEATTACH")
     private String fileAttach;
+
+    @Column(name = "PARENTID")
+    private Long parentId;
 
     public Spend() {
     }
@@ -66,14 +67,6 @@ public class Spend {
         this.date = date;
     }
 
-    public Boolean getExpense() {
-        return expense;
-    }
-
-    public void setExpense(Boolean expense) {
-        this.expense = expense;
-    }
-
     public String getFileAttach() {
         return fileAttach;
     }
@@ -81,4 +74,13 @@ public class Spend {
     public void setFileAttach(String fileAttach) {
         this.fileAttach = fileAttach;
     }
+
+    public Long getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
+
 }

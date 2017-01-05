@@ -4,7 +4,7 @@ import com.n2.portal.dao.ExpenseDateDao;
 import com.n2.portal.dto.ExpenseDateDTO;
 import com.n2.portal.model.expense.ExpenseDate;
 import com.n2.portal.service.ExpenseDateService;
-import com.n2.portal.utils.MessageI18N;
+import com.n2.portal.core.MessageI18N;
 import com.n2.portal.utils.N2Date;
 import com.n2.portal.utils.N2Security;
 import org.springframework.beans.factory.annotation.Autowired;

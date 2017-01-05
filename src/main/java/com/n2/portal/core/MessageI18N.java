@@ -1,4 +1,4 @@
-package com.n2.portal.utils;
+package com.n2.portal.core;
 
 import org.apache.log4j.Logger;
 

@@ -13,17 +13,14 @@ import java.util.List;
  */
 @Entity
 @Table(name = "EXPENSEDATE")
-public class ExpenseDate {
+public class ExpenseDate extends ExpenseAbstract {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+
     @Column(name = "DATE")
     private Date date;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "date")
     @JsonManagedReference
-    @Fetch(FetchMode.SELECT)
     private List<Spend> spends;
 
     @Column(name = "TOTAL")
@@ -33,14 +30,6 @@ public class ExpenseDate {
     private String userId;
 
     public ExpenseDate() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Date getDate() {

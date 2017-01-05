@@ -18,7 +18,7 @@ public class SpendDaoImpl extends GenericDao<Spend, Long> implements SpendDao {
 
     public List<Spend> getSpendWithExpense(Date date, String userId, boolean expense) {
         Criteria criteria = createEntityCriteria();
-        criteria.add(Restrictions.and(Restrictions.eq("date.date", date),
+        criteria.add(Restrictions.and(
                 Restrictions.eq("date.userId", userId),
                 Restrictions.eq("expense", expense)));
         return criteria.list();
