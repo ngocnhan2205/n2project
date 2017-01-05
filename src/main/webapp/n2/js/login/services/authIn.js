@@ -12,9 +12,13 @@ loginModule.factory('AuthIn', ['$cookieStore', '$q', '$rootScope', function ($co
             return config;
         },
         responseError: function (rejection) {
-            $rootScope.$emit("n2:error", rejection);
-            $cookieStore.remove('n2Token');
-            return $q.reject(rejection);
+            if (rejection.status == 401) {
+                $rootScope.$emit("n2:error", rejection);
+                $cookieStore.remove('n2Token');
+                return $q.reject(rejection);
+            } else {
+                console.log('Failed status code : ' + rejection.status);
+            }
         }
     }
 }])
