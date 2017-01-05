@@ -2,6 +2,8 @@ package com.n2.portal.controller;
 
 import com.n2.portal.dto.SpendDTO;
 import com.n2.portal.model.expense.Spend;
+import com.n2.portal.model.expense.SpendCategory;
+import com.n2.portal.service.SpendCategoryService;
 import com.n2.portal.service.SpendService;
 import com.n2.portal.utils.N2Date;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,11 +28,14 @@ public class SpendController {
     @Autowired
     private SpendService spendService;
 
+    @Autowired
+    private SpendCategoryService spendCategoryService;
+
     @RequestMapping(value = "/spend", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Spend> saveSpend(@RequestParam("date") String date,
-                                           @RequestParam("name") String name) {
+    public ResponseEntity<SpendCategory> saveSpendCategory(@RequestParam("date") String date,
+                                                           @RequestParam("name") String name) {
         Date d = N2Date.getInstance(N2Date.parseDate(date));
-        return new ResponseEntity<Spend>(spendService.saveSpend(name, d), HttpStatus.OK);
+        return new ResponseEntity<SpendCategory>(spendCategoryService.save(name, d), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/spend", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)

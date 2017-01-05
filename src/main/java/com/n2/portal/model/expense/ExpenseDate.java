@@ -5,25 +5,29 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by buibichngoc on 1/1/2017.
  */
 @Entity
 @Table(name = "EXPENSEDATE")
-public class ExpenseDate {
+public class ExpenseDate implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(name = "DATE")
     private Date date;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "date")
     @JsonManagedReference
-    private List<Spend> spends;
+    private Set<SpendCategory> spendCategories = new HashSet<SpendCategory>(0);
 
     @Column(name = "TOTAL")
     private Double total;
@@ -50,12 +54,12 @@ public class ExpenseDate {
         this.date = date;
     }
 
-    public List<Spend> getSpends() {
-        return spends;
+    public Set<SpendCategory> getSpendCategories() {
+        return spendCategories;
     }
 
-    public void setSpends(List<Spend> spends) {
-        this.spends = spends;
+    public void setSpendCategories(Set<SpendCategory> spendCategories) {
+        this.spendCategories = spendCategories;
     }
 
     public Double getTotal() {
@@ -73,4 +77,5 @@ public class ExpenseDate {
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
 }

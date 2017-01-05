@@ -13,10 +13,10 @@ public final class N2Util {
     private N2Util() {
     }
 
-    public static <T extends ExpenseAbstract> List<T> getById(List<T> list, String parentId) {
+    public static <T extends ExpenseAbstract> List<T> getById(List<T> list, Long parentId) {
         List<T> listObject = new ArrayList<T>();
         for (T t : list) {
-            if (parentId.equals(t.getParentId())) {
+            if (t.getParentId() != null && parentId.equals(t.getParentId())) {
                 listObject.add(t);
             }
         }

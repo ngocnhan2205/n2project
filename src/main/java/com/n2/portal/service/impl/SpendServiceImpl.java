@@ -8,6 +8,7 @@ import com.n2.portal.model.expense.ExpenseDate;
 import com.n2.portal.model.expense.Spend;
 import com.n2.portal.service.SpendService;
 import com.n2.portal.utils.N2Security;
+import com.n2.portal.utils.N2Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,38 +31,26 @@ public class SpendServiceImpl implements SpendService {
     @Autowired
     private ExpenseDateDao expenseDateDao;
 
-    public Spend saveSpend(String name, Date date) {
-        String userId = N2Security.getUser();
-        ExpenseDate expenseDate = expenseDateDao.getExpenseDateByDate(date, userId);
-        if (expenseDate == null) {
-            ExpenseDate e = new ExpenseDate();
-            e.setDate(date);
-            e.setUserId(userId);
-            expenseDate = expenseDateDao.saveOrUpdate(e);
-        }
-        Spend spend = new Spend();
-        spend.setName(name);
-        spend.setDate(expenseDate);
-        spend.setParentId(null);
-        return spendDao.saveOrUpdate(spend);
+    public Spend saveSpendCategory(String name, Date date) {
+
+        return null;
     }
 
     public List<SpendDTO> getAllSpend(Date date) {
-        String userId = N2Security.getUser();
-        ExpenseDate expenseDate = expenseDateDao.getExpenseDateByDate(date, userId);
-        List<Spend> spends = expenseDate.getSpends();
-        //Collections.sort(spends, new CompareSpend());
+
         return null;
     }
 
 
     private List<SpendDTO> preSpend(List<Spend> spends) {
         List<SpendDTO> dtos = new ArrayList<SpendDTO>();
-        List<Spend> sp = null;
         SpendDTO dto = null;
         for (Spend spend : spends) {
             if (spend.getParentId() == null) {
-
+                dto = new SpendDTO();
+                dto.setSpend(spend);
+                dto.setSubSpend(N2Util.getById(spends, spend.getId()));
+                dtos.add(dto);
             }
         }
         return dtos;

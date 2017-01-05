@@ -22,9 +22,9 @@ public class Spend extends ExpenseAbstract {
     private Double value;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "date_id")
+    @JoinColumn(name = "spend_category")
     @JsonBackReference
-    private ExpenseDate date;
+    private SpendCategory spendCategory;
 
     @Column(name = "FILEATTACH")
     private String fileAttach;
@@ -57,12 +57,12 @@ public class Spend extends ExpenseAbstract {
         this.value = value;
     }
 
-    public ExpenseDate getDate() {
-        return date;
+    public SpendCategory getSpendCategory() {
+        return spendCategory;
     }
 
-    public void setDate(ExpenseDate date) {
-        this.date = date;
+    public void setSpendCategory(SpendCategory spendCategory) {
+        this.spendCategory = spendCategory;
     }
 
     public String getFileAttach() {

@@ -17,7 +17,7 @@ public interface SpendService {
      * @param name
      * @param date
      */
-    Spend saveSpend(String name, Date date);
+    Spend saveSpendCategory(String name, Date date);
 
     /**
      * @param date
