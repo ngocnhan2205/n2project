@@ -72,4 +72,16 @@ public abstract class AbstractMenu {
     public void setOrderIndex(int orderIndex) {
         this.orderIndex = orderIndex;
     }
+
+    @Override
+    public String toString() {
+        return "AbstractMenu{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", icon='" + icon + '\'' +
+                ", url='" + url + '\'' +
+                ", orderIndex=" + orderIndex +
+                '}';
+    }
 }

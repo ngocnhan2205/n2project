@@ -39,8 +39,8 @@ public class SpendController {
     }
 
     @RequestMapping(value = "/spend", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<SpendDTO>> getAll(@RequestParam("date") String date) {
+    public ResponseEntity<List<SpendCategory>> getAll(@RequestParam("date") String date) {
         Date d = N2Date.getInstance(N2Date.parseDate(date));
-        return new ResponseEntity<List<SpendDTO>>(spendService.getAllSpend(d), HttpStatus.OK);
+        return new ResponseEntity<List<SpendCategory>>(spendService.getAllSpend(d), HttpStatus.OK);
     }
 }

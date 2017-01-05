@@ -26,4 +26,9 @@ public class SubMenu extends AbstractMenu {
     public void setMenu(Menu menu) {
         this.menu = menu;
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }
