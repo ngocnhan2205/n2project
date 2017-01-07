@@ -45,4 +45,10 @@ public class SpendCategoryServiceImpl implements SpendCategoryService {
         spendCategory.setName(name);
         return spendCategoryDao.saveOrUpdate(spendCategory);
     }
+
+    public void delete(Long id) {
+        SpendCategory spendCategory = new SpendCategory();
+        spendCategory.setId(id);
+        spendCategoryDao.delete(spendCategory);
+    }
 }

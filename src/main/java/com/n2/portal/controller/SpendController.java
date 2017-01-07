@@ -1,7 +1,5 @@
 package com.n2.portal.controller;
 
-import com.n2.portal.dto.SpendDTO;
-import com.n2.portal.model.expense.Spend;
 import com.n2.portal.model.expense.SpendCategory;
 import com.n2.portal.service.SpendCategoryService;
 import com.n2.portal.service.SpendService;
@@ -45,5 +43,11 @@ public class SpendController {
     public ResponseEntity<SpendCategory> updateSpendCategory(@PathVariable("id") Long id,
                                                              @RequestParam("name") String name) {
         return new ResponseEntity<SpendCategory>(spendCategoryService.update(id, name), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/spend/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<Void> deleteSpendCategory(@PathVariable("id") Long id) {
+        spendCategoryService.delete(id);
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }

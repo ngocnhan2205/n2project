@@ -1,8 +1,8 @@
 /**
  * Created by banhu on 1/1/2017.
  */
-expenseModule.controller('DialogSpendController', ['$scope', 'ExpenseService', 'DATE', '$uibModalInstance',
-    function ($scope, ExpenseService, DATE, $uibModalInstance) {
+expenseModule.controller('DialogSpendController', ['$scope', 'ExpenseService', 'DATE', '$uibModalInstance', 'N2Service', '$mdDialog',
+    function ($scope, ExpenseService, DATE, $uibModalInstance, N2Service, $mdDialog) {
         $scope.date = DATE;
         $scope.showAdd = false;
         $scope.titleExpense = null;
@@ -13,7 +13,7 @@ expenseModule.controller('DialogSpendController', ['$scope', 'ExpenseService', '
             for (var i in dates) {
                 i.isEditName = false;
             }
-        };
+        }
 
 
         function init() {
@@ -21,7 +21,7 @@ expenseModule.controller('DialogSpendController', ['$scope', 'ExpenseService', '
                 $scope.expenses = res.data;
                 preExpense($scope.expenses);
             });
-        };
+        }
 
         init();
 
@@ -54,5 +54,12 @@ expenseModule.controller('DialogSpendController', ['$scope', 'ExpenseService', '
             }
             ex.isEditName = false;
         };
+
+        $scope.deleteSpendCategory = function (id) {
+            var confirm = N2Service.showConfirm('Delete', 'Are you sure?');
+            $mdDialog.show(confirm).then(function () {
+                ExpenseService.deleteSpendCategory(id);
+            })
+        }
 
     }]);

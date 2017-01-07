@@ -22,4 +22,9 @@ public interface SpendCategoryService {
      * @return
      */
     SpendCategory update(Long id, String name);
+
+    /**
+     * @param id
+     */
+    void delete(Long id);
 }

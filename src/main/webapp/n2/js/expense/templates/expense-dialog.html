@@ -78,27 +78,34 @@
 <div class="modal-body" id="modal-body">
     <form name="expense">
         <div class="totalSpend">
-            <span style="font-weight: 600">Total spend: </span>
-            <span style="font-weight: 400">1000 VND</span>
+            <span class="n2-b-6">Total spend: </span>
+            <span class="n2-b-4">1000 VND</span>
         </div>
         <div class="totalSum">
-            <span style="font-weight: 600">Sum: </span>
-            <span style="font-weight: 400">1000 VND</span>
+            <span class="n2-b-6">Sum: </span>
+            <span class="n2-b-4">1000 VND</span>
         </div>
-        <div style="text-align: right; margin-top: 4px; margin-bottom: 4px">
+        <div class="n2-btn-ex">
             <button type="button" class="btn btn-default btn-sm" ng-click="addExpense()">
                 <span class="glyphicon glyphicon-plus" style="color: #bfbfbf;"></span>
             </button>
         </div>
-
-
         <div ng-repeat="ex in expenses" class="n2-panel">
             <div class="n2-panel-header">
                 <div focus-on-show ng-show="ex.isEditName">
                     <input type="text" class="form-control lbExpense" id="usr"
+                           placeholder="Enter expense..."
                            ng-model="ex.name" n2-enter="saveExpense(ex)"/>
                 </div>
-                <span ng-bind="ex.name" ng-hide="ex.isEditName" ng-click="edit(ex)"></span>
+                <div class="row" ng-hide="ex.isEditName">
+                    <div class="col-md-6" ng-bind="ex.name" ng-click="edit(ex)"></div>
+                    <div class="col-md-6">
+                        <span class="pull-right glyphicon glyphicon-trash" style="color: white"
+                              ng-click="deleteSpendCategory(ex.id)">
+                        </span>
+                    </div>
+                </div>
+
             </div>
 
             <div class="n2-panel-body" ng-show="expenses.length > 0">
@@ -126,8 +133,9 @@
                     </tr>
 
                     <tr>
-                        <td colspan="2" align="right">Sum:</td>
+                        <td>Sum:</td>
                         <td>500000</td>
+                        <td></td>
                     </tr>
                     </tbody>
                 </table>
