@@ -15,4 +15,11 @@ public interface SpendCategoryService {
      * @return
      */
     SpendCategory save(String name, Date date);
+
+    /**
+     * @param id
+     * @param name
+     * @return
+     */
+    SpendCategory update(Long id, String name);
 }

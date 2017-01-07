@@ -2,8 +2,8 @@
  * Created by dhnhan on 18/10/2016.
  */
 expenseModule.controller('ExpenseController',
-    ['$scope', '$mdDialog', 'ExpenseService',
-        function ($scope, $mdDialog, ExpenseService) {
+    ['$scope', '$uibModal', 'ExpenseService',
+        function ($scope, $uibModal, ExpenseService) {
             $scope.date = $n2.formatDateToDay();
             $scope.dates = [];
 
@@ -16,22 +16,25 @@ expenseModule.controller('ExpenseController',
                 });
             };
 
+
             init();
 
-            $scope.showDialogExpense = function (ev, date) {
-                var d = $mdDialog.show({
-                    controller: 'DialogSpendController',
+            $scope.showDialogExpense = function (date) {
+                var modalIntance = $uibModal.open({
+                    animation: true,
+                    ariaLabelledBy: 'modal-title',
+                    ariaDescribedBy: 'modal-body',
                     templateUrl: 'static/js/expense/templates/expense-dialog.html',
-                    parent: angular.element(document.body),
-                    targetEvent: ev,
-                    clickOutsideToClose: true,
-                    fullscreen: true,
-                    locals: {
-                        DATE: date
+                    controller: 'DialogSpendController',
+                    size: 'lg',
+                    resolve: {
+                        DATE: function () {
+                            return date;
+                        }
                     }
                 });
-                d.then(function (objData) {
 
-                });
-            };
+            }
+
+
         }]);

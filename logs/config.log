@@ -1,0 +1,1031 @@
+2017-01-05 14:52:29 INFO  ContextLoader:305 - Root WebApplicationContext: initialization started
+2017-01-05 14:52:29 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing Root WebApplicationContext: startup date [Thu Jan 05 14:52:29 ICT 2017]; root of context hierarchy
+2017-01-05 14:52:30 INFO  AnnotationConfigWebApplicationContext:207 - Registering annotated classes: [class com.n2.portal.configuration.core.N2Configuration]
+2017-01-05 14:52:30 WARN  ConfigurationClassPostProcessor:386 - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-01-05 14:52:30 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 14:52:31 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-01-05 14:52:31 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-05 14:52:31 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2017-01-05 14:52:31 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-01-05 14:52:31 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-01-05 14:52:32 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-01-05 14:52:32 WARN  RootClass:288 - HHH000038: Composite-id class does not override equals(): com.n2.portal.model.expense.Spend
+2017-01-05 14:52:32 WARN  RootClass:289 - HHH000039: Composite-id class does not override hashCode(): com.n2.portal.model.expense.Spend
+2017-01-05 14:52:32 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-05 14:52:32 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-05 14:52:32 INFO  Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2017-01-05 14:52:33 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2017-01-05 14:52:33 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2017-01-05 14:52:33 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2017-01-05 14:52:33 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user
+2017-01-05 14:52:33 INFO  TableMetadata:67 - HHH000037: Columns: [password, last_name, id, state, first_name, email, sso_id]
+2017-01-05 14:52:33 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 14:52:33 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_hqk6uc88j3imq8u9jhro36vt3, primary]
+2017-01-05 14:52:33 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user_user_profile
+2017-01-05 14:52:33 INFO  TableMetadata:67 - HHH000037: Columns: [user_id, user_profile_id]
+2017-01-05 14:52:33 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_brmce0t584euix4wb4rursf1q, fk_gs2lq4vmukguubh36utd4r2cl]
+2017-01-05 14:52:33 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_gs2lq4vmukguubh36utd4r2cl, primary]
+2017-01-05 14:52:33 INFO  TableMetadata:66 - HHH000261: Table found: n2.expensedate
+2017-01-05 14:52:33 INFO  TableMetadata:67 - HHH000037: Columns: [date, total, id, userid]
+2017-01-05 14:52:33 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 14:52:33 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 14:52:33 INFO  TableMetadata:66 - HHH000261: Table found: n2.menu
+2017-01-05 14:52:33 INFO  TableMetadata:67 - HHH000037: Columns: [isadmin, icon, name, description, id, url, otherindex]
+2017-01-05 14:52:33 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 14:52:33 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 14:52:33 INFO  TableMetadata:66 - HHH000261: Table found: n2.spend
+2017-01-05 14:52:33 INFO  TableMetadata:67 - HHH000037: Columns: [fileattach, name, spend_category, id, value, parentid]
+2017-01-05 14:52:33 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_3fnehs407empyoqsqgnxksphj]
+2017-01-05 14:52:33 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_3fnehs407empyoqsqgnxksphj, primary]
+2017-01-05 14:52:33 INFO  TableMetadata:66 - HHH000261: Table found: n2.spendcategory
+2017-01-05 14:52:33 INFO  TableMetadata:67 - HHH000037: Columns: [total, name, id, date_id, parentid]
+2017-01-05 14:52:33 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_oohqj8l247v9c33bd747so0l1]
+2017-01-05 14:52:33 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_oohqj8l247v9c33bd747so0l1, primary]
+2017-01-05 14:52:33 INFO  TableMetadata:66 - HHH000261: Table found: n2.submenu
+2017-01-05 14:52:33 INFO  TableMetadata:67 - HHH000037: Columns: [icon, name, description, id, url, menu_id, otherindex]
+2017-01-05 14:52:33 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_ld5aoy95uhip39yxullnk7mgd]
+2017-01-05 14:52:33 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_ld5aoy95uhip39yxullnk7mgd, primary]
+2017-01-05 14:52:33 INFO  TableMetadata:66 - HHH000261: Table found: n2.user_profile
+2017-01-05 14:52:33 INFO  TableMetadata:67 - HHH000037: Columns: [id, type]
+2017-01-05 14:52:33 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 14:52:33 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_cva7m2blp7ekclxworqxau1l7, primary]
+2017-01-05 14:52:33 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2017-01-05 14:52:34 INFO  MessageI18N:19 - MessageI18N load file messge message-vn.properties
+2017-01-05 14:52:34 INFO  HibernateTransactionManager:360 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@1e1fe207] of Hibernate SessionFactory for HibernateTransactionManager
+2017-01-05 14:52:34 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize(java.util.Map<java.lang.String, java.lang.Object>,java.util.Map<java.lang.String, java.lang.String>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 14:52:34 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize],methods=[POST],params=[user_oauth_approval]}" onto public org.springframework.web.servlet.View org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(java.util.Map<java.lang.String, java.lang.String>,java.util.Map<java.lang.String, ?>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 14:52:34 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 14:52:34 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.getAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 14:52:34 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/check_token]}" onto public java.util.Map<java.lang.String, ?> org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint.checkToken(java.lang.String)
+2017-01-05 14:52:34 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/confirm_access]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.getAccessConfirmation(java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2017-01-05 14:52:34 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/error]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelErrorEndpoint.handleError(javax.servlet.http.HttpServletRequest)
+2017-01-05 14:52:35 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-01-05 14:52:36 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b49ffc3, org.springframework.security.web.context.SecurityContextPersistenceFilter@68226d36, org.springframework.security.web.header.HeaderWriterFilter@e847edf, org.springframework.security.web.authentication.logout.LogoutFilter@39e8c846, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@60924735, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3763b02, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@261ce24, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31e61cb, org.springframework.security.web.session.SessionManagementFilter@7c9a89c, org.springframework.security.web.access.ExceptionTranslationFilter@2dc53b7b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@477c6e72]
+2017-01-05 14:52:36 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@373abe4a, org.springframework.security.web.context.SecurityContextPersistenceFilter@79ee55d6, org.springframework.security.web.header.HeaderWriterFilter@56de8df6, org.springframework.security.web.authentication.logout.LogoutFilter@1e8acedd, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@42a44a6b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24960206, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6058a5f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4356ea40, org.springframework.security.web.session.SessionManagementFilter@66cfdb11, org.springframework.security.web.access.ExceptionTranslationFilter@32cded00, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@250c1c8]
+2017-01-05 14:52:36 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@774404f1, org.springframework.security.web.context.SecurityContextPersistenceFilter@67380e6e, org.springframework.security.web.header.HeaderWriterFilter@40710f0d, org.springframework.security.web.authentication.logout.LogoutFilter@55348aed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3a9f72a0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@725e1b99, org.springframework.security.web.session.SessionManagementFilter@529eaa7d, org.springframework.security.web.access.ExceptionTranslationFilter@216f92a3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@400103c7]
+2017-01-05 14:52:36 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/expense],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.ExpenseDateDTO>> com.n2.portal.controller.ExpenseController.getExpenses(int,int)
+2017-01-05 14:52:36 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/menu],methods=[GET],produces=[application/json]}" onto public java.util.List<com.n2.portal.model.menu.Menu> com.n2.portal.controller.MenuController.getMenus()
+2017-01-05 14:52:36 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.SpendDTO>> com.n2.portal.controller.SpendController.getAll(java.lang.String)
+2017-01-05 14:52:36 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.n2.portal.model.expense.SpendCategory> com.n2.portal.controller.SpendController.saveSpendCategory(java.lang.String,java.lang.String)
+2017-01-05 14:52:36 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/logout],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.n2.portal.controller.UserController.logout(javax.servlet.http.HttpServletRequest)
+2017-01-05 14:52:36 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/user],methods=[GET]}" onto public com.n2.portal.model.User com.n2.portal.controller.UserController.getUserCurrent()
+2017-01-05 14:52:36 INFO  SimpleUrlHandlerMapping:341 - Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-05 14:52:37 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Thu Jan 05 14:52:29 ICT 2017]; root of context hierarchy
+2017-01-05 14:52:37 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-05 14:52:37 INFO  ContextLoader:345 - Root WebApplicationContext: initialization completed in 7660 ms
+2017-01-05 14:52:37 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2017-01-05 14:52:37 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jan 05 14:52:37 ICT 2017]; parent: Root WebApplicationContext
+2017-01-05 14:52:37 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 14:52:37 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 72 ms
+2017-01-05 14:52:43 INFO  TokenEndpoint:178 - Handling error: InvalidGrantException, Invalid refresh token: 32787f40-da4b-4dfb-9c47-62c741d608fd
+2017-01-05 14:52:50 INFO  logController:19 - Running function getUserCurrent of controller class com.n2.portal.controller.UserController$$EnhancerBySpringCGLIB$$89a50695
+2017-01-05 14:52:50 INFO  logController:19 - Running function getMenus of controller class com.n2.portal.controller.MenuController$$EnhancerBySpringCGLIB$$43b4c4d1
+2017-01-05 14:52:52 INFO  logController:19 - Running function getExpenses of controller class com.n2.portal.controller.ExpenseController$$EnhancerBySpringCGLIB$$3b9a406e
+2017-01-05 14:52:55 INFO  logController:19 - Running function getAll of controller class com.n2.portal.controller.SpendController$$EnhancerBySpringCGLIB$$d399fb00
+2017-01-05 14:55:59 INFO  ContextLoader:305 - Root WebApplicationContext: initialization started
+2017-01-05 14:55:59 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing Root WebApplicationContext: startup date [Thu Jan 05 14:55:59 ICT 2017]; root of context hierarchy
+2017-01-05 14:55:59 INFO  AnnotationConfigWebApplicationContext:207 - Registering annotated classes: [class com.n2.portal.configuration.core.N2Configuration]
+2017-01-05 14:55:59 WARN  ConfigurationClassPostProcessor:386 - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-01-05 14:56:00 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 14:56:01 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-01-05 14:56:01 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-05 14:56:01 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2017-01-05 14:56:01 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-01-05 14:56:01 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-01-05 14:56:01 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-01-05 14:56:02 WARN  RootClass:288 - HHH000038: Composite-id class does not override equals(): com.n2.portal.model.expense.Spend
+2017-01-05 14:56:02 WARN  RootClass:289 - HHH000039: Composite-id class does not override hashCode(): com.n2.portal.model.expense.Spend
+2017-01-05 14:56:02 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-05 14:56:02 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-05 14:56:02 INFO  Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2017-01-05 14:56:03 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2017-01-05 14:56:03 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2017-01-05 14:56:03 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2017-01-05 14:56:03 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user
+2017-01-05 14:56:03 INFO  TableMetadata:67 - HHH000037: Columns: [password, last_name, id, state, first_name, email, sso_id]
+2017-01-05 14:56:03 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 14:56:03 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_hqk6uc88j3imq8u9jhro36vt3, primary]
+2017-01-05 14:56:03 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user_user_profile
+2017-01-05 14:56:03 INFO  TableMetadata:67 - HHH000037: Columns: [user_id, user_profile_id]
+2017-01-05 14:56:03 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_brmce0t584euix4wb4rursf1q, fk_gs2lq4vmukguubh36utd4r2cl]
+2017-01-05 14:56:03 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_gs2lq4vmukguubh36utd4r2cl, primary]
+2017-01-05 14:56:03 INFO  TableMetadata:66 - HHH000261: Table found: n2.expensedate
+2017-01-05 14:56:03 INFO  TableMetadata:67 - HHH000037: Columns: [date, total, id, userid]
+2017-01-05 14:56:03 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 14:56:03 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 14:56:03 INFO  TableMetadata:66 - HHH000261: Table found: n2.menu
+2017-01-05 14:56:03 INFO  TableMetadata:67 - HHH000037: Columns: [isadmin, icon, name, description, id, url, otherindex]
+2017-01-05 14:56:03 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 14:56:03 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 14:56:03 INFO  TableMetadata:66 - HHH000261: Table found: n2.spend
+2017-01-05 14:56:03 INFO  TableMetadata:67 - HHH000037: Columns: [fileattach, name, spend_category, id, value, parentid]
+2017-01-05 14:56:03 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_3fnehs407empyoqsqgnxksphj]
+2017-01-05 14:56:03 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_3fnehs407empyoqsqgnxksphj, primary]
+2017-01-05 14:56:03 INFO  TableMetadata:66 - HHH000261: Table found: n2.spendcategory
+2017-01-05 14:56:03 INFO  TableMetadata:67 - HHH000037: Columns: [total, name, id, date_id, parentid]
+2017-01-05 14:56:03 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_oohqj8l247v9c33bd747so0l1]
+2017-01-05 14:56:03 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_oohqj8l247v9c33bd747so0l1, primary]
+2017-01-05 14:56:03 INFO  TableMetadata:66 - HHH000261: Table found: n2.submenu
+2017-01-05 14:56:03 INFO  TableMetadata:67 - HHH000037: Columns: [icon, name, description, id, url, menu_id, otherindex]
+2017-01-05 14:56:03 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_ld5aoy95uhip39yxullnk7mgd]
+2017-01-05 14:56:03 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_ld5aoy95uhip39yxullnk7mgd, primary]
+2017-01-05 14:56:03 INFO  TableMetadata:66 - HHH000261: Table found: n2.user_profile
+2017-01-05 14:56:03 INFO  TableMetadata:67 - HHH000037: Columns: [id, type]
+2017-01-05 14:56:03 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 14:56:03 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_cva7m2blp7ekclxworqxau1l7, primary]
+2017-01-05 14:56:03 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2017-01-05 14:56:03 INFO  MessageI18N:19 - MessageI18N load file messge message-vn.properties
+2017-01-05 14:56:04 INFO  HibernateTransactionManager:360 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@782bc143] of Hibernate SessionFactory for HibernateTransactionManager
+2017-01-05 14:56:04 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize],methods=[POST],params=[user_oauth_approval]}" onto public org.springframework.web.servlet.View org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(java.util.Map<java.lang.String, java.lang.String>,java.util.Map<java.lang.String, ?>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 14:56:04 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize(java.util.Map<java.lang.String, java.lang.Object>,java.util.Map<java.lang.String, java.lang.String>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 14:56:04 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 14:56:04 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.getAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 14:56:04 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/check_token]}" onto public java.util.Map<java.lang.String, ?> org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint.checkToken(java.lang.String)
+2017-01-05 14:56:04 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/confirm_access]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.getAccessConfirmation(java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2017-01-05 14:56:04 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/error]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelErrorEndpoint.handleError(javax.servlet.http.HttpServletRequest)
+2017-01-05 14:56:05 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-01-05 14:56:05 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43803abb, org.springframework.security.web.context.SecurityContextPersistenceFilter@650deeb5, org.springframework.security.web.header.HeaderWriterFilter@4b9b550f, org.springframework.security.web.authentication.logout.LogoutFilter@424942a4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@19a728d4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@700f25a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47eed14d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@df62263, org.springframework.security.web.session.SessionManagementFilter@5754dc41, org.springframework.security.web.access.ExceptionTranslationFilter@5ed54d05, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25b1a81f]
+2017-01-05 14:56:05 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@720dcc57, org.springframework.security.web.context.SecurityContextPersistenceFilter@2232410b, org.springframework.security.web.header.HeaderWriterFilter@57219914, org.springframework.security.web.authentication.logout.LogoutFilter@77dab806, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@7a43e441, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d6b3088, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46d9f308, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@533e1bca, org.springframework.security.web.session.SessionManagementFilter@4f3fc1b4, org.springframework.security.web.access.ExceptionTranslationFilter@5efc2356, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@474ddd69]
+2017-01-05 14:56:05 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f53d0a9, org.springframework.security.web.context.SecurityContextPersistenceFilter@65f29266, org.springframework.security.web.header.HeaderWriterFilter@2ce12412, org.springframework.security.web.authentication.logout.LogoutFilter@6f7903ae, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@63890bc4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@46ed6213, org.springframework.security.web.session.SessionManagementFilter@4e9cf434, org.springframework.security.web.access.ExceptionTranslationFilter@70bec874, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3f063739]
+2017-01-05 14:56:06 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Thu Jan 05 14:55:59 ICT 2017]; root of context hierarchy
+2017-01-05 14:56:06 INFO  SimpleUrlHandlerMapping:341 - Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-05 14:56:06 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-05 14:56:06 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/expense],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.ExpenseDateDTO>> com.n2.portal.controller.ExpenseController.getExpenses(int,int)
+2017-01-05 14:56:06 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/menu],methods=[GET],produces=[application/json]}" onto public java.util.List<com.n2.portal.model.menu.Menu> com.n2.portal.controller.MenuController.getMenus()
+2017-01-05 14:56:06 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.SpendDTO>> com.n2.portal.controller.SpendController.getAll(java.lang.String)
+2017-01-05 14:56:06 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.n2.portal.model.expense.SpendCategory> com.n2.portal.controller.SpendController.saveSpendCategory(java.lang.String,java.lang.String)
+2017-01-05 14:56:06 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/logout],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.n2.portal.controller.UserController.logout(javax.servlet.http.HttpServletRequest)
+2017-01-05 14:56:06 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/user],methods=[GET]}" onto public com.n2.portal.model.User com.n2.portal.controller.UserController.getUserCurrent()
+2017-01-05 14:56:06 INFO  ContextLoader:345 - Root WebApplicationContext: initialization completed in 7682 ms
+2017-01-05 14:56:06 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2017-01-05 14:56:06 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jan 05 14:56:06 ICT 2017]; parent: Root WebApplicationContext
+2017-01-05 14:56:06 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 14:56:06 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 64 ms
+2017-01-05 14:56:12 INFO  TokenEndpoint:178 - Handling error: InvalidGrantException, Invalid refresh token: b066316c-45b3-42c3-8c05-58585ac117f2
+2017-01-05 15:00:16 INFO  ContextLoader:305 - Root WebApplicationContext: initialization started
+2017-01-05 15:00:16 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing Root WebApplicationContext: startup date [Thu Jan 05 15:00:16 ICT 2017]; root of context hierarchy
+2017-01-05 15:00:16 INFO  AnnotationConfigWebApplicationContext:207 - Registering annotated classes: [class com.n2.portal.configuration.core.N2Configuration]
+2017-01-05 15:00:17 WARN  ConfigurationClassPostProcessor:386 - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-01-05 15:00:17 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 15:00:18 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-01-05 15:00:18 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-05 15:00:18 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2017-01-05 15:00:18 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-01-05 15:00:18 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-01-05 15:00:19 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-01-05 15:00:19 WARN  RootClass:288 - HHH000038: Composite-id class does not override equals(): com.n2.portal.model.expense.Spend
+2017-01-05 15:00:19 WARN  RootClass:289 - HHH000039: Composite-id class does not override hashCode(): com.n2.portal.model.expense.Spend
+2017-01-05 15:00:19 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-05 15:00:19 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-05 15:00:19 INFO  Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2017-01-05 15:00:20 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2017-01-05 15:00:20 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2017-01-05 15:00:20 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2017-01-05 15:00:20 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user
+2017-01-05 15:00:20 INFO  TableMetadata:67 - HHH000037: Columns: [password, last_name, id, state, first_name, email, sso_id]
+2017-01-05 15:00:20 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:00:20 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_hqk6uc88j3imq8u9jhro36vt3, primary]
+2017-01-05 15:00:20 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user_user_profile
+2017-01-05 15:00:20 INFO  TableMetadata:67 - HHH000037: Columns: [user_id, user_profile_id]
+2017-01-05 15:00:20 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_brmce0t584euix4wb4rursf1q, fk_gs2lq4vmukguubh36utd4r2cl]
+2017-01-05 15:00:20 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_gs2lq4vmukguubh36utd4r2cl, primary]
+2017-01-05 15:00:20 INFO  TableMetadata:66 - HHH000261: Table found: n2.expensedate
+2017-01-05 15:00:20 INFO  TableMetadata:67 - HHH000037: Columns: [date, total, id, userid]
+2017-01-05 15:00:20 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:00:20 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 15:00:20 INFO  TableMetadata:66 - HHH000261: Table found: n2.menu
+2017-01-05 15:00:20 INFO  TableMetadata:67 - HHH000037: Columns: [isadmin, icon, name, description, id, url, otherindex]
+2017-01-05 15:00:20 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:00:20 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 15:00:20 INFO  TableMetadata:66 - HHH000261: Table found: n2.spend
+2017-01-05 15:00:20 INFO  TableMetadata:67 - HHH000037: Columns: [fileattach, name, spend_category, id, value, parentid]
+2017-01-05 15:00:20 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_3fnehs407empyoqsqgnxksphj]
+2017-01-05 15:00:20 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_3fnehs407empyoqsqgnxksphj, primary]
+2017-01-05 15:00:20 INFO  TableMetadata:66 - HHH000261: Table found: n2.spendcategory
+2017-01-05 15:00:20 INFO  TableMetadata:67 - HHH000037: Columns: [total, name, id, date_id, parentid]
+2017-01-05 15:00:20 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_oohqj8l247v9c33bd747so0l1]
+2017-01-05 15:00:20 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_oohqj8l247v9c33bd747so0l1, primary]
+2017-01-05 15:00:20 INFO  TableMetadata:66 - HHH000261: Table found: n2.submenu
+2017-01-05 15:00:20 INFO  TableMetadata:67 - HHH000037: Columns: [icon, name, description, id, url, menu_id, otherindex]
+2017-01-05 15:00:20 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_ld5aoy95uhip39yxullnk7mgd]
+2017-01-05 15:00:20 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_ld5aoy95uhip39yxullnk7mgd, primary]
+2017-01-05 15:00:20 INFO  TableMetadata:66 - HHH000261: Table found: n2.user_profile
+2017-01-05 15:00:20 INFO  TableMetadata:67 - HHH000037: Columns: [id, type]
+2017-01-05 15:00:20 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:00:20 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_cva7m2blp7ekclxworqxau1l7, primary]
+2017-01-05 15:00:20 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2017-01-05 15:00:21 INFO  MessageI18N:19 - MessageI18N load file messge message-vn.properties
+2017-01-05 15:00:21 INFO  HibernateTransactionManager:360 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@2d634a77] of Hibernate SessionFactory for HibernateTransactionManager
+2017-01-05 15:00:21 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize],methods=[POST],params=[user_oauth_approval]}" onto public org.springframework.web.servlet.View org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(java.util.Map<java.lang.String, java.lang.String>,java.util.Map<java.lang.String, ?>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 15:00:21 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize(java.util.Map<java.lang.String, java.lang.Object>,java.util.Map<java.lang.String, java.lang.String>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 15:00:21 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.getAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 15:00:21 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 15:00:21 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/check_token]}" onto public java.util.Map<java.lang.String, ?> org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint.checkToken(java.lang.String)
+2017-01-05 15:00:21 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/confirm_access]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.getAccessConfirmation(java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2017-01-05 15:00:21 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/error]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelErrorEndpoint.handleError(javax.servlet.http.HttpServletRequest)
+2017-01-05 15:00:23 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-01-05 15:00:23 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b10eeee, org.springframework.security.web.context.SecurityContextPersistenceFilter@25c990dc, org.springframework.security.web.header.HeaderWriterFilter@7010c324, org.springframework.security.web.authentication.logout.LogoutFilter@46d3ad81, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3f130c3a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4408afb7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@728ae0a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4a6d9599, org.springframework.security.web.session.SessionManagementFilter@793cde97, org.springframework.security.web.access.ExceptionTranslationFilter@79b996b0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@fbac372]
+2017-01-05 15:00:23 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b7d76b0, org.springframework.security.web.context.SecurityContextPersistenceFilter@32f06d5b, org.springframework.security.web.header.HeaderWriterFilter@73c4c2c8, org.springframework.security.web.authentication.logout.LogoutFilter@3499475e, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@afffa97, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3647c498, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63c0821a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@475c9aa7, org.springframework.security.web.session.SessionManagementFilter@5b718feb, org.springframework.security.web.access.ExceptionTranslationFilter@18939401, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a9d4b37]
+2017-01-05 15:00:23 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1acac24a, org.springframework.security.web.context.SecurityContextPersistenceFilter@15a77eeb, org.springframework.security.web.header.HeaderWriterFilter@7a191653, org.springframework.security.web.authentication.logout.LogoutFilter@1257f130, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@288e0ee8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a972e24, org.springframework.security.web.session.SessionManagementFilter@586a1442, org.springframework.security.web.access.ExceptionTranslationFilter@2a62eed1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6abe7687]
+2017-01-05 15:00:24 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-05 15:00:24 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Thu Jan 05 15:00:16 ICT 2017]; root of context hierarchy
+2017-01-05 15:00:24 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/expense],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.ExpenseDateDTO>> com.n2.portal.controller.ExpenseController.getExpenses(int,int)
+2017-01-05 15:00:24 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/menu],methods=[GET],produces=[application/json]}" onto public java.util.List<com.n2.portal.model.menu.Menu> com.n2.portal.controller.MenuController.getMenus()
+2017-01-05 15:00:24 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.SpendDTO>> com.n2.portal.controller.SpendController.getAll(java.lang.String)
+2017-01-05 15:00:24 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.n2.portal.model.expense.SpendCategory> com.n2.portal.controller.SpendController.saveSpendCategory(java.lang.String,java.lang.String)
+2017-01-05 15:00:24 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/user],methods=[GET]}" onto public com.n2.portal.model.User com.n2.portal.controller.UserController.getUserCurrent()
+2017-01-05 15:00:24 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/logout],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.n2.portal.controller.UserController.logout(javax.servlet.http.HttpServletRequest)
+2017-01-05 15:00:24 INFO  SimpleUrlHandlerMapping:341 - Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-05 15:00:24 INFO  ContextLoader:345 - Root WebApplicationContext: initialization completed in 8214 ms
+2017-01-05 15:00:24 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2017-01-05 15:00:24 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jan 05 15:00:24 ICT 2017]; parent: Root WebApplicationContext
+2017-01-05 15:00:24 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 15:00:24 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 83 ms
+2017-01-05 15:00:36 INFO  TokenEndpoint:178 - Handling error: InvalidGrantException, Invalid refresh token: 7c276f08-e049-475c-91ab-76cb069e6035
+2017-01-05 15:02:43 INFO  ContextLoader:305 - Root WebApplicationContext: initialization started
+2017-01-05 15:02:43 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing Root WebApplicationContext: startup date [Thu Jan 05 15:02:43 ICT 2017]; root of context hierarchy
+2017-01-05 15:02:43 INFO  AnnotationConfigWebApplicationContext:207 - Registering annotated classes: [class com.n2.portal.configuration.core.N2Configuration]
+2017-01-05 15:02:43 WARN  ConfigurationClassPostProcessor:386 - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-01-05 15:02:44 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 15:02:45 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-01-05 15:02:45 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-05 15:02:45 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2017-01-05 15:02:45 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-01-05 15:02:45 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-01-05 15:02:46 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-01-05 15:02:46 WARN  RootClass:288 - HHH000038: Composite-id class does not override equals(): com.n2.portal.model.expense.Spend
+2017-01-05 15:02:46 WARN  RootClass:289 - HHH000039: Composite-id class does not override hashCode(): com.n2.portal.model.expense.Spend
+2017-01-05 15:02:46 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-05 15:02:46 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-05 15:02:46 INFO  Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2017-01-05 15:02:47 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2017-01-05 15:02:47 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2017-01-05 15:02:47 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2017-01-05 15:02:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user
+2017-01-05 15:02:47 INFO  TableMetadata:67 - HHH000037: Columns: [password, last_name, id, state, first_name, email, sso_id]
+2017-01-05 15:02:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:02:47 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_hqk6uc88j3imq8u9jhro36vt3, primary]
+2017-01-05 15:02:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user_user_profile
+2017-01-05 15:02:47 INFO  TableMetadata:67 - HHH000037: Columns: [user_id, user_profile_id]
+2017-01-05 15:02:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_brmce0t584euix4wb4rursf1q, fk_gs2lq4vmukguubh36utd4r2cl]
+2017-01-05 15:02:47 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_gs2lq4vmukguubh36utd4r2cl, primary]
+2017-01-05 15:02:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.expensedate
+2017-01-05 15:02:47 INFO  TableMetadata:67 - HHH000037: Columns: [date, total, id, userid]
+2017-01-05 15:02:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:02:47 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 15:02:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.menu
+2017-01-05 15:02:47 INFO  TableMetadata:67 - HHH000037: Columns: [isadmin, icon, name, description, id, url, otherindex]
+2017-01-05 15:02:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:02:47 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 15:02:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.spend
+2017-01-05 15:02:47 INFO  TableMetadata:67 - HHH000037: Columns: [fileattach, name, spend_category, id, value, parentid]
+2017-01-05 15:02:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_3fnehs407empyoqsqgnxksphj]
+2017-01-05 15:02:47 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_3fnehs407empyoqsqgnxksphj, primary]
+2017-01-05 15:02:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.spendcategory
+2017-01-05 15:02:47 INFO  TableMetadata:67 - HHH000037: Columns: [total, name, id, date_id, parentid]
+2017-01-05 15:02:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_oohqj8l247v9c33bd747so0l1]
+2017-01-05 15:02:47 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_oohqj8l247v9c33bd747so0l1, primary]
+2017-01-05 15:02:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.submenu
+2017-01-05 15:02:47 INFO  TableMetadata:67 - HHH000037: Columns: [icon, name, description, id, url, menu_id, otherindex]
+2017-01-05 15:02:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_ld5aoy95uhip39yxullnk7mgd]
+2017-01-05 15:02:47 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_ld5aoy95uhip39yxullnk7mgd, primary]
+2017-01-05 15:02:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.user_profile
+2017-01-05 15:02:47 INFO  TableMetadata:67 - HHH000037: Columns: [id, type]
+2017-01-05 15:02:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:02:47 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_cva7m2blp7ekclxworqxau1l7, primary]
+2017-01-05 15:02:47 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2017-01-05 15:02:48 INFO  MessageI18N:19 - MessageI18N load file messge message-vn.properties
+2017-01-05 15:02:48 INFO  HibernateTransactionManager:360 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@621f525a] of Hibernate SessionFactory for HibernateTransactionManager
+2017-01-05 15:02:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize],methods=[POST],params=[user_oauth_approval]}" onto public org.springframework.web.servlet.View org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(java.util.Map<java.lang.String, java.lang.String>,java.util.Map<java.lang.String, ?>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 15:02:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize(java.util.Map<java.lang.String, java.lang.Object>,java.util.Map<java.lang.String, java.lang.String>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 15:02:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 15:02:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.getAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 15:02:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/check_token]}" onto public java.util.Map<java.lang.String, ?> org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint.checkToken(java.lang.String)
+2017-01-05 15:02:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/confirm_access]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.getAccessConfirmation(java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2017-01-05 15:02:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/error]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelErrorEndpoint.handleError(javax.servlet.http.HttpServletRequest)
+2017-01-05 15:02:49 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-01-05 15:02:50 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@736099eb, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a3a72a2, org.springframework.security.web.header.HeaderWriterFilter@76185de3, org.springframework.security.web.authentication.logout.LogoutFilter@575813fa, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@639f5e8e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23553bc3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@620f0899, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7a26cb73, org.springframework.security.web.session.SessionManagementFilter@571e0b8d, org.springframework.security.web.access.ExceptionTranslationFilter@6dcbb52, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7898e18a]
+2017-01-05 15:02:50 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d31c608, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f7d3b58, org.springframework.security.web.header.HeaderWriterFilter@b644cfa, org.springframework.security.web.authentication.logout.LogoutFilter@5471c24d, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@7f7989f8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@72ebc54b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b415470, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c28618b, org.springframework.security.web.session.SessionManagementFilter@6fec0a67, org.springframework.security.web.access.ExceptionTranslationFilter@234dd2de, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5a6ff7e]
+2017-01-05 15:02:50 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3022b2c5, org.springframework.security.web.context.SecurityContextPersistenceFilter@13170304, org.springframework.security.web.header.HeaderWriterFilter@7aafffbf, org.springframework.security.web.authentication.logout.LogoutFilter@2e8ce043, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ed1cb81, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b068be3, org.springframework.security.web.session.SessionManagementFilter@32c6e921, org.springframework.security.web.access.ExceptionTranslationFilter@157511c6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@73843861]
+2017-01-05 15:02:50 INFO  SimpleUrlHandlerMapping:341 - Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-05 15:02:51 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Thu Jan 05 15:02:43 ICT 2017]; root of context hierarchy
+2017-01-05 15:02:51 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-05 15:02:51 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/expense],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.ExpenseDateDTO>> com.n2.portal.controller.ExpenseController.getExpenses(int,int)
+2017-01-05 15:02:51 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/menu],methods=[GET],produces=[application/json]}" onto public java.util.List<com.n2.portal.model.menu.Menu> com.n2.portal.controller.MenuController.getMenus()
+2017-01-05 15:02:51 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.SpendDTO>> com.n2.portal.controller.SpendController.getAll(java.lang.String)
+2017-01-05 15:02:51 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.n2.portal.model.expense.SpendCategory> com.n2.portal.controller.SpendController.saveSpendCategory(java.lang.String,java.lang.String)
+2017-01-05 15:02:51 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/logout],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.n2.portal.controller.UserController.logout(javax.servlet.http.HttpServletRequest)
+2017-01-05 15:02:51 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/user],methods=[GET]}" onto public com.n2.portal.model.User com.n2.portal.controller.UserController.getUserCurrent()
+2017-01-05 15:02:51 INFO  ContextLoader:345 - Root WebApplicationContext: initialization completed in 8406 ms
+2017-01-05 15:02:51 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2017-01-05 15:02:51 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jan 05 15:02:51 ICT 2017]; parent: Root WebApplicationContext
+2017-01-05 15:02:51 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 15:02:51 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 73 ms
+2017-01-05 15:03:00 INFO  TokenEndpoint:178 - Handling error: InvalidGrantException, Invalid refresh token: 94aa15f7-dfe7-4cd3-a16a-d0ad424e4ce9
+2017-01-05 15:05:11 INFO  ContextLoader:305 - Root WebApplicationContext: initialization started
+2017-01-05 15:05:11 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing Root WebApplicationContext: startup date [Thu Jan 05 15:05:11 ICT 2017]; root of context hierarchy
+2017-01-05 15:05:11 INFO  AnnotationConfigWebApplicationContext:207 - Registering annotated classes: [class com.n2.portal.configuration.core.N2Configuration]
+2017-01-05 15:05:12 WARN  ConfigurationClassPostProcessor:386 - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-01-05 15:05:12 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 15:05:13 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-01-05 15:05:13 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-05 15:05:13 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2017-01-05 15:05:13 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-01-05 15:05:13 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-01-05 15:05:14 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-01-05 15:05:14 WARN  RootClass:288 - HHH000038: Composite-id class does not override equals(): com.n2.portal.model.expense.Spend
+2017-01-05 15:05:14 WARN  RootClass:289 - HHH000039: Composite-id class does not override hashCode(): com.n2.portal.model.expense.Spend
+2017-01-05 15:05:14 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-05 15:05:14 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-05 15:05:14 INFO  Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2017-01-05 15:05:15 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2017-01-05 15:05:15 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2017-01-05 15:05:15 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2017-01-05 15:05:15 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user
+2017-01-05 15:05:15 INFO  TableMetadata:67 - HHH000037: Columns: [password, last_name, id, state, first_name, email, sso_id]
+2017-01-05 15:05:15 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:05:15 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_hqk6uc88j3imq8u9jhro36vt3, primary]
+2017-01-05 15:05:15 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user_user_profile
+2017-01-05 15:05:15 INFO  TableMetadata:67 - HHH000037: Columns: [user_id, user_profile_id]
+2017-01-05 15:05:15 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_brmce0t584euix4wb4rursf1q, fk_gs2lq4vmukguubh36utd4r2cl]
+2017-01-05 15:05:15 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_gs2lq4vmukguubh36utd4r2cl, primary]
+2017-01-05 15:05:15 INFO  TableMetadata:66 - HHH000261: Table found: n2.expensedate
+2017-01-05 15:05:15 INFO  TableMetadata:67 - HHH000037: Columns: [date, total, id, userid]
+2017-01-05 15:05:15 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:05:15 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 15:05:15 INFO  TableMetadata:66 - HHH000261: Table found: n2.menu
+2017-01-05 15:05:15 INFO  TableMetadata:67 - HHH000037: Columns: [isadmin, icon, name, description, id, url, otherindex]
+2017-01-05 15:05:15 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:05:15 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 15:05:15 INFO  TableMetadata:66 - HHH000261: Table found: n2.spend
+2017-01-05 15:05:15 INFO  TableMetadata:67 - HHH000037: Columns: [fileattach, name, spend_category, id, value, parentid]
+2017-01-05 15:05:15 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_3fnehs407empyoqsqgnxksphj]
+2017-01-05 15:05:15 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_3fnehs407empyoqsqgnxksphj, primary]
+2017-01-05 15:05:15 INFO  TableMetadata:66 - HHH000261: Table found: n2.spendcategory
+2017-01-05 15:05:15 INFO  TableMetadata:67 - HHH000037: Columns: [total, name, id, date_id, parentid]
+2017-01-05 15:05:15 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_oohqj8l247v9c33bd747so0l1]
+2017-01-05 15:05:15 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_oohqj8l247v9c33bd747so0l1, primary]
+2017-01-05 15:05:15 INFO  TableMetadata:66 - HHH000261: Table found: n2.submenu
+2017-01-05 15:05:15 INFO  TableMetadata:67 - HHH000037: Columns: [icon, name, description, id, url, menu_id, otherindex]
+2017-01-05 15:05:15 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_ld5aoy95uhip39yxullnk7mgd]
+2017-01-05 15:05:15 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_ld5aoy95uhip39yxullnk7mgd, primary]
+2017-01-05 15:05:15 INFO  TableMetadata:66 - HHH000261: Table found: n2.user_profile
+2017-01-05 15:05:15 INFO  TableMetadata:67 - HHH000037: Columns: [id, type]
+2017-01-05 15:05:15 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:05:15 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_cva7m2blp7ekclxworqxau1l7, primary]
+2017-01-05 15:05:15 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2017-01-05 15:05:16 INFO  MessageI18N:19 - MessageI18N load file messge message-vn.properties
+2017-01-05 15:05:16 INFO  HibernateTransactionManager:360 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@5b9b780a] of Hibernate SessionFactory for HibernateTransactionManager
+2017-01-05 15:05:16 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize(java.util.Map<java.lang.String, java.lang.Object>,java.util.Map<java.lang.String, java.lang.String>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 15:05:16 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize],methods=[POST],params=[user_oauth_approval]}" onto public org.springframework.web.servlet.View org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(java.util.Map<java.lang.String, java.lang.String>,java.util.Map<java.lang.String, ?>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 15:05:16 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.getAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 15:05:16 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 15:05:16 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/check_token]}" onto public java.util.Map<java.lang.String, ?> org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint.checkToken(java.lang.String)
+2017-01-05 15:05:16 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/confirm_access]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.getAccessConfirmation(java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2017-01-05 15:05:16 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/error]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelErrorEndpoint.handleError(javax.servlet.http.HttpServletRequest)
+2017-01-05 15:05:17 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-01-05 15:05:18 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37b12fd, org.springframework.security.web.context.SecurityContextPersistenceFilter@187df820, org.springframework.security.web.header.HeaderWriterFilter@21b2d073, org.springframework.security.web.authentication.logout.LogoutFilter@1ff6b165, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@475085ef, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3264f12d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51dd85db, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a33f029, org.springframework.security.web.session.SessionManagementFilter@4e240b44, org.springframework.security.web.access.ExceptionTranslationFilter@1faf988a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@a225490]
+2017-01-05 15:05:18 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f53d0a9, org.springframework.security.web.context.SecurityContextPersistenceFilter@6cec651b, org.springframework.security.web.header.HeaderWriterFilter@5c2f0504, org.springframework.security.web.authentication.logout.LogoutFilter@4ad91f4b, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@345024ab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f9f7b42, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b3c4690, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@73cfd76e, org.springframework.security.web.session.SessionManagementFilter@16c0f69a, org.springframework.security.web.access.ExceptionTranslationFilter@79bd5ba7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3f063739]
+2017-01-05 15:05:18 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f27bc3f, org.springframework.security.web.context.SecurityContextPersistenceFilter@76cabb2c, org.springframework.security.web.header.HeaderWriterFilter@1b5b653d, org.springframework.security.web.authentication.logout.LogoutFilter@3e70c967, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1340c04b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53f22d93, org.springframework.security.web.session.SessionManagementFilter@7723598b, org.springframework.security.web.access.ExceptionTranslationFilter@34ba3aa4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@724826de]
+2017-01-05 15:05:18 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/expense],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.ExpenseDateDTO>> com.n2.portal.controller.ExpenseController.getExpenses(int,int)
+2017-01-05 15:05:18 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/menu],methods=[GET],produces=[application/json]}" onto public java.util.List<com.n2.portal.model.menu.Menu> com.n2.portal.controller.MenuController.getMenus()
+2017-01-05 15:05:18 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.SpendDTO>> com.n2.portal.controller.SpendController.getAll(java.lang.String)
+2017-01-05 15:05:18 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.n2.portal.model.expense.SpendCategory> com.n2.portal.controller.SpendController.saveSpendCategory(java.lang.String,java.lang.String)
+2017-01-05 15:05:18 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/logout],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.n2.portal.controller.UserController.logout(javax.servlet.http.HttpServletRequest)
+2017-01-05 15:05:18 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/user],methods=[GET]}" onto public com.n2.portal.model.User com.n2.portal.controller.UserController.getUserCurrent()
+2017-01-05 15:05:18 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-05 15:05:18 INFO  SimpleUrlHandlerMapping:341 - Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-05 15:05:18 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Thu Jan 05 15:05:11 ICT 2017]; root of context hierarchy
+2017-01-05 15:05:19 INFO  ContextLoader:345 - Root WebApplicationContext: initialization completed in 7346 ms
+2017-01-05 15:05:19 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2017-01-05 15:05:19 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jan 05 15:05:19 ICT 2017]; parent: Root WebApplicationContext
+2017-01-05 15:05:19 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 15:05:19 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 68 ms
+2017-01-05 15:06:34 INFO  TokenEndpoint:178 - Handling error: InvalidGrantException, Invalid refresh token: 813f4bc2-3726-4cc3-beea-502fda7e74e3
+2017-01-05 15:22:57 INFO  ContextLoader:305 - Root WebApplicationContext: initialization started
+2017-01-05 15:22:57 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing Root WebApplicationContext: startup date [Thu Jan 05 15:22:57 ICT 2017]; root of context hierarchy
+2017-01-05 15:22:57 INFO  AnnotationConfigWebApplicationContext:207 - Registering annotated classes: [class com.n2.portal.configuration.core.N2Configuration]
+2017-01-05 15:22:57 WARN  ConfigurationClassPostProcessor:386 - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-01-05 15:22:58 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 15:22:58 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-01-05 15:22:59 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-05 15:22:59 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2017-01-05 15:22:59 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-01-05 15:22:59 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-01-05 15:22:59 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-01-05 15:23:00 WARN  RootClass:288 - HHH000038: Composite-id class does not override equals(): com.n2.portal.model.expense.Spend
+2017-01-05 15:23:00 WARN  RootClass:289 - HHH000039: Composite-id class does not override hashCode(): com.n2.portal.model.expense.Spend
+2017-01-05 15:23:00 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-05 15:23:00 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-05 15:23:00 INFO  Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2017-01-05 15:23:01 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2017-01-05 15:23:01 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2017-01-05 15:23:01 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2017-01-05 15:23:01 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user
+2017-01-05 15:23:01 INFO  TableMetadata:67 - HHH000037: Columns: [password, last_name, id, state, first_name, email, sso_id]
+2017-01-05 15:23:01 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:23:01 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_hqk6uc88j3imq8u9jhro36vt3, primary]
+2017-01-05 15:23:01 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user_user_profile
+2017-01-05 15:23:01 INFO  TableMetadata:67 - HHH000037: Columns: [user_id, user_profile_id]
+2017-01-05 15:23:01 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_brmce0t584euix4wb4rursf1q, fk_gs2lq4vmukguubh36utd4r2cl]
+2017-01-05 15:23:01 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_gs2lq4vmukguubh36utd4r2cl, primary]
+2017-01-05 15:23:01 INFO  TableMetadata:66 - HHH000261: Table found: n2.expensedate
+2017-01-05 15:23:01 INFO  TableMetadata:67 - HHH000037: Columns: [date, total, id, userid]
+2017-01-05 15:23:01 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:23:01 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 15:23:01 INFO  TableMetadata:66 - HHH000261: Table found: n2.menu
+2017-01-05 15:23:01 INFO  TableMetadata:67 - HHH000037: Columns: [isadmin, icon, name, description, id, url, otherindex]
+2017-01-05 15:23:01 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:23:01 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 15:23:01 INFO  TableMetadata:66 - HHH000261: Table found: n2.spend
+2017-01-05 15:23:01 INFO  TableMetadata:67 - HHH000037: Columns: [fileattach, name, spend_category, id, value, parentid]
+2017-01-05 15:23:01 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_3fnehs407empyoqsqgnxksphj]
+2017-01-05 15:23:01 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_3fnehs407empyoqsqgnxksphj, primary]
+2017-01-05 15:23:01 INFO  TableMetadata:66 - HHH000261: Table found: n2.spendcategory
+2017-01-05 15:23:01 INFO  TableMetadata:67 - HHH000037: Columns: [total, name, id, date_id, parentid]
+2017-01-05 15:23:01 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_oohqj8l247v9c33bd747so0l1]
+2017-01-05 15:23:01 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_oohqj8l247v9c33bd747so0l1, primary]
+2017-01-05 15:23:01 INFO  TableMetadata:66 - HHH000261: Table found: n2.submenu
+2017-01-05 15:23:01 INFO  TableMetadata:67 - HHH000037: Columns: [icon, name, description, id, url, menu_id, otherindex]
+2017-01-05 15:23:01 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_ld5aoy95uhip39yxullnk7mgd]
+2017-01-05 15:23:01 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_ld5aoy95uhip39yxullnk7mgd, primary]
+2017-01-05 15:23:01 INFO  TableMetadata:66 - HHH000261: Table found: n2.user_profile
+2017-01-05 15:23:01 INFO  TableMetadata:67 - HHH000037: Columns: [id, type]
+2017-01-05 15:23:01 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:23:01 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_cva7m2blp7ekclxworqxau1l7, primary]
+2017-01-05 15:23:01 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2017-01-05 15:23:01 INFO  MessageI18N:19 - MessageI18N load file messge message-vn.properties
+2017-01-05 15:23:02 INFO  HibernateTransactionManager:360 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@19e5312] of Hibernate SessionFactory for HibernateTransactionManager
+2017-01-05 15:23:02 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize(java.util.Map<java.lang.String, java.lang.Object>,java.util.Map<java.lang.String, java.lang.String>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 15:23:02 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize],methods=[POST],params=[user_oauth_approval]}" onto public org.springframework.web.servlet.View org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(java.util.Map<java.lang.String, java.lang.String>,java.util.Map<java.lang.String, ?>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 15:23:02 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 15:23:02 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.getAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 15:23:02 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/check_token]}" onto public java.util.Map<java.lang.String, ?> org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint.checkToken(java.lang.String)
+2017-01-05 15:23:02 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/confirm_access]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.getAccessConfirmation(java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2017-01-05 15:23:02 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/error]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelErrorEndpoint.handleError(javax.servlet.http.HttpServletRequest)
+2017-01-05 15:23:03 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-01-05 15:23:03 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77835813, org.springframework.security.web.context.SecurityContextPersistenceFilter@670d24de, org.springframework.security.web.header.HeaderWriterFilter@5005bedc, org.springframework.security.web.authentication.logout.LogoutFilter@3e4123a9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3ee74e15, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76d7fc30, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1baeab62, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5fbf5d63, org.springframework.security.web.session.SessionManagementFilter@6d5ffb84, org.springframework.security.web.access.ExceptionTranslationFilter@20b78102, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5e47a2e8]
+2017-01-05 15:23:03 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1475528a, org.springframework.security.web.context.SecurityContextPersistenceFilter@147db85c, org.springframework.security.web.header.HeaderWriterFilter@21386aa, org.springframework.security.web.authentication.logout.LogoutFilter@3ed5a86e, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@1aebab1c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@243873b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c7b670f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1503e64c, org.springframework.security.web.session.SessionManagementFilter@4b0d203e, org.springframework.security.web.access.ExceptionTranslationFilter@d437d7d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@51dcaf4b]
+2017-01-05 15:23:03 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43b37529, org.springframework.security.web.context.SecurityContextPersistenceFilter@11930dee, org.springframework.security.web.header.HeaderWriterFilter@16060248, org.springframework.security.web.authentication.logout.LogoutFilter@5b5b4b2c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c641785, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@ad64403, org.springframework.security.web.session.SessionManagementFilter@3e8dfa37, org.springframework.security.web.access.ExceptionTranslationFilter@699a9a1b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6737a87a]
+2017-01-05 15:23:04 INFO  SimpleUrlHandlerMapping:341 - Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-05 15:23:04 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-05 15:23:04 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Thu Jan 05 15:22:57 ICT 2017]; root of context hierarchy
+2017-01-05 15:23:04 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/expense],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.ExpenseDateDTO>> com.n2.portal.controller.ExpenseController.getExpenses(int,int)
+2017-01-05 15:23:04 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/menu],methods=[GET],produces=[application/json]}" onto public java.util.List<com.n2.portal.model.menu.Menu> com.n2.portal.controller.MenuController.getMenus()
+2017-01-05 15:23:04 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.model.expense.SpendCategory>> com.n2.portal.controller.SpendController.getAll(java.lang.String)
+2017-01-05 15:23:04 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.n2.portal.model.expense.SpendCategory> com.n2.portal.controller.SpendController.saveSpendCategory(java.lang.String,java.lang.String)
+2017-01-05 15:23:04 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/logout],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.n2.portal.controller.UserController.logout(javax.servlet.http.HttpServletRequest)
+2017-01-05 15:23:04 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/user],methods=[GET]}" onto public com.n2.portal.model.User com.n2.portal.controller.UserController.getUserCurrent()
+2017-01-05 15:23:04 INFO  ContextLoader:345 - Root WebApplicationContext: initialization completed in 7618 ms
+2017-01-05 15:23:04 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2017-01-05 15:23:04 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jan 05 15:23:04 ICT 2017]; parent: Root WebApplicationContext
+2017-01-05 15:23:04 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 15:23:04 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 69 ms
+2017-01-05 15:23:09 INFO  TokenEndpoint:178 - Handling error: InvalidGrantException, Invalid refresh token: bf7dd58a-7bb3-4847-8966-765ef9c7abcb
+2017-01-05 15:24:41 INFO  ContextLoader:305 - Root WebApplicationContext: initialization started
+2017-01-05 15:24:41 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing Root WebApplicationContext: startup date [Thu Jan 05 15:24:41 ICT 2017]; root of context hierarchy
+2017-01-05 15:24:41 INFO  AnnotationConfigWebApplicationContext:207 - Registering annotated classes: [class com.n2.portal.configuration.core.N2Configuration]
+2017-01-05 15:24:41 WARN  ConfigurationClassPostProcessor:386 - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-01-05 15:24:42 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 15:24:43 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-01-05 15:24:43 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-05 15:24:43 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2017-01-05 15:24:43 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-01-05 15:24:43 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-01-05 15:24:43 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-01-05 15:24:44 WARN  RootClass:288 - HHH000038: Composite-id class does not override equals(): com.n2.portal.model.expense.Spend
+2017-01-05 15:24:44 WARN  RootClass:289 - HHH000039: Composite-id class does not override hashCode(): com.n2.portal.model.expense.Spend
+2017-01-05 15:24:44 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-05 15:24:44 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-05 15:24:44 INFO  Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2017-01-05 15:24:45 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2017-01-05 15:24:45 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2017-01-05 15:24:45 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2017-01-05 15:24:45 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user
+2017-01-05 15:24:45 INFO  TableMetadata:67 - HHH000037: Columns: [password, last_name, id, state, first_name, email, sso_id]
+2017-01-05 15:24:45 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:24:45 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_hqk6uc88j3imq8u9jhro36vt3, primary]
+2017-01-05 15:24:45 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user_user_profile
+2017-01-05 15:24:45 INFO  TableMetadata:67 - HHH000037: Columns: [user_id, user_profile_id]
+2017-01-05 15:24:45 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_brmce0t584euix4wb4rursf1q, fk_gs2lq4vmukguubh36utd4r2cl]
+2017-01-05 15:24:45 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_gs2lq4vmukguubh36utd4r2cl, primary]
+2017-01-05 15:24:45 INFO  TableMetadata:66 - HHH000261: Table found: n2.expensedate
+2017-01-05 15:24:45 INFO  TableMetadata:67 - HHH000037: Columns: [date, total, id, userid]
+2017-01-05 15:24:45 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:24:45 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 15:24:45 INFO  TableMetadata:66 - HHH000261: Table found: n2.menu
+2017-01-05 15:24:45 INFO  TableMetadata:67 - HHH000037: Columns: [isadmin, icon, name, description, id, url, otherindex]
+2017-01-05 15:24:45 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:24:45 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 15:24:45 INFO  TableMetadata:66 - HHH000261: Table found: n2.spend
+2017-01-05 15:24:45 INFO  TableMetadata:67 - HHH000037: Columns: [fileattach, name, spend_category, id, value, parentid]
+2017-01-05 15:24:45 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_3fnehs407empyoqsqgnxksphj]
+2017-01-05 15:24:45 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_3fnehs407empyoqsqgnxksphj, primary]
+2017-01-05 15:24:45 INFO  TableMetadata:66 - HHH000261: Table found: n2.spendcategory
+2017-01-05 15:24:45 INFO  TableMetadata:67 - HHH000037: Columns: [total, name, id, date_id, parentid]
+2017-01-05 15:24:45 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_oohqj8l247v9c33bd747so0l1]
+2017-01-05 15:24:45 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_oohqj8l247v9c33bd747so0l1, primary]
+2017-01-05 15:24:45 INFO  TableMetadata:66 - HHH000261: Table found: n2.submenu
+2017-01-05 15:24:45 INFO  TableMetadata:67 - HHH000037: Columns: [icon, name, description, id, url, menu_id, otherindex]
+2017-01-05 15:24:45 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_ld5aoy95uhip39yxullnk7mgd]
+2017-01-05 15:24:45 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_ld5aoy95uhip39yxullnk7mgd, primary]
+2017-01-05 15:24:45 INFO  TableMetadata:66 - HHH000261: Table found: n2.user_profile
+2017-01-05 15:24:45 INFO  TableMetadata:67 - HHH000037: Columns: [id, type]
+2017-01-05 15:24:45 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 15:24:45 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_cva7m2blp7ekclxworqxau1l7, primary]
+2017-01-05 15:24:45 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2017-01-05 15:24:45 INFO  MessageI18N:19 - MessageI18N load file messge message-vn.properties
+2017-01-05 15:24:46 INFO  HibernateTransactionManager:360 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@430fbd88] of Hibernate SessionFactory for HibernateTransactionManager
+2017-01-05 15:24:46 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize],methods=[POST],params=[user_oauth_approval]}" onto public org.springframework.web.servlet.View org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(java.util.Map<java.lang.String, java.lang.String>,java.util.Map<java.lang.String, ?>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 15:24:46 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize(java.util.Map<java.lang.String, java.lang.Object>,java.util.Map<java.lang.String, java.lang.String>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 15:24:46 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.getAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 15:24:46 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 15:24:46 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/check_token]}" onto public java.util.Map<java.lang.String, ?> org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint.checkToken(java.lang.String)
+2017-01-05 15:24:46 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/confirm_access]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.getAccessConfirmation(java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2017-01-05 15:24:46 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/error]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelErrorEndpoint.handleError(javax.servlet.http.HttpServletRequest)
+2017-01-05 15:24:47 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-01-05 15:24:47 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69ebc47e, org.springframework.security.web.context.SecurityContextPersistenceFilter@679bbd66, org.springframework.security.web.header.HeaderWriterFilter@740152fc, org.springframework.security.web.authentication.logout.LogoutFilter@1a14ee19, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3e373e59, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@63b1ef58, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53310110, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@288abb46, org.springframework.security.web.session.SessionManagementFilter@7791f5e7, org.springframework.security.web.access.ExceptionTranslationFilter@6f3e4cca, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4650b5df]
+2017-01-05 15:24:47 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30e8fcc1, org.springframework.security.web.context.SecurityContextPersistenceFilter@704d4025, org.springframework.security.web.header.HeaderWriterFilter@66159142, org.springframework.security.web.authentication.logout.LogoutFilter@3dd866fe, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@2a0a16ef, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7ae32e12, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@30b63f8d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1783db9f, org.springframework.security.web.session.SessionManagementFilter@6416449, org.springframework.security.web.access.ExceptionTranslationFilter@3207046a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4cdded8d]
+2017-01-05 15:24:47 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70ae2694, org.springframework.security.web.context.SecurityContextPersistenceFilter@21435328, org.springframework.security.web.header.HeaderWriterFilter@589a72e3, org.springframework.security.web.authentication.logout.LogoutFilter@4653cb62, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@455043af, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e563c8c, org.springframework.security.web.session.SessionManagementFilter@32575b47, org.springframework.security.web.access.ExceptionTranslationFilter@8ed834c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1da54121]
+2017-01-05 15:24:48 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/expense],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.ExpenseDateDTO>> com.n2.portal.controller.ExpenseController.getExpenses(int,int)
+2017-01-05 15:24:48 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/menu],methods=[GET],produces=[application/json]}" onto public java.util.List<com.n2.portal.model.menu.Menu> com.n2.portal.controller.MenuController.getMenus()
+2017-01-05 15:24:48 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.model.expense.SpendCategory>> com.n2.portal.controller.SpendController.getAll(java.lang.String)
+2017-01-05 15:24:48 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.n2.portal.model.expense.SpendCategory> com.n2.portal.controller.SpendController.saveSpendCategory(java.lang.String,java.lang.String)
+2017-01-05 15:24:48 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/logout],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.n2.portal.controller.UserController.logout(javax.servlet.http.HttpServletRequest)
+2017-01-05 15:24:48 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/user],methods=[GET]}" onto public com.n2.portal.model.User com.n2.portal.controller.UserController.getUserCurrent()
+2017-01-05 15:24:48 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-05 15:24:48 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Thu Jan 05 15:24:41 ICT 2017]; root of context hierarchy
+2017-01-05 15:24:48 INFO  SimpleUrlHandlerMapping:341 - Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-05 15:24:48 INFO  ContextLoader:345 - Root WebApplicationContext: initialization completed in 7646 ms
+2017-01-05 15:24:48 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2017-01-05 15:24:48 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jan 05 15:24:48 ICT 2017]; parent: Root WebApplicationContext
+2017-01-05 15:24:48 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 15:24:48 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 62 ms
+2017-01-05 16:15:39 WARN  PageNotFound:1147 - No mapping found for HTTP request with URI [/n2/api/spends] in DispatcherServlet with name 'dispatcher'
+2017-01-05 16:17:16 WARN  PageNotFound:1147 - No mapping found for HTTP request with URI [/n2/api/spends] in DispatcherServlet with name 'dispatcher'
+2017-01-05 16:17:27 WARN  PageNotFound:1147 - No mapping found for HTTP request with URI [/n2/api/spends] in DispatcherServlet with name 'dispatcher'
+2017-01-05 21:35:26 INFO  ContextLoader:305 - Root WebApplicationContext: initialization started
+2017-01-05 21:35:26 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing Root WebApplicationContext: startup date [Thu Jan 05 21:35:26 ICT 2017]; root of context hierarchy
+2017-01-05 21:35:26 INFO  AnnotationConfigWebApplicationContext:207 - Registering annotated classes: [class com.n2.portal.configuration.core.N2Configuration]
+2017-01-05 21:35:27 WARN  ConfigurationClassPostProcessor:386 - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-01-05 21:35:27 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 21:35:28 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-01-05 21:35:28 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-05 21:35:28 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2017-01-05 21:35:28 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-01-05 21:35:28 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-01-05 21:35:29 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-01-05 21:35:29 WARN  RootClass:288 - HHH000038: Composite-id class does not override equals(): com.n2.portal.model.expense.Spend
+2017-01-05 21:35:29 WARN  RootClass:289 - HHH000039: Composite-id class does not override hashCode(): com.n2.portal.model.expense.Spend
+2017-01-05 21:35:29 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-05 21:35:29 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-05 21:35:29 INFO  Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2017-01-05 21:35:30 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2017-01-05 21:35:30 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2017-01-05 21:35:30 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2017-01-05 21:35:30 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user
+2017-01-05 21:35:30 INFO  TableMetadata:67 - HHH000037: Columns: [password, last_name, id, state, first_name, email, sso_id]
+2017-01-05 21:35:30 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 21:35:30 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_hqk6uc88j3imq8u9jhro36vt3, primary]
+2017-01-05 21:35:30 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user_user_profile
+2017-01-05 21:35:30 INFO  TableMetadata:67 - HHH000037: Columns: [user_id, user_profile_id]
+2017-01-05 21:35:30 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_brmce0t584euix4wb4rursf1q, fk_gs2lq4vmukguubh36utd4r2cl]
+2017-01-05 21:35:30 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_gs2lq4vmukguubh36utd4r2cl, primary]
+2017-01-05 21:35:30 INFO  TableMetadata:66 - HHH000261: Table found: n2.expensedate
+2017-01-05 21:35:30 INFO  TableMetadata:67 - HHH000037: Columns: [date, total, id, userid]
+2017-01-05 21:35:30 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 21:35:30 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 21:35:30 INFO  TableMetadata:66 - HHH000261: Table found: n2.menu
+2017-01-05 21:35:30 INFO  TableMetadata:67 - HHH000037: Columns: [isadmin, icon, name, description, id, url, otherindex]
+2017-01-05 21:35:30 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 21:35:30 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-05 21:35:30 INFO  TableMetadata:66 - HHH000261: Table found: n2.spend
+2017-01-05 21:35:30 INFO  TableMetadata:67 - HHH000037: Columns: [fileattach, name, spend_category, id, value, parentid]
+2017-01-05 21:35:30 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_3fnehs407empyoqsqgnxksphj]
+2017-01-05 21:35:30 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_3fnehs407empyoqsqgnxksphj, primary]
+2017-01-05 21:35:30 INFO  TableMetadata:66 - HHH000261: Table found: n2.spendcategory
+2017-01-05 21:35:30 INFO  TableMetadata:67 - HHH000037: Columns: [total, name, id, date_id, parentid]
+2017-01-05 21:35:30 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_oohqj8l247v9c33bd747so0l1]
+2017-01-05 21:35:30 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_oohqj8l247v9c33bd747so0l1, primary]
+2017-01-05 21:35:30 INFO  TableMetadata:66 - HHH000261: Table found: n2.submenu
+2017-01-05 21:35:30 INFO  TableMetadata:67 - HHH000037: Columns: [icon, name, description, id, url, menu_id, otherindex]
+2017-01-05 21:35:30 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_ld5aoy95uhip39yxullnk7mgd]
+2017-01-05 21:35:30 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_ld5aoy95uhip39yxullnk7mgd, primary]
+2017-01-05 21:35:30 INFO  TableMetadata:66 - HHH000261: Table found: n2.user_profile
+2017-01-05 21:35:30 INFO  TableMetadata:67 - HHH000037: Columns: [id, type]
+2017-01-05 21:35:30 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-05 21:35:30 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_cva7m2blp7ekclxworqxau1l7, primary]
+2017-01-05 21:35:30 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2017-01-05 21:35:31 INFO  MessageI18N:19 - MessageI18N load file messge message-vn.properties
+2017-01-05 21:35:31 INFO  HibernateTransactionManager:360 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@12881ad8] of Hibernate SessionFactory for HibernateTransactionManager
+2017-01-05 21:35:31 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize],methods=[POST],params=[user_oauth_approval]}" onto public org.springframework.web.servlet.View org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(java.util.Map<java.lang.String, java.lang.String>,java.util.Map<java.lang.String, ?>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 21:35:31 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize(java.util.Map<java.lang.String, java.lang.Object>,java.util.Map<java.lang.String, java.lang.String>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-05 21:35:31 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.getAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 21:35:31 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-05 21:35:31 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/check_token]}" onto public java.util.Map<java.lang.String, ?> org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint.checkToken(java.lang.String)
+2017-01-05 21:35:31 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/confirm_access]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.getAccessConfirmation(java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2017-01-05 21:35:31 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/error]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelErrorEndpoint.handleError(javax.servlet.http.HttpServletRequest)
+2017-01-05 21:35:32 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-01-05 21:35:33 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@740d7da9, org.springframework.security.web.context.SecurityContextPersistenceFilter@6cbc7efa, org.springframework.security.web.header.HeaderWriterFilter@1ca47c6c, org.springframework.security.web.authentication.logout.LogoutFilter@3a334206, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@633d1503, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1bda4c18, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2fef29ed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26e7c707, org.springframework.security.web.session.SessionManagementFilter@57d6ae49, org.springframework.security.web.access.ExceptionTranslationFilter@ad4c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@737d6f6]
+2017-01-05 21:35:33 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d23665, org.springframework.security.web.context.SecurityContextPersistenceFilter@3d66391e, org.springframework.security.web.header.HeaderWriterFilter@64d90dc7, org.springframework.security.web.authentication.logout.LogoutFilter@69b44fde, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@59d66fa2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74109c12, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@588b1062, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3730729a, org.springframework.security.web.session.SessionManagementFilter@5a9d6277, org.springframework.security.web.access.ExceptionTranslationFilter@5a9265ad, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7acf8e27]
+2017-01-05 21:35:33 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@9d9a263, org.springframework.security.web.context.SecurityContextPersistenceFilter@5167547e, org.springframework.security.web.header.HeaderWriterFilter@253aa1a7, org.springframework.security.web.authentication.logout.LogoutFilter@3fb70287, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c026559, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c45cce7, org.springframework.security.web.session.SessionManagementFilter@76b0b62e, org.springframework.security.web.access.ExceptionTranslationFilter@4295e3a8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e7bb92a]
+2017-01-05 21:35:33 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Thu Jan 05 21:35:26 ICT 2017]; root of context hierarchy
+2017-01-05 21:35:33 INFO  SimpleUrlHandlerMapping:341 - Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-05 21:35:33 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/expense],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.ExpenseDateDTO>> com.n2.portal.controller.ExpenseController.getExpenses(int,int)
+2017-01-05 21:35:33 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/menu],methods=[GET],produces=[application/json]}" onto public java.util.List<com.n2.portal.model.menu.Menu> com.n2.portal.controller.MenuController.getMenus()
+2017-01-05 21:35:33 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.model.expense.SpendCategory>> com.n2.portal.controller.SpendController.getAll(java.lang.String)
+2017-01-05 21:35:33 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.n2.portal.model.expense.SpendCategory> com.n2.portal.controller.SpendController.saveSpendCategory(java.lang.String,java.lang.String)
+2017-01-05 21:35:33 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/user],methods=[GET]}" onto public com.n2.portal.model.User com.n2.portal.controller.UserController.getUserCurrent()
+2017-01-05 21:35:33 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/logout],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.n2.portal.controller.UserController.logout(javax.servlet.http.HttpServletRequest)
+2017-01-05 21:35:34 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-05 21:35:34 INFO  ContextLoader:345 - Root WebApplicationContext: initialization completed in 7618 ms
+2017-01-05 21:35:34 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2017-01-05 21:35:34 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Thu Jan 05 21:35:34 ICT 2017]; parent: Root WebApplicationContext
+2017-01-05 21:35:34 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-05 21:35:34 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 71 ms
+2017-01-05 21:35:43 INFO  TokenEndpoint:178 - Handling error: InvalidGrantException, Invalid refresh token: c3b12fee-17d1-451f-a9fd-b179c77a5cff
+2017-01-05 23:20:01 WARN  PageNotFound:1147 - No mapping found for HTTP request with URI [/docs.css] in DispatcherServlet with name 'dispatcher'
+2017-01-05 23:20:01 WARN  PageNotFound:1147 - No mapping found for HTTP request with URI [/docs.css] in DispatcherServlet with name 'dispatcher'
+2017-01-05 23:20:01 WARN  PageNotFound:1147 - No mapping found for HTTP request with URI [/docs.css] in DispatcherServlet with name 'dispatcher'
+2017-01-07 21:38:17 INFO  ContextLoader:305 - Root WebApplicationContext: initialization started
+2017-01-07 21:38:17 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing Root WebApplicationContext: startup date [Sat Jan 07 21:38:17 ICT 2017]; root of context hierarchy
+2017-01-07 21:38:17 INFO  AnnotationConfigWebApplicationContext:207 - Registering annotated classes: [class com.n2.portal.configuration.core.N2Configuration]
+2017-01-07 21:38:18 WARN  ConfigurationClassPostProcessor:386 - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-01-07 21:38:18 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-07 21:38:20 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-01-07 21:38:20 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-07 21:38:20 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2017-01-07 21:38:20 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-01-07 21:38:20 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-01-07 21:38:21 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-01-07 21:38:21 WARN  RootClass:288 - HHH000038: Composite-id class does not override equals(): com.n2.portal.model.expense.Spend
+2017-01-07 21:38:21 WARN  RootClass:289 - HHH000039: Composite-id class does not override hashCode(): com.n2.portal.model.expense.Spend
+2017-01-07 21:38:21 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-07 21:38:21 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-07 21:38:22 INFO  Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2017-01-07 21:38:23 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2017-01-07 21:38:23 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2017-01-07 21:38:23 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2017-01-07 21:38:23 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user
+2017-01-07 21:38:23 INFO  TableMetadata:67 - HHH000037: Columns: [password, last_name, id, state, first_name, email, sso_id]
+2017-01-07 21:38:23 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-07 21:38:23 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_hqk6uc88j3imq8u9jhro36vt3, primary]
+2017-01-07 21:38:23 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user_user_profile
+2017-01-07 21:38:23 INFO  TableMetadata:67 - HHH000037: Columns: [user_id, user_profile_id]
+2017-01-07 21:38:23 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_brmce0t584euix4wb4rursf1q, fk_gs2lq4vmukguubh36utd4r2cl]
+2017-01-07 21:38:23 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_gs2lq4vmukguubh36utd4r2cl, primary]
+2017-01-07 21:38:23 INFO  TableMetadata:66 - HHH000261: Table found: n2.expensedate
+2017-01-07 21:38:23 INFO  TableMetadata:67 - HHH000037: Columns: [date, total, id, userid]
+2017-01-07 21:38:23 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-07 21:38:23 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-07 21:38:23 INFO  TableMetadata:66 - HHH000261: Table found: n2.menu
+2017-01-07 21:38:23 INFO  TableMetadata:67 - HHH000037: Columns: [isadmin, icon, name, description, id, url, otherindex]
+2017-01-07 21:38:23 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-07 21:38:23 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-07 21:38:23 INFO  TableMetadata:66 - HHH000261: Table found: n2.spend
+2017-01-07 21:38:23 INFO  TableMetadata:67 - HHH000037: Columns: [fileattach, name, spend_category, id, value, parentid]
+2017-01-07 21:38:23 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_3fnehs407empyoqsqgnxksphj]
+2017-01-07 21:38:23 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_3fnehs407empyoqsqgnxksphj, primary]
+2017-01-07 21:38:23 INFO  TableMetadata:66 - HHH000261: Table found: n2.spendcategory
+2017-01-07 21:38:23 INFO  TableMetadata:67 - HHH000037: Columns: [total, name, id, date_id, parentid]
+2017-01-07 21:38:23 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_oohqj8l247v9c33bd747so0l1]
+2017-01-07 21:38:23 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_oohqj8l247v9c33bd747so0l1, primary]
+2017-01-07 21:38:23 INFO  TableMetadata:66 - HHH000261: Table found: n2.submenu
+2017-01-07 21:38:23 INFO  TableMetadata:67 - HHH000037: Columns: [icon, name, description, id, url, menu_id, otherindex]
+2017-01-07 21:38:23 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_ld5aoy95uhip39yxullnk7mgd]
+2017-01-07 21:38:23 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_ld5aoy95uhip39yxullnk7mgd, primary]
+2017-01-07 21:38:23 INFO  TableMetadata:66 - HHH000261: Table found: n2.user_profile
+2017-01-07 21:38:23 INFO  TableMetadata:67 - HHH000037: Columns: [id, type]
+2017-01-07 21:38:23 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-07 21:38:23 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_cva7m2blp7ekclxworqxau1l7, primary]
+2017-01-07 21:38:23 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2017-01-07 21:38:24 INFO  MessageI18N:19 - MessageI18N load file messge message-vn.properties
+2017-01-07 21:38:24 INFO  HibernateTransactionManager:360 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@c6c74e9] of Hibernate SessionFactory for HibernateTransactionManager
+2017-01-07 21:38:24 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize],methods=[POST],params=[user_oauth_approval]}" onto public org.springframework.web.servlet.View org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(java.util.Map<java.lang.String, java.lang.String>,java.util.Map<java.lang.String, ?>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-07 21:38:24 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize(java.util.Map<java.lang.String, java.lang.Object>,java.util.Map<java.lang.String, java.lang.String>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-07 21:38:24 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-07 21:38:24 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.getAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-07 21:38:24 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/check_token]}" onto public java.util.Map<java.lang.String, ?> org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint.checkToken(java.lang.String)
+2017-01-07 21:38:24 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/confirm_access]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.getAccessConfirmation(java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2017-01-07 21:38:24 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/error]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelErrorEndpoint.handleError(javax.servlet.http.HttpServletRequest)
+2017-01-07 21:38:26 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-01-07 21:39:40 INFO  ContextLoader:305 - Root WebApplicationContext: initialization started
+2017-01-07 21:39:40 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing Root WebApplicationContext: startup date [Sat Jan 07 21:39:40 ICT 2017]; root of context hierarchy
+2017-01-07 21:39:40 INFO  AnnotationConfigWebApplicationContext:207 - Registering annotated classes: [class com.n2.portal.configuration.core.N2Configuration]
+2017-01-07 21:39:42 WARN  ConfigurationClassPostProcessor:386 - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-01-07 21:39:42 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-07 21:39:44 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-01-07 21:39:44 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-07 21:39:44 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2017-01-07 21:39:44 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-01-07 21:39:44 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-01-07 21:39:45 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-01-07 21:39:45 WARN  RootClass:288 - HHH000038: Composite-id class does not override equals(): com.n2.portal.model.expense.Spend
+2017-01-07 21:39:45 WARN  RootClass:289 - HHH000039: Composite-id class does not override hashCode(): com.n2.portal.model.expense.Spend
+2017-01-07 21:39:45 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-07 21:39:45 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-07 21:39:45 INFO  Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2017-01-07 21:39:47 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2017-01-07 21:39:47 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2017-01-07 21:39:47 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2017-01-07 21:39:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user
+2017-01-07 21:39:47 INFO  TableMetadata:67 - HHH000037: Columns: [password, last_name, id, state, first_name, email, sso_id]
+2017-01-07 21:39:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-07 21:39:47 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_hqk6uc88j3imq8u9jhro36vt3, primary]
+2017-01-07 21:39:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user_user_profile
+2017-01-07 21:39:47 INFO  TableMetadata:67 - HHH000037: Columns: [user_id, user_profile_id]
+2017-01-07 21:39:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_brmce0t584euix4wb4rursf1q, fk_gs2lq4vmukguubh36utd4r2cl]
+2017-01-07 21:39:47 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_gs2lq4vmukguubh36utd4r2cl, primary]
+2017-01-07 21:39:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.expensedate
+2017-01-07 21:39:47 INFO  TableMetadata:67 - HHH000037: Columns: [date, total, id, userid]
+2017-01-07 21:39:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-07 21:39:47 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-07 21:39:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.menu
+2017-01-07 21:39:47 INFO  TableMetadata:67 - HHH000037: Columns: [isadmin, icon, name, description, id, url, otherindex]
+2017-01-07 21:39:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-07 21:39:47 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-07 21:39:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.spend
+2017-01-07 21:39:47 INFO  TableMetadata:67 - HHH000037: Columns: [fileattach, name, spend_category, id, value, parentid]
+2017-01-07 21:39:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_3fnehs407empyoqsqgnxksphj]
+2017-01-07 21:39:47 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_3fnehs407empyoqsqgnxksphj, primary]
+2017-01-07 21:39:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.spendcategory
+2017-01-07 21:39:47 INFO  TableMetadata:67 - HHH000037: Columns: [total, name, id, date_id, parentid]
+2017-01-07 21:39:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_oohqj8l247v9c33bd747so0l1]
+2017-01-07 21:39:47 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_oohqj8l247v9c33bd747so0l1, primary]
+2017-01-07 21:39:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.submenu
+2017-01-07 21:39:47 INFO  TableMetadata:67 - HHH000037: Columns: [icon, name, description, id, url, menu_id, otherindex]
+2017-01-07 21:39:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_ld5aoy95uhip39yxullnk7mgd]
+2017-01-07 21:39:47 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_ld5aoy95uhip39yxullnk7mgd, primary]
+2017-01-07 21:39:47 INFO  TableMetadata:66 - HHH000261: Table found: n2.user_profile
+2017-01-07 21:39:47 INFO  TableMetadata:67 - HHH000037: Columns: [id, type]
+2017-01-07 21:39:47 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-07 21:39:47 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_cva7m2blp7ekclxworqxau1l7, primary]
+2017-01-07 21:39:47 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2017-01-07 21:39:48 INFO  MessageI18N:19 - MessageI18N load file messge message-vn.properties
+2017-01-07 21:39:48 INFO  HibernateTransactionManager:360 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@2bed5436] of Hibernate SessionFactory for HibernateTransactionManager
+2017-01-07 21:39:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize],methods=[POST],params=[user_oauth_approval]}" onto public org.springframework.web.servlet.View org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(java.util.Map<java.lang.String, java.lang.String>,java.util.Map<java.lang.String, ?>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-07 21:39:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize(java.util.Map<java.lang.String, java.lang.Object>,java.util.Map<java.lang.String, java.lang.String>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-07 21:39:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.getAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-07 21:39:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-07 21:39:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/check_token]}" onto public java.util.Map<java.lang.String, ?> org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint.checkToken(java.lang.String)
+2017-01-07 21:39:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/confirm_access]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.getAccessConfirmation(java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2017-01-07 21:39:48 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/error]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelErrorEndpoint.handleError(javax.servlet.http.HttpServletRequest)
+2017-01-07 21:39:50 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-01-07 21:39:50 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ef8ddb5, org.springframework.security.web.context.SecurityContextPersistenceFilter@17c7a0a2, org.springframework.security.web.header.HeaderWriterFilter@4956a77e, org.springframework.security.web.authentication.logout.LogoutFilter@6155b115, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@52c54dca, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d8e3eb1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9501832, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@593bbfaf, org.springframework.security.web.session.SessionManagementFilter@385fae93, org.springframework.security.web.access.ExceptionTranslationFilter@4f9d999e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4a7bdda5]
+2017-01-07 21:39:50 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1646ab55, org.springframework.security.web.context.SecurityContextPersistenceFilter@6202d2d0, org.springframework.security.web.header.HeaderWriterFilter@4506dbc9, org.springframework.security.web.authentication.logout.LogoutFilter@36643414, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@5797d7ba, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d3d3aed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e967c10, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30071fe3, org.springframework.security.web.session.SessionManagementFilter@91429c7, org.springframework.security.web.access.ExceptionTranslationFilter@3d18c39, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f07ab8f]
+2017-01-07 21:39:50 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@656b6f0c, org.springframework.security.web.context.SecurityContextPersistenceFilter@6e8a83ef, org.springframework.security.web.header.HeaderWriterFilter@2c26af81, org.springframework.security.web.authentication.logout.LogoutFilter@18c23586, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ca7e7eb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35e40f59, org.springframework.security.web.session.SessionManagementFilter@25310744, org.springframework.security.web.access.ExceptionTranslationFilter@2a1d1e53, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d8a5b2f]
+2017-01-07 21:39:51 INFO  SimpleUrlHandlerMapping:341 - Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-07 21:39:51 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/expense],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.ExpenseDateDTO>> com.n2.portal.controller.ExpenseController.getExpenses(int,int)
+2017-01-07 21:39:51 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/menu],methods=[GET],produces=[application/json]}" onto public java.util.List<com.n2.portal.model.menu.Menu> com.n2.portal.controller.MenuController.getMenus()
+2017-01-07 21:39:51 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.model.expense.SpendCategory>> com.n2.portal.controller.SpendController.getAll(java.lang.String)
+2017-01-07 21:39:51 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.n2.portal.model.expense.SpendCategory> com.n2.portal.controller.SpendController.saveSpendCategory(java.lang.String,java.lang.String)
+2017-01-07 21:39:51 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/logout],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.n2.portal.controller.UserController.logout(javax.servlet.http.HttpServletRequest)
+2017-01-07 21:39:52 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/user],methods=[GET]}" onto public com.n2.portal.model.User com.n2.portal.controller.UserController.getUserCurrent()
+2017-01-07 21:39:52 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Sat Jan 07 21:39:40 ICT 2017]; root of context hierarchy
+2017-01-07 21:39:52 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 21:39:52 INFO  ContextLoader:345 - Root WebApplicationContext: initialization completed in 12735 ms
+2017-01-07 21:39:52 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2017-01-07 21:39:52 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Sat Jan 07 21:39:52 ICT 2017]; parent: Root WebApplicationContext
+2017-01-07 21:39:52 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-07 21:39:53 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 703 ms
+2017-01-08 00:17:17 INFO  ContextLoader:305 - Root WebApplicationContext: initialization started
+2017-01-08 00:17:17 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing Root WebApplicationContext: startup date [Sun Jan 08 00:17:17 ICT 2017]; root of context hierarchy
+2017-01-08 00:17:17 INFO  AnnotationConfigWebApplicationContext:207 - Registering annotated classes: [class com.n2.portal.configuration.core.N2Configuration]
+2017-01-08 00:17:17 WARN  ConfigurationClassPostProcessor:386 - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-01-08 00:17:18 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-08 00:17:19 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-01-08 00:17:19 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-08 00:17:19 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2017-01-08 00:17:19 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-01-08 00:17:19 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-01-08 00:17:19 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-01-08 00:17:20 WARN  RootClass:288 - HHH000038: Composite-id class does not override equals(): com.n2.portal.model.expense.Spend
+2017-01-08 00:17:20 WARN  RootClass:289 - HHH000039: Composite-id class does not override hashCode(): com.n2.portal.model.expense.Spend
+2017-01-08 00:17:20 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-08 00:17:20 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-08 00:17:20 INFO  Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2017-01-08 00:17:21 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2017-01-08 00:17:21 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2017-01-08 00:17:21 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2017-01-08 00:17:21 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user
+2017-01-08 00:17:21 INFO  TableMetadata:67 - HHH000037: Columns: [password, last_name, id, state, first_name, email, sso_id]
+2017-01-08 00:17:21 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-08 00:17:21 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_hqk6uc88j3imq8u9jhro36vt3, primary]
+2017-01-08 00:17:21 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user_user_profile
+2017-01-08 00:17:21 INFO  TableMetadata:67 - HHH000037: Columns: [user_id, user_profile_id]
+2017-01-08 00:17:21 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_brmce0t584euix4wb4rursf1q, fk_gs2lq4vmukguubh36utd4r2cl]
+2017-01-08 00:17:21 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_gs2lq4vmukguubh36utd4r2cl, primary]
+2017-01-08 00:17:21 INFO  TableMetadata:66 - HHH000261: Table found: n2.expensedate
+2017-01-08 00:17:21 INFO  TableMetadata:67 - HHH000037: Columns: [date, total, id, userid]
+2017-01-08 00:17:21 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-08 00:17:21 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-08 00:17:21 INFO  TableMetadata:66 - HHH000261: Table found: n2.menu
+2017-01-08 00:17:21 INFO  TableMetadata:67 - HHH000037: Columns: [isadmin, icon, name, description, id, url, otherindex]
+2017-01-08 00:17:21 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-08 00:17:21 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-08 00:17:21 INFO  TableMetadata:66 - HHH000261: Table found: n2.spend
+2017-01-08 00:17:21 INFO  TableMetadata:67 - HHH000037: Columns: [fileattach, name, spend_category, id, value, parentid]
+2017-01-08 00:17:21 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_3fnehs407empyoqsqgnxksphj]
+2017-01-08 00:17:21 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_3fnehs407empyoqsqgnxksphj, primary]
+2017-01-08 00:17:21 INFO  TableMetadata:66 - HHH000261: Table found: n2.spendcategory
+2017-01-08 00:17:21 INFO  TableMetadata:67 - HHH000037: Columns: [total, name, id, date_id, parentid]
+2017-01-08 00:17:21 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_oohqj8l247v9c33bd747so0l1]
+2017-01-08 00:17:21 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_oohqj8l247v9c33bd747so0l1, primary]
+2017-01-08 00:17:21 INFO  TableMetadata:66 - HHH000261: Table found: n2.submenu
+2017-01-08 00:17:21 INFO  TableMetadata:67 - HHH000037: Columns: [icon, name, description, id, url, menu_id, otherindex]
+2017-01-08 00:17:21 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_ld5aoy95uhip39yxullnk7mgd]
+2017-01-08 00:17:21 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_ld5aoy95uhip39yxullnk7mgd, primary]
+2017-01-08 00:17:21 INFO  TableMetadata:66 - HHH000261: Table found: n2.user_profile
+2017-01-08 00:17:21 INFO  TableMetadata:67 - HHH000037: Columns: [id, type]
+2017-01-08 00:17:21 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-08 00:17:21 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_cva7m2blp7ekclxworqxau1l7, primary]
+2017-01-08 00:17:21 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2017-01-08 00:17:22 INFO  MessageI18N:19 - MessageI18N load file messge message-vn.properties
+2017-01-08 00:17:22 INFO  HibernateTransactionManager:360 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@43965857] of Hibernate SessionFactory for HibernateTransactionManager
+2017-01-08 00:17:22 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize(java.util.Map<java.lang.String, java.lang.Object>,java.util.Map<java.lang.String, java.lang.String>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-08 00:17:22 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize],methods=[POST],params=[user_oauth_approval]}" onto public org.springframework.web.servlet.View org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(java.util.Map<java.lang.String, java.lang.String>,java.util.Map<java.lang.String, ?>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-08 00:17:22 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.getAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-08 00:17:22 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-08 00:17:22 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/check_token]}" onto public java.util.Map<java.lang.String, ?> org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint.checkToken(java.lang.String)
+2017-01-08 00:17:22 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/confirm_access]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.getAccessConfirmation(java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2017-01-08 00:17:22 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/error]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelErrorEndpoint.handleError(javax.servlet.http.HttpServletRequest)
+2017-01-08 00:17:24 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-01-08 00:17:24 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@55a14c43, org.springframework.security.web.context.SecurityContextPersistenceFilter@1120489d, org.springframework.security.web.header.HeaderWriterFilter@143f6cf7, org.springframework.security.web.authentication.logout.LogoutFilter@a39d05d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@10bc6b9a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b27f43f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@334b4070, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d150fdf, org.springframework.security.web.session.SessionManagementFilter@4543c896, org.springframework.security.web.access.ExceptionTranslationFilter@60aed7c0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5b832298]
+2017-01-08 00:17:24 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58662cdd, org.springframework.security.web.context.SecurityContextPersistenceFilter@269daf4c, org.springframework.security.web.header.HeaderWriterFilter@4ebcc81d, org.springframework.security.web.authentication.logout.LogoutFilter@125facbb, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@27fa1c17, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5629c767, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7efd019f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@466961c0, org.springframework.security.web.session.SessionManagementFilter@1a6ec407, org.springframework.security.web.access.ExceptionTranslationFilter@4506b840, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@686e6499]
+2017-01-08 00:17:24 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@44b9612b, org.springframework.security.web.context.SecurityContextPersistenceFilter@58db2294, org.springframework.security.web.header.HeaderWriterFilter@72ab7863, org.springframework.security.web.authentication.logout.LogoutFilter@1770a1d2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@65dfff58, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c1efbe0, org.springframework.security.web.session.SessionManagementFilter@41434ec7, org.springframework.security.web.access.ExceptionTranslationFilter@1c443fa8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2597841d]
+2017-01-08 00:17:25 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Sun Jan 08 00:17:17 ICT 2017]; root of context hierarchy
+2017-01-08 00:17:25 INFO  SimpleUrlHandlerMapping:341 - Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-08 00:17:25 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-08 00:17:25 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/expense],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.ExpenseDateDTO>> com.n2.portal.controller.ExpenseController.getExpenses(int,int)
+2017-01-08 00:17:25 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/menu],methods=[GET],produces=[application/json]}" onto public java.util.List<com.n2.portal.model.menu.Menu> com.n2.portal.controller.MenuController.getMenus()
+2017-01-08 00:17:25 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.model.expense.SpendCategory>> com.n2.portal.controller.SpendController.getAll(java.lang.String)
+2017-01-08 00:17:25 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.n2.portal.model.expense.SpendCategory> com.n2.portal.controller.SpendController.saveSpendCategory(java.lang.String,java.lang.String)
+2017-01-08 00:17:25 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/logout],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.n2.portal.controller.UserController.logout(javax.servlet.http.HttpServletRequest)
+2017-01-08 00:17:25 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/user],methods=[GET]}" onto public com.n2.portal.model.User com.n2.portal.controller.UserController.getUserCurrent()
+2017-01-08 00:17:25 INFO  ContextLoader:345 - Root WebApplicationContext: initialization completed in 8663 ms
+2017-01-08 00:17:25 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2017-01-08 00:17:25 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Sun Jan 08 00:17:25 ICT 2017]; parent: Root WebApplicationContext
+2017-01-08 00:17:25 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-08 00:17:25 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 83 ms
+2017-01-08 00:27:16 INFO  TokenEndpoint:178 - Handling error: InvalidGrantException, Invalid refresh token: a851b8bb-ef1d-4d17-9342-e7640c49aa8b
+2017-01-08 00:28:20 INFO  ContextLoader:305 - Root WebApplicationContext: initialization started
+2017-01-08 00:28:20 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing Root WebApplicationContext: startup date [Sun Jan 08 00:28:20 ICT 2017]; root of context hierarchy
+2017-01-08 00:28:20 INFO  AnnotationConfigWebApplicationContext:207 - Registering annotated classes: [class com.n2.portal.configuration.core.N2Configuration]
+2017-01-08 00:28:20 WARN  ConfigurationClassPostProcessor:386 - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-01-08 00:28:21 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-08 00:28:22 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-01-08 00:28:22 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-08 00:28:22 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2017-01-08 00:28:22 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-01-08 00:28:22 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-01-08 00:28:22 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-01-08 00:28:23 WARN  RootClass:288 - HHH000038: Composite-id class does not override equals(): com.n2.portal.model.expense.Spend
+2017-01-08 00:28:23 WARN  RootClass:289 - HHH000039: Composite-id class does not override hashCode(): com.n2.portal.model.expense.Spend
+2017-01-08 00:28:23 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-08 00:28:23 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-08 00:28:23 INFO  Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2017-01-08 00:28:24 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2017-01-08 00:28:24 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2017-01-08 00:28:24 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2017-01-08 00:28:24 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user
+2017-01-08 00:28:24 INFO  TableMetadata:67 - HHH000037: Columns: [password, last_name, id, state, first_name, email, sso_id]
+2017-01-08 00:28:24 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-08 00:28:24 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_hqk6uc88j3imq8u9jhro36vt3, primary]
+2017-01-08 00:28:24 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user_user_profile
+2017-01-08 00:28:24 INFO  TableMetadata:67 - HHH000037: Columns: [user_id, user_profile_id]
+2017-01-08 00:28:24 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_brmce0t584euix4wb4rursf1q, fk_gs2lq4vmukguubh36utd4r2cl]
+2017-01-08 00:28:24 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_gs2lq4vmukguubh36utd4r2cl, primary]
+2017-01-08 00:28:24 INFO  TableMetadata:66 - HHH000261: Table found: n2.expensedate
+2017-01-08 00:28:24 INFO  TableMetadata:67 - HHH000037: Columns: [date, total, id, userid]
+2017-01-08 00:28:24 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-08 00:28:24 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-08 00:28:24 INFO  TableMetadata:66 - HHH000261: Table found: n2.menu
+2017-01-08 00:28:24 INFO  TableMetadata:67 - HHH000037: Columns: [isadmin, icon, name, description, id, url, otherindex]
+2017-01-08 00:28:24 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-08 00:28:24 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-08 00:28:24 INFO  TableMetadata:66 - HHH000261: Table found: n2.spend
+2017-01-08 00:28:24 INFO  TableMetadata:67 - HHH000037: Columns: [fileattach, name, spend_category, id, value, parentid]
+2017-01-08 00:28:24 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_3fnehs407empyoqsqgnxksphj]
+2017-01-08 00:28:24 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_3fnehs407empyoqsqgnxksphj, primary]
+2017-01-08 00:28:24 INFO  TableMetadata:66 - HHH000261: Table found: n2.spendcategory
+2017-01-08 00:28:24 INFO  TableMetadata:67 - HHH000037: Columns: [total, name, id, date_id, parentid]
+2017-01-08 00:28:24 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_oohqj8l247v9c33bd747so0l1]
+2017-01-08 00:28:24 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_oohqj8l247v9c33bd747so0l1, primary]
+2017-01-08 00:28:24 INFO  TableMetadata:66 - HHH000261: Table found: n2.submenu
+2017-01-08 00:28:24 INFO  TableMetadata:67 - HHH000037: Columns: [icon, name, description, id, url, menu_id, otherindex]
+2017-01-08 00:28:24 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_ld5aoy95uhip39yxullnk7mgd]
+2017-01-08 00:28:24 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_ld5aoy95uhip39yxullnk7mgd, primary]
+2017-01-08 00:28:24 INFO  TableMetadata:66 - HHH000261: Table found: n2.user_profile
+2017-01-08 00:28:24 INFO  TableMetadata:67 - HHH000037: Columns: [id, type]
+2017-01-08 00:28:24 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-08 00:28:24 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_cva7m2blp7ekclxworqxau1l7, primary]
+2017-01-08 00:28:24 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2017-01-08 00:28:24 INFO  MessageI18N:19 - MessageI18N load file messge message-vn.properties
+2017-01-08 00:28:25 INFO  HibernateTransactionManager:360 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@6e01cce6] of Hibernate SessionFactory for HibernateTransactionManager
+2017-01-08 00:28:25 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize(java.util.Map<java.lang.String, java.lang.Object>,java.util.Map<java.lang.String, java.lang.String>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-08 00:28:25 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize],methods=[POST],params=[user_oauth_approval]}" onto public org.springframework.web.servlet.View org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(java.util.Map<java.lang.String, java.lang.String>,java.util.Map<java.lang.String, ?>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-08 00:28:25 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-08 00:28:25 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.getAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-08 00:28:25 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/check_token]}" onto public java.util.Map<java.lang.String, ?> org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint.checkToken(java.lang.String)
+2017-01-08 00:28:25 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/confirm_access]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.getAccessConfirmation(java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2017-01-08 00:28:25 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/error]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelErrorEndpoint.handleError(javax.servlet.http.HttpServletRequest)
+2017-01-08 00:28:26 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-01-08 00:28:26 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50109c9e, org.springframework.security.web.context.SecurityContextPersistenceFilter@3b3c6f20, org.springframework.security.web.header.HeaderWriterFilter@7095c074, org.springframework.security.web.authentication.logout.LogoutFilter@18d79e29, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1f4057eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ccf279, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@331367a2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3367da, org.springframework.security.web.session.SessionManagementFilter@3f5d502e, org.springframework.security.web.access.ExceptionTranslationFilter@25f6b8a9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5e55babe]
+2017-01-08 00:28:26 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@13606c2, org.springframework.security.web.context.SecurityContextPersistenceFilter@742ef2b4, org.springframework.security.web.header.HeaderWriterFilter@4f258813, org.springframework.security.web.authentication.logout.LogoutFilter@2ccaf0ab, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@2e5b91fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57a98a7b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@342fe58d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1869a0e3, org.springframework.security.web.session.SessionManagementFilter@404b06cd, org.springframework.security.web.access.ExceptionTranslationFilter@27b08288, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@54934d04]
+2017-01-08 00:28:26 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18505bb5, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a8a5037, org.springframework.security.web.header.HeaderWriterFilter@4798e30f, org.springframework.security.web.authentication.logout.LogoutFilter@7fea019, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3ce4c5e5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c64d9ed, org.springframework.security.web.session.SessionManagementFilter@5c9ce7a7, org.springframework.security.web.access.ExceptionTranslationFilter@57fe26cd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3d51f3ad]
+2017-01-08 00:28:27 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/expense],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.ExpenseDateDTO>> com.n2.portal.controller.ExpenseController.getExpenses(int,int)
+2017-01-08 00:28:27 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/menu],methods=[GET],produces=[application/json]}" onto public java.util.List<com.n2.portal.model.menu.Menu> com.n2.portal.controller.MenuController.getMenus()
+2017-01-08 00:28:27 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.model.expense.SpendCategory>> com.n2.portal.controller.SpendController.getAll(java.lang.String)
+2017-01-08 00:28:27 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.n2.portal.model.expense.SpendCategory> com.n2.portal.controller.SpendController.saveSpendCategory(java.lang.String,java.lang.String)
+2017-01-08 00:28:27 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/logout],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.n2.portal.controller.UserController.logout(javax.servlet.http.HttpServletRequest)
+2017-01-08 00:28:27 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/user],methods=[GET]}" onto public com.n2.portal.model.User com.n2.portal.controller.UserController.getUserCurrent()
+2017-01-08 00:28:27 INFO  SimpleUrlHandlerMapping:341 - Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-08 00:28:27 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Sun Jan 08 00:28:20 ICT 2017]; root of context hierarchy
+2017-01-08 00:28:27 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-08 00:28:28 INFO  ContextLoader:345 - Root WebApplicationContext: initialization completed in 7829 ms
+2017-01-08 00:28:28 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2017-01-08 00:28:28 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Sun Jan 08 00:28:28 ICT 2017]; parent: Root WebApplicationContext
+2017-01-08 00:28:28 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-08 00:28:28 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 187 ms
+2017-01-08 00:28:40 INFO  TokenEndpoint:178 - Handling error: InvalidGrantException, Invalid refresh token: 1d6d92c4-2387-4b4e-8b20-2446e8f89a43
+2017-01-08 00:51:07 INFO  ContextLoader:305 - Root WebApplicationContext: initialization started
+2017-01-08 00:51:07 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing Root WebApplicationContext: startup date [Sun Jan 08 00:51:07 ICT 2017]; root of context hierarchy
+2017-01-08 00:51:07 INFO  AnnotationConfigWebApplicationContext:207 - Registering annotated classes: [class com.n2.portal.configuration.core.N2Configuration]
+2017-01-08 00:51:07 WARN  ConfigurationClassPostProcessor:386 - Cannot enhance @Configuration bean definition 'org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerEndpointsConfiguration$TokenKeyEndpointRegistrar' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-01-08 00:51:08 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-08 00:51:09 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-01-08 00:51:09 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-01-08 00:51:09 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2017-01-08 00:51:09 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2017-01-08 00:51:09 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-01-08 00:51:10 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-01-08 00:51:10 WARN  RootClass:288 - HHH000038: Composite-id class does not override equals(): com.n2.portal.model.expense.Spend
+2017-01-08 00:51:10 WARN  RootClass:289 - HHH000039: Composite-id class does not override hashCode(): com.n2.portal.model.expense.Spend
+2017-01-08 00:51:10 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-01-08 00:51:10 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-01-08 00:51:10 INFO  Version:27 - HV000001: Hibernate Validator 5.1.3.Final
+2017-01-08 00:51:11 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2017-01-08 00:51:11 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2017-01-08 00:51:11 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2017-01-08 00:51:11 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user
+2017-01-08 00:51:11 INFO  TableMetadata:67 - HHH000037: Columns: [password, last_name, id, state, first_name, email, sso_id]
+2017-01-08 00:51:11 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-08 00:51:11 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_hqk6uc88j3imq8u9jhro36vt3, primary]
+2017-01-08 00:51:11 INFO  TableMetadata:66 - HHH000261: Table found: n2.app_user_user_profile
+2017-01-08 00:51:11 INFO  TableMetadata:67 - HHH000037: Columns: [user_id, user_profile_id]
+2017-01-08 00:51:11 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_brmce0t584euix4wb4rursf1q, fk_gs2lq4vmukguubh36utd4r2cl]
+2017-01-08 00:51:11 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_gs2lq4vmukguubh36utd4r2cl, primary]
+2017-01-08 00:51:11 INFO  TableMetadata:66 - HHH000261: Table found: n2.expensedate
+2017-01-08 00:51:11 INFO  TableMetadata:67 - HHH000037: Columns: [date, total, id, userid]
+2017-01-08 00:51:11 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-08 00:51:11 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-08 00:51:11 INFO  TableMetadata:66 - HHH000261: Table found: n2.menu
+2017-01-08 00:51:11 INFO  TableMetadata:67 - HHH000037: Columns: [isadmin, icon, name, description, id, url, otherindex]
+2017-01-08 00:51:11 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-08 00:51:11 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2017-01-08 00:51:11 INFO  TableMetadata:66 - HHH000261: Table found: n2.spend
+2017-01-08 00:51:11 INFO  TableMetadata:67 - HHH000037: Columns: [fileattach, name, spend_category, id, value, parentid]
+2017-01-08 00:51:11 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_3fnehs407empyoqsqgnxksphj]
+2017-01-08 00:51:11 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_3fnehs407empyoqsqgnxksphj, primary]
+2017-01-08 00:51:11 INFO  TableMetadata:66 - HHH000261: Table found: n2.spendcategory
+2017-01-08 00:51:11 INFO  TableMetadata:67 - HHH000037: Columns: [total, name, id, date_id, parentid]
+2017-01-08 00:51:11 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_oohqj8l247v9c33bd747so0l1]
+2017-01-08 00:51:11 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_oohqj8l247v9c33bd747so0l1, primary]
+2017-01-08 00:51:11 INFO  TableMetadata:66 - HHH000261: Table found: n2.submenu
+2017-01-08 00:51:11 INFO  TableMetadata:67 - HHH000037: Columns: [icon, name, description, id, url, menu_id, otherindex]
+2017-01-08 00:51:11 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_ld5aoy95uhip39yxullnk7mgd]
+2017-01-08 00:51:11 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_ld5aoy95uhip39yxullnk7mgd, primary]
+2017-01-08 00:51:11 INFO  TableMetadata:66 - HHH000261: Table found: n2.user_profile
+2017-01-08 00:51:11 INFO  TableMetadata:67 - HHH000037: Columns: [id, type]
+2017-01-08 00:51:11 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2017-01-08 00:51:11 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_cva7m2blp7ekclxworqxau1l7, primary]
+2017-01-08 00:51:11 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2017-01-08 00:51:12 INFO  MessageI18N:19 - MessageI18N load file messge message-vn.properties
+2017-01-08 00:51:12 INFO  HibernateTransactionManager:360 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@556c00d5] of Hibernate SessionFactory for HibernateTransactionManager
+2017-01-08 00:51:12 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.authorize(java.util.Map<java.lang.String, java.lang.Object>,java.util.Map<java.lang.String, java.lang.String>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-08 00:51:12 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/authorize],methods=[POST],params=[user_oauth_approval]}" onto public org.springframework.web.servlet.View org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.approveOrDeny(java.util.Map<java.lang.String, java.lang.String>,java.util.Map<java.lang.String, ?>,org.springframework.web.bind.support.SessionStatus,java.security.Principal)
+2017-01-08 00:51:12 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.getAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-08 00:51:12 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/token],methods=[POST]}" onto public org.springframework.http.ResponseEntity<org.springframework.security.oauth2.common.OAuth2AccessToken> org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.postAccessToken(java.security.Principal,java.util.Map<java.lang.String, java.lang.String>) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2017-01-08 00:51:12 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/check_token]}" onto public java.util.Map<java.lang.String, ?> org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint.checkToken(java.lang.String)
+2017-01-08 00:51:12 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/confirm_access]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.getAccessConfirmation(java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2017-01-08 00:51:12 INFO  FrameworkEndpointHandlerMapping:537 - Mapped "{[/oauth/error]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.security.oauth2.provider.endpoint.WhitelabelErrorEndpoint.handleError(javax.servlet.http.HttpServletRequest)
+2017-01-08 00:51:14 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-01-08 00:51:14 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@dcc4a67, org.springframework.security.web.context.SecurityContextPersistenceFilter@5274cbdc, org.springframework.security.web.header.HeaderWriterFilter@5b3344bd, org.springframework.security.web.authentication.logout.LogoutFilter@30a7d647, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2535a1b0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@594cdadd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b15521e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@12d1d6c1, org.springframework.security.web.session.SessionManagementFilter@19aa1241, org.springframework.security.web.access.ExceptionTranslationFilter@4bfe380b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41658c20]
+2017-01-08 00:51:15 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d86fa99, org.springframework.security.web.context.SecurityContextPersistenceFilter@7ea373d7, org.springframework.security.web.header.HeaderWriterFilter@38c6ba5b, org.springframework.security.web.authentication.logout.LogoutFilter@4e277001, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@48940d74, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12a3b974, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1fbadd19, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6594c59a, org.springframework.security.web.session.SessionManagementFilter@15189a9d, org.springframework.security.web.access.ExceptionTranslationFilter@5a26d95e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@59b70908]
+2017-01-08 00:51:15 INFO  DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@54ae67aa, org.springframework.security.web.context.SecurityContextPersistenceFilter@525741b6, org.springframework.security.web.header.HeaderWriterFilter@72b263e1, org.springframework.security.web.authentication.logout.LogoutFilter@46e154d2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@51f37d8c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@303fa138, org.springframework.security.web.session.SessionManagementFilter@5d757ba6, org.springframework.security.web.access.ExceptionTranslationFilter@43e809f1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@65762de2]
+2017-01-08 00:51:15 INFO  SimpleUrlHandlerMapping:341 - Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2017-01-08 00:51:16 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: Root WebApplicationContext: startup date [Sun Jan 08 00:51:07 ICT 2017]; root of context hierarchy
+2017-01-08 00:51:16 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/expense],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.dto.ExpenseDateDTO>> com.n2.portal.controller.ExpenseController.getExpenses(int,int)
+2017-01-08 00:51:16 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/menu],methods=[GET],produces=[application/json]}" onto public java.util.List<com.n2.portal.model.menu.Menu> com.n2.portal.controller.MenuController.getMenus()
+2017-01-08 00:51:16 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[GET],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.n2.portal.model.expense.SpendCategory>> com.n2.portal.controller.SpendController.getAll(java.lang.String)
+2017-01-08 00:51:16 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend/{id}],methods=[PUT],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.n2.portal.model.expense.SpendCategory> com.n2.portal.controller.SpendController.updateSpendCategory(java.lang.Long,java.lang.String)
+2017-01-08 00:51:16 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/spend],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<com.n2.portal.model.expense.SpendCategory> com.n2.portal.controller.SpendController.saveSpendCategory(java.lang.String,java.lang.String)
+2017-01-08 00:51:16 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/logout],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.n2.portal.controller.UserController.logout(javax.servlet.http.HttpServletRequest)
+2017-01-08 00:51:16 INFO  RequestMappingHandlerMapping:537 - Mapped "{[/n2/api/user],methods=[GET]}" onto public com.n2.portal.model.User com.n2.portal.controller.UserController.getUserCurrent()
+2017-01-08 00:51:16 INFO  SimpleUrlHandlerMapping:354 - Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-08 00:51:17 INFO  ContextLoader:345 - Root WebApplicationContext: initialization completed in 10019 ms
+2017-01-08 00:51:17 INFO  DispatcherServlet:489 - FrameworkServlet 'dispatcher': initialization started
+2017-01-08 00:51:17 INFO  AnnotationConfigWebApplicationContext:581 - Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Sun Jan 08 00:51:17 ICT 2017]; parent: Root WebApplicationContext
+2017-01-08 00:51:17 INFO  AutowiredAnnotationBeanPostProcessor:155 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-08 00:51:17 INFO  DispatcherServlet:508 - FrameworkServlet 'dispatcher': initialization completed in 120 ms
+2017-01-08 00:51:18 INFO  TokenEndpoint:178 - Handling error: InvalidGrantException, Invalid refresh token: 92b8a738-342b-43a6-9c40-b1e5cefbc711

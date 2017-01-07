@@ -24,6 +24,12 @@ expenseModule.factory('ExpenseService', ['N2Service', 'METHOD', function (N2Serv
                 date: date
             };
             return N2Service.requestRest(this.urlSpend, METHOD.GET, params);
+        },
+        updateSpendCategory: function (id, name) {
+            var params = {
+                name: name
+            };
+            return N2Service.requestRest(this.urlSpend + '/' + id, METHOD.PUT, params);
         }
     }
 }]);

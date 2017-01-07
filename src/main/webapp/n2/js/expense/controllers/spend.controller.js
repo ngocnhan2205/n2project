@@ -1,40 +1,58 @@
 /**
  * Created by banhu on 1/1/2017.
  */
-expenseModule.controller('DialogSpendController', ['$scope', '$mdDialog', 'DATE', 'ExpenseService',
-    function ($scope, $mdDialog, DATE, ExpenseService) {
+expenseModule.controller('DialogSpendController', ['$scope', 'ExpenseService', 'DATE', '$uibModalInstance',
+    function ($scope, ExpenseService, DATE, $uibModalInstance) {
         $scope.date = DATE;
         $scope.showAdd = false;
         $scope.titleExpense = null;
         $scope.expenses = [];
 
-        $scope.close = function () {
-            $mdDialog.hide();
+
+        function preExpense(dates) {
+            for (var i in dates) {
+                i.isEditName = false;
+            }
         };
 
-        $scope.showAddExpense = function () {
-            $scope.showAdd = true;
-        };
 
         function init() {
             ExpenseService.getExpenseOfSpend($scope.date).then(function (res) {
                 $scope.expenses = res.data;
+                preExpense($scope.expenses);
             });
         };
 
         init();
 
-        $scope.saveExpense = function () {
-            if ($n2.isEmpty($scope.titleExpense)) {
-                $scope.showAdd = false;
-                $scope.titleExpense = null;
+        $scope.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+
+        $scope.edit = function (ex) {
+            ex.isEditName = true;
+        };
+
+        $scope.addExpense = function () {
+            $scope.expenses.unshift({isEditName: true});
+        };
+
+
+        $scope.saveExpense = function (ex) {
+            if ($n2.isNotEmpty(ex.name)) {
+                if (ex.id) {
+                    ExpenseService.updateSpendCategory(ex.id, ex.name).then(function (res) {
+                        ex = res.data;
+                    })
+                } else {
+                    ExpenseService.saveExpense(ex.name, $scope.date).then(function (res) {
+                        ex = res.data;
+                    });
+                }
             } else {
-                ExpenseService.saveExpense($scope.titleExpense, $scope.date).then(function (res) {
-                    $scope.expenses.push(res.data);
-                    $scope.showAdd = false;
-                    $scope.titleExpense = null;
-                });
+                $scope.expenses.shift();
             }
+            ex.isEditName = false;
         };
 
     }]);

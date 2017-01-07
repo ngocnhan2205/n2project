@@ -4,7 +4,7 @@
 appMain
     .config(['$stateProvider', '$urlRouterProvider',
         function ($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise("/n2/overview");
+            $urlRouterProvider.otherwise("/n2/login");
             $stateProvider
                 .state('n2', {
                     abstract: true,

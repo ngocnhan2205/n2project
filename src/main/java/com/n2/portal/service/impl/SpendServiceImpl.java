@@ -1,5 +1,6 @@
 package com.n2.portal.service.impl;
 
+import com.n2.portal.core.CompareSpendCategory;
 import com.n2.portal.dao.ExpenseDateDao;
 import com.n2.portal.dao.SpendDao;
 import com.n2.portal.dto.SpendDTO;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -36,6 +38,7 @@ public class SpendServiceImpl implements SpendService {
         List<SpendCategory> result = new ArrayList<SpendCategory>();
         if (expenseDate != null && expenseDate.getSpendCategories() != null)
             result.addAll(expenseDate.getSpendCategories());
+        Collections.sort(result, new CompareSpendCategory());
         return result;
     }
 

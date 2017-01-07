@@ -67,3 +67,7 @@ $n2.isEmpty = function (str) {
     return false;
 };
 
+$n2.isNotEmpty = function (str) {
+    return !$n2.isEmpty(str);
+};
+

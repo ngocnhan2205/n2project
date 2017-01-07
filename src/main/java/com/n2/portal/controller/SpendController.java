@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -42,5 +39,11 @@ public class SpendController {
     public ResponseEntity<List<SpendCategory>> getAll(@RequestParam("date") String date) {
         Date d = N2Date.getInstance(N2Date.parseDate(date));
         return new ResponseEntity<List<SpendCategory>>(spendService.getAllSpend(d), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/spend/{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<SpendCategory> updateSpendCategory(@PathVariable("id") Long id,
+                                                             @RequestParam("name") String name) {
+        return new ResponseEntity<SpendCategory>(spendCategoryService.update(id, name), HttpStatus.OK);
     }
 }
