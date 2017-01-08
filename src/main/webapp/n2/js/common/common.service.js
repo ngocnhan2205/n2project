@@ -39,7 +39,7 @@ appMain.factory('N2Service', ['$http', '$q', '$mdDialog',
                         .targetEvent(ev)
                 );
             },
-            showConfirm: function (title, msg, ev) {
+            showConfirm: function (title, msg, ev, id) {
                 var con = $mdDialog.confirm()
                     .title(title)
                     .textContent(msg)

@@ -72,79 +72,83 @@
 </div>-->
 
 
-<div class="modal-header">
-    <h3 class="modal-title" id="modal-title">Spend date : {{date}}</h3>
-</div>
-<div class="modal-body" id="modal-body">
-    <form name="expense">
-        <div class="totalSpend">
-            <span class="n2-b-6">Total spend: </span>
-            <span class="n2-b-4">1000 VND</span>
-        </div>
-        <div class="totalSum">
-            <span class="n2-b-6">Sum: </span>
-            <span class="n2-b-4">1000 VND</span>
-        </div>
-        <div class="n2-btn-ex">
-            <button type="button" class="btn btn-default btn-sm" ng-click="addExpense()">
-                <span class="glyphicon glyphicon-plus" style="color: #bfbfbf;"></span>
-            </button>
-        </div>
-        <div ng-repeat="ex in expenses" class="n2-panel">
-            <div class="n2-panel-header">
-                <div focus-on-show ng-show="ex.isEditName">
-                    <input type="text" class="form-control lbExpense" id="usr"
-                           placeholder="Enter expense..."
-                           ng-model="ex.name" n2-enter="saveExpense(ex)"/>
-                </div>
-                <div class="row" ng-hide="ex.isEditName">
-                    <div class="col-md-6" ng-bind="ex.name" ng-click="edit(ex)"></div>
-                    <div class="col-md-6">
-                        <span class="pull-right glyphicon glyphicon-trash" style="color: white"
-                              ng-click="deleteSpendCategory(ex.id)">
-                        </span>
+<div id="modalSpend">
+
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Spend date : {{date}}</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <form name="expense">
+            <div class="totalSpend">
+                <span class="n2-b-6">Total spend: </span>
+                <span class="n2-b-4">1000 VND</span>
+            </div>
+            <div class="totalSum">
+                <span class="n2-b-6">Sum: </span>
+                <span class="n2-b-4">1000 VND</span>
+            </div>
+            <div class="n2-btn-ex">
+                <button type="button" class="btn btn-default btn-sm" ng-click="addExpense()">
+                    <span class="glyphicon glyphicon-plus" style="color: #bfbfbf;"></span>
+                </button>
+            </div>
+            <div ng-repeat="ex in expenses" class="n2-panel">
+                <div class="n2-panel-header">
+                    <div focus-on-show ng-show="ex.isEditName">
+                        <input type="text" class="form-control lbExpense" id="usr"
+                               placeholder="Enter expense..."
+                               ng-model="ex.name" n2-enter="saveExpense(ex)"/>
                     </div>
+                    <div class="row" ng-hide="ex.isEditName">
+                        <div class="col-md-6" ng-bind="ex.name" ng-click="edit(ex)"></div>
+                        <div class="col-md-6">
+                        <span class="pull-right glyphicon glyphicon-trash" style="color: white"
+                              ng-confirm-click="Are you sure?"
+                              confirmed-click="deleteSpendCategory(ex.id)">
+                        </span>
+                        </div>
+                    </div>
+
                 </div>
 
+                <div class="n2-panel-body" ng-show="expenses.length > 0">
+                    <table class="table">
+                        <colgroup>
+                            <col span="1" style="width: 35%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 65%;">
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <td>rau cai</td>
+                            <td>5000</td>
+                            <td>khong</td>
+                        </tr>
+                        <tr>
+                            <td>nuoc uong</td>
+                            <td>5000</td>
+                            <td>khong</td>
+                        </tr>
+                        <tr>
+                            <td>Thit lon</td>
+                            <td>5000</td>
+                            <td>khong</td>
+                        </tr>
+
+                        <tr>
+                            <td>Sum:</td>
+                            <td>500000</td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <div class="n2-panel-body" ng-show="expenses.length > 0">
-                <table class="table">
-                    <colgroup>
-                        <col span="1" style="width: 35%;">
-                        <col span="1" style="width: 10%;">
-                        <col span="1" style="width: 65%;">
-                    </colgroup>
-                    <tbody>
-                    <tr>
-                        <td>rau cai</td>
-                        <td>5000</td>
-                        <td>khong</td>
-                    </tr>
-                    <tr>
-                        <td>nuoc uong</td>
-                        <td>5000</td>
-                        <td>khong</td>
-                    </tr>
-                    <tr>
-                        <td>Thit lon</td>
-                        <td>5000</td>
-                        <td>khong</td>
-                    </tr>
 
-                    <tr>
-                        <td>Sum:</td>
-                        <td>500000</td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-
-    </form>
-</div>
-<div class="modal-footer">
-    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" type="button" ng-click="cancel()">Cancel</button>
+    </div>
 </div>

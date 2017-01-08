@@ -144,3 +144,15 @@ md-card md-card-title {
     font-weight: 400;
 }
 
+.md-dialog-container {
+    z-index: 1150;
+}
+
+.md-dialog > form {
+    overflow: hidden;
+}
+
+md-dialog > form {
+    overflow: hidden;
+}
+

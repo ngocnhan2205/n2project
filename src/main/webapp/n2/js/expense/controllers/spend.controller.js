@@ -42,11 +42,11 @@ expenseModule.controller('DialogSpendController', ['$scope', 'ExpenseService', '
             if ($n2.isNotEmpty(ex.name)) {
                 if (ex.id) {
                     ExpenseService.updateSpendCategory(ex.id, ex.name).then(function (res) {
-                        ex = res.data;
+                        $scope.expenses[0] = res.data;
                     })
                 } else {
                     ExpenseService.saveExpense(ex.name, $scope.date).then(function (res) {
-                        ex = res.data;
+                        $scope.expenses[0] = res.data;
                     });
                 }
             } else {
@@ -56,10 +56,8 @@ expenseModule.controller('DialogSpendController', ['$scope', 'ExpenseService', '
         };
 
         $scope.deleteSpendCategory = function (id) {
-            var confirm = N2Service.showConfirm('Delete', 'Are you sure?');
-            $mdDialog.show(confirm).then(function () {
-                ExpenseService.deleteSpendCategory(id);
-            })
+            ExpenseService.deleteSpendCategory(id).then(function () {
+            });
         }
 
     }]);
