@@ -164,3 +164,9 @@
     margin-top: 4px;
     margin-bottom: 4px;
 }
+
+.n2-btn-close {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+}
